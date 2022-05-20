@@ -1,0 +1,11 @@
+<% if comment.body.nil? %>
+<% else %>
+<div class="card">
+  <div class="card-body">
+    <%= comment.body %> <br>
+    - <small><%= comment.commenter %> | <%= comment.updated_at %></small>
+  </div>
+</div>
+<p></p>
+<% end %>
+

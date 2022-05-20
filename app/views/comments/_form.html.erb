@@ -1,0 +1,9 @@
+<%= form_with model: [ @post, @post.comments.build ] do |form| %>
+  <%= form.text_field :commenter, class: "form-control", placeholder: "Put your name" %> <p></p>
+  <%= form.text_area :body, class: "form-control", placeholder: "Write your comment here" %>
+  </p>
+  <p>
+    <%= form.submit class: "btn btn-sm btn-outline-secondary" %>
+    <%= link_to "Back to posts", posts_path, class: "btn btn-outline-primary btn-sm" %>
+  </p>
+<% end %>
