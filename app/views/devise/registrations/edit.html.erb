@@ -4,7 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <p></p>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -21,7 +21,7 @@
   </div>
   <p></p>
   <div class="field">
-    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password", class: "form-control" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password", class: "form-control", :required => true %>
   </div>
   <p></p>
   <div class="actions">

@@ -10,7 +10,8 @@
       <div class="card text-center">
         <div class="card-body">
           <h6 class="card-title"><%= post.title %></h6>
-          <p class="card-text"><%= post.body %></p>
+          <p class="card-text"><%= post.body %>    <%= post.is_approved %></p>
+          
           <%= link_to "Go to Post", post, class: "btn btn-primary" %>
         </div>
         <div class="card-footer text-muted">
@@ -22,6 +23,7 @@
   </div>
   <br>
   <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+  <br><br>
 <% end %>
 
 

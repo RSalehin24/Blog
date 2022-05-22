@@ -5,11 +5,14 @@
     <%= post.updated_at %>
     <hr class="my-4">
     <%= post.body %>
-    <% if current_user.id == post.user_id %>
+    <% if current_user.id == post.user_id || current_user.is_admin? %>
+
       <div>
         <p></p>
         <br>
-        <%= link_to "Edit", edit_post_path(@post), class: "btn btn-primary" %> 
+        <% if current_user.id == post.user_id %>
+          <%= link_to "Edit", edit_post_path(@post), class: "btn btn-primary" %>
+        <% end %>
         <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"%>
       </div>
     <% end %>

@@ -12,22 +12,22 @@
   <% end %>
   <p></p>
   <div>
-    <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
+    <%= form.text_field :title, class: "form-control", placeholder: "Title", :required => true %>
   </div>
 
   <p></p>
   <div>
-    <%= form.text_area :body, class: "form-control", placeholder: "Body" %>
+    <%= form.text_area :body, class: "form-control", placeholder: "Body", :required => true %>
   </div>
 
   <p></p>
   <div>
-    <%= form.text_field :author, class: "form-control", placeholder: "Author" %>
+    <%= form.text_field :author, class: "form-control", placeholder: "Author", :required => true %>
   </div>
 
   <p></p>
   <div>
-    <%= form.text_field :user_id, class: "form-control", placeholder: "User ID", value: current_user.id, type: :hidden %>
+    <%= form.text_field :user_id, class: "form-control", placeholder: "User ID", value: current_user.id, type: :hidden, :required => true %>
   </div>
 
   <p></p>

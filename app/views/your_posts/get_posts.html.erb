@@ -7,19 +7,33 @@
 <% else %>
   <div id="posts">
     <% @posts.each do |post| %>
-      <div class="card text-center">
-        <div class="card-body">
-          <h6 class="card-title"><%= post.title %></h6>
-          <p class="card-text"><%= post.body %></p>
-          <%= link_to "Go to Post", post, class: "btn btn-primary" %>
+      <% if post.is_approved? %>
+        <div class="card text-center">
+          <div class="card-body">
+            <h6 class="card-title"><%= post.title %></h6>
+            <p class="card-text"><%= post.body %></p>
+            <%= link_to "Go to Post", post, class: "btn btn-primary" %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= post.updated_at %>
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          <%= post.updated_at %>
+        <p></p>
+      <% else %>
+         <div class="card text-center">
+          <div class="card-body">
+            <h6 class="card-title"><%= post.title %></h6>
+            <p>This post has not been approved yet</p>
+          </div>
+          <div class="card-footer text-muted">
+            <%= post.updated_at %>
+          </div>
         </div>
-      </div>
-      <p></p>
+        <p></p>
+      <% end %>
     <% end %>
   </div>
   <br>
   <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+  <br><br>
 <% end %>
