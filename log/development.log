@@ -29036,3 +29036,1460 @@ Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.6ms | Allocations: 547
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:47:15 +0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.9ms | Allocations: 7406)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:47:15 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 780)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4249)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 827)
+  Rendered layouts/_alerts.html.erb (Duration: 0.6ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 240.2ms | Allocations: 101384)
+Completed 200 OK in 258ms (Views: 249.3ms | ActiveRecord: 0.0ms | Allocations: 110049)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:47:19 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.4ms | Allocations: 2074)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 165)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1156)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 197)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4099)
+Completed 200 OK in 412ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 5878)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:47:20 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms | Allocations: 1638)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1019)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 193)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3846)
+Completed 200 OK in 420ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4381)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:47:23 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.2ms | Allocations: 1455)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1019)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 193)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 3846)
+Completed 200 OK in 418ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 4373)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:47:27 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1025)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3906)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4576)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-22 21:47:28 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 172)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1749)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 269)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4866)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 6171)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-22 21:47:41 +0600
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"salehin24.rs@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "salehin24.rs@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin", "is_requested") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "salehin24.rs@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-22 15:47:41.630881"], ["updated_at", "2022-05-22 15:47:41.630881"], ["is_admin", 0], ["is_requested", 0]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/posts
+Completed 302 Found in 425ms (ActiveRecord: 2.2ms | Allocations: 8737)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:47:41 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 5035)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 418)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 8386)
+Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 1.4ms | Allocations: 13110)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2022-05-22 21:47:46 +0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 1.1ms | Allocations: 449)
+  Rendered comments/_form.html.erb (Duration: 29.6ms | Allocations: 9805)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered posts/show.html.erb within layouts/application (Duration: 38.4ms | Allocations: 11993)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 357)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 15107)
+Completed 200 OK in 52ms (Views: 41.6ms | ActiveRecord: 1.5ms | Allocations: 18949)
+
+
+Started GET "/change_role/change_is_admin" for 127.0.0.1 at 2022-05-22 21:47:51 +0600
+Processing by ChangeRoleController#change_is_admin as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/change_is_admin.html.erb within layouts/application
+  Rendered change_role/change_is_admin.html.erb within layouts/application (Duration: 2.5ms | Allocations: 349)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 386)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3616)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 5999)
+
+
+Started POST "/change_role/requested_admin_role" for 127.0.0.1 at 2022-05-22 21:47:52 +0600
+Processing by ChangeRoleController#requested_admin_role as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/change_role_controller.rb:20:in `requested_admin_role'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "is_requested" = ? WHERE "users"."id" = ?[0m  [["is_requested", 1], ["id", 9]]
+  ↳ app/controllers/change_role_controller.rb:26:in `requested_admin_role'
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms | Allocations: 3342)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:47:52 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1188)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 349)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4428)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6829)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:48:06 +0600
+Processing by YourPostsController#get_posts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 2.3ms | Allocations: 604)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3574)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 5294)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:48:08 +0600
+Processing by YourPostsController#get_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 2.6ms | Allocations: 604)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 317)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3569)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.5ms | Allocations: 5190)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:48:10 +0600
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.3ms | Allocations: 1218)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1549)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 316)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4522)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 6194)
+
+
+Started POST "/posts" for 127.0.0.1 at 2022-05-22 21:48:23 +0600
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Title", "body"=>"body", "author"=>"Author", "user_id"=>"9"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "author", "user_id", "created_at", "updated_at", "is_approved") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Title"], ["body", "body"], ["author", "Author"], ["user_id", 9], ["created_at", "2022-05-22 15:48:23.236055"], ["updated_at", "2022-05-22 15:48:23.236055"], ["is_approved", 0]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+Redirected to http://127.0.0.1:3000/posts/2
+Completed 302 Found in 19ms (ActiveRecord: 2.5ms | Allocations: 6204)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2022-05-22 21:48:23 +0600
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Filter chain halted as :approved rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 2436)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:48:23 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/your_posts/get_posts.html.erb:9
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1230)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 317)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4210)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms | Allocations: 5870)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:48:25 +0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1261)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 326)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4235)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 5836)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:49:25 +0600
+Processing by PostsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3556)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 936)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 20726)
+Completed 200 OK in 32ms (Views: 22.1ms | ActiveRecord: 1.5ms | Allocations: 29579)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:49:27 +0600
+Processing by ChangeRoleController#role_change_requests as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."is_requested" = ?[0m  [["is_requested", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:14
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1874)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 404)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5156)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 7560)
+
+
+Started POST "/change_role/change_is_admin?_id=9" for 127.0.0.1 at 2022-05-22 21:49:28 +0600
+Processing by ChangeRoleController#update_is_admin as TURBO_STREAM
+  Parameters: {"_id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/change_role_controller.rb:32:in `update_is_admin'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "is_admin" = ? WHERE "users"."id" = ?[0m  [["is_admin", 1], ["id", 9]]
+  ↳ app/controllers/change_role_controller.rb:36:in `update_is_admin'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "is_requested" = ? WHERE "users"."id" = ?[0m  [["is_requested", 0], ["id", 9]]
+  ↳ app/controllers/change_role_controller.rb:37:in `update_is_admin'
+Redirected to http://127.0.0.1:3000/change_role/role_change_requests
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms | Allocations: 3578)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:49:28 +0600
+Processing by ChangeRoleController#role_change_requests as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 1.3ms | Allocations: 559)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 415)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3682)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 5379)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:49:56 +0600
+Processing by ChangeRoleController#role_change_requests as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1016)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 991)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 18261)
+Completed 200 OK in 26ms (Views: 19.1ms | ActiveRecord: 0.9ms | Allocations: 25451)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:49:59 +0600
+Processing by YourPostsController#get_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/your_posts/get_posts.html.erb:9
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3546)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 430)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6858)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 1.0ms | Allocations: 10884)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:50:01 +0600
+Processing by HandlePostsController#posts_tobe_approved as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 0]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:8
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1905)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 427)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5216)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 7634)
+
+
+Started POST "/posts/2" for 127.0.0.1 at 2022-05-22 21:50:03 +0600
+Processing by PostsController#approve_post as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `approve_post'
+  [1m[36mPost Update (1.3ms)[0m  [1m[33mUPDATE "posts" SET "is_approved" = ? WHERE "posts"."id" = ?[0m  [["is_approved", 1], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:74:in `approve_post'
+Redirected to http://127.0.0.1:3000/handle_posts/posts_tobe_approved
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms | Allocations: 3464)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:50:03 +0600
+Processing by HandlePostsController#posts_tobe_approved as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 0.7ms | Allocations: 566)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 408)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3796)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 5511)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:50:06 +0600
+Processing by YourPostsController#get_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 9]]
+  ↳ app/views/your_posts/get_posts.html.erb:9
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1291)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 393)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4332)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.9ms | Allocations: 5930)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2022-05-22 21:50:06 +0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 1.3ms | Allocations: 588)
+  Rendered comments/_form.html.erb (Duration: 11.3ms | Allocations: 4972)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 7001)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 423)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 10275)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 1.0ms | Allocations: 13772)
+
+
+Started DELETE "/posts/2" for 127.0.0.1 at 2022-05-22 21:50:10 +0600
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:84:in `correct_user_or_admin'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+Redirected to http://127.0.0.1:3000/posts
+Completed 303 See Other in 8ms (ActiveRecord: 1.4ms | Allocations: 6386)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:50:10 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1645)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 402)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4718)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 6471)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-22 21:50:36 +0600
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 3140)
+
+
+Started DELETE "/" for 127.0.0.1 at 2022-05-22 21:50:36 +0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:50:36 +0600
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 400)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:50:36 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 611)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2093)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 269)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5214)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 6459)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-22 21:50:38 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 223)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 125)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1636)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 269)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4746)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6041)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-22 21:50:54 +0600
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"you@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "you@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin", "is_requested") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "you@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-22 15:50:54.793562"], ["updated_at", "2022-05-22 15:50:54.793562"], ["is_admin", 0], ["is_requested", 0]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/posts
+Completed 302 Found in 412ms (ActiveRecord: 1.4ms | Allocations: 6340)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:50:54 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1273)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 372)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4302)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 5959)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2022-05-22 21:50:59 +0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 66)
+  Rendered comments/_form.html.erb (Duration: 3.3ms | Allocations: 830)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1712)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 355)
+  Rendered layouts/_alerts.html.erb (Duration: 4.7ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 4703)
+Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 0.8ms | Allocations: 7202)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:51:03 +0600
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.5ms | Allocations: 1134)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1460)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 355)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4472)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 6109)
+
+
+Started POST "/posts" for 127.0.0.1 at 2022-05-22 21:51:14 +0600
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"title", "body"=>"body", "author"=>"author", "user_id"=>"10"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "author", "user_id", "created_at", "updated_at", "is_approved") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "title"], ["body", "body"], ["author", "author"], ["user_id", 10], ["created_at", "2022-05-22 15:51:14.895669"], ["updated_at", "2022-05-22 15:51:14.895669"], ["is_approved", 0]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+Redirected to http://127.0.0.1:3000/posts/3
+Completed 302 Found in 17ms (ActiveRecord: 2.0ms | Allocations: 5948)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2022-05-22 21:51:14 +0600
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Filter chain halted as :approved rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 2406)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:51:14 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/your_posts/get_posts.html.erb:9
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1199)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 359)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4214)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 5874)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:51:18 +0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1253)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 365)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4275)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 0.7ms | Allocations: 5881)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-22 21:51:22 +0600
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms | Allocations: 1803)
+
+
+Started DELETE "/" for 127.0.0.1 at 2022-05-22 21:51:22 +0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:51:22 +0600
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:22 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1038)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3924)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 4593)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:23 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3888)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4517)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:28 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms | Allocations: 1520)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 193)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3849)
+Completed 200 OK in 412ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4370)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:41 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms | Allocations: 1452)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1019)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 193)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3854)
+Completed 200 OK in 414ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 4376)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:43 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.3ms | Allocations: 1446)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1019)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 193)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3845)
+Completed 200 OK in 416ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4366)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:51:45 +0600
+Processing by YourPostsController#get_posts as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 300)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:45 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3896)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4553)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:51:48 +0600
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:48 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3896)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 4550)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:51:49 +0600
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 300)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:49 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3896)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4544)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-22 21:51:50 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 874)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3747)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 4311)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:51:58 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3897)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4528)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-22 21:52:01 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 538)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 265)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3715)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 4560)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:52:03 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1102)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3967)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4648)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-22 21:52:55 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 224)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 547)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2134)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 797)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 19123)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.6ms | Allocations: 24332)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-22 21:53:17 +0600
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin01@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin01@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "is_admin", "is_requested") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin01@mail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-05-22 15:53:17.689477"], ["updated_at", "2022-05-22 15:53:17.689477"], ["is_admin", 0], ["is_requested", 0]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/posts
+Completed 302 Found in 421ms (ActiveRecord: 1.8ms | Allocations: 6574)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:53:17 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3574)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 459)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6979)
+Completed 200 OK in 12ms (Views: 6.9ms | ActiveRecord: 0.7ms | Allocations: 11304)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:53:25 +0600
+Processing by ChangeRoleController#role_change_requests as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 2.9ms | Allocations: 959)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 484)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4343)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 6739)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:53:26 +0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1294)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 404)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4346)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 6058)
+
+
+Started GET "/change_role/change_is_admin" for 127.0.0.1 at 2022-05-22 21:53:27 +0600
+Processing by ChangeRoleController#change_is_admin as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/change_is_admin.html.erb within layouts/application
+  Rendered change_role/change_is_admin.html.erb within layouts/application (Duration: 1.1ms | Allocations: 256)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 395)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3299)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4961)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:53:28 +0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1253)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 404)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4306)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 5900)
+
+
+Started GET "/change_role/change_is_admin" for 127.0.0.1 at 2022-05-22 21:53:35 +0600
+Processing by ChangeRoleController#change_is_admin as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/change_is_admin.html.erb within layouts/application
+  Rendered change_role/change_is_admin.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 395)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3139)
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 4702)
+
+
+Started POST "/change_role/requested_admin_role" for 127.0.0.1 at 2022-05-22 21:53:36 +0600
+Processing by ChangeRoleController#requested_admin_role as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/change_role_controller.rb:20:in `requested_admin_role'
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "is_requested" = ? WHERE "users"."id" = ?[0m  [["is_requested", 1], ["id", 11]]
+  ↳ app/controllers/change_role_controller.rb:26:in `requested_admin_role'
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms | Allocations: 3087)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:53:36 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1177)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 391)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4469)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6880)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:53:38 +0600
+Processing by ChangeRoleController#role_change_requests as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."is_requested" = ?[0m  [["is_requested", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:14
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1334)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 365)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4360)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 0.7ms | Allocations: 6082)
+
+
+Started POST "/change_role/change_is_admin?_id=11" for 127.0.0.1 at 2022-05-22 21:53:39 +0600
+Processing by ChangeRoleController#update_is_admin as TURBO_STREAM
+  Parameters: {"_id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/change_role_controller.rb:32:in `update_is_admin'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "is_admin" = ? WHERE "users"."id" = ?[0m  [["is_admin", 1], ["id", 11]]
+  ↳ app/controllers/change_role_controller.rb:36:in `update_is_admin'
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "is_requested" = ? WHERE "users"."id" = ?[0m  [["is_requested", 0], ["id", 11]]
+  ↳ app/controllers/change_role_controller.rb:37:in `update_is_admin'
+Redirected to http://127.0.0.1:3000/change_role/role_change_requests
+Completed 302 Found in 13ms (ActiveRecord: 3.6ms | Allocations: 2861)
+
+
+Started GET "/change_role/role_change_requests" for 127.0.0.1 at 2022-05-22 21:53:39 +0600
+Processing by ChangeRoleController#role_change_requests as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering change_role/role_change_requests.html.erb within layouts/application
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."is_requested" = ? LIMIT ?[0m  [["is_requested", 1], ["LIMIT", 1]]
+  ↳ app/views/change_role/role_change_requests.html.erb:2
+  Rendered change_role/role_change_requests.html.erb within layouts/application (Duration: 1.2ms | Allocations: 556)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 415)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3628)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 5281)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:53:41 +0600
+Processing by HandlePostsController#posts_tobe_approved as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 0]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:8
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1862)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 427)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 5167)
+Completed 200 OK in 14ms (Views: 9.0ms | ActiveRecord: 0.6ms | Allocations: 7568)
+
+
+Started POST "/posts/3" for 127.0.0.1 at 2022-05-22 21:53:42 +0600
+Processing by PostsController#approve_post as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `approve_post'
+  [1m[36mPost Update (1.8ms)[0m  [1m[33mUPDATE "posts" SET "is_approved" = ? WHERE "posts"."id" = ?[0m  [["is_approved", 1], ["id", 3]]
+  ↳ app/controllers/posts_controller.rb:74:in `approve_post'
+Redirected to http://127.0.0.1:3000/handle_posts/posts_tobe_approved
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms | Allocations: 3156)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:53:42 +0600
+Processing by HandlePostsController#posts_tobe_approved as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 11.6ms | Allocations: 556)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 402)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 3629)
+Completed 200 OK in 38ms (Views: 20.7ms | ActiveRecord: 0.3ms | Allocations: 5304)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:53:47 +0600
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1340)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 405)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4402)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 6005)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:53:49 +0600
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.4ms | Allocations: 1224)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1550)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 392)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4587)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 6260)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-22 21:54:00 +0600
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 2467)
+
+
+Started DELETE "/" for 127.0.0.1 at 2022-05-22 21:54:00 +0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:54:00 +0600
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:54:00 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 190)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1601)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 269)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4722)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5867)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-22 21:54:01 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 874)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3756)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4426)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:54:20 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1023)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3889)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4544)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:54:31 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"you@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "you@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/posts/new
+Completed 302 Found in 399ms (ActiveRecord: 0.2ms | Allocations: 2681)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:54:32 +0600
+Processing by PostsController#new as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 0.7ms | Allocations: 773)
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 895)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 396)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3940)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5541)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2022-05-22 21:55:17 +0600
+Processing by PostsController#new as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.1ms | Allocations: 1343)
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1717)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 908)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 18798)
+Completed 200 OK in 25ms (Views: 14.3ms | ActiveRecord: 1.0ms | Allocations: 29077)
+
+
+Started POST "/posts" for 127.0.0.1 at 2022-05-22 21:55:35 +0600
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"titlemember post", "body"=>"memeber", "author"=>"author", "user_id"=>"10"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "author", "user_id", "created_at", "updated_at", "is_approved") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "titlemember post"], ["body", "memeber"], ["author", "author"], ["user_id", 10], ["created_at", "2022-05-22 15:55:35.335101"], ["updated_at", "2022-05-22 15:55:35.335101"], ["is_approved", 0]]
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:35:in `block in create'
+Redirected to http://127.0.0.1:3000/posts/4
+Completed 302 Found in 14ms (ActiveRecord: 1.9ms | Allocations: 6338)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2022-05-22 21:55:35 +0600
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Filter chain halted as :approved rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 3570)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:55:35 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/views/your_posts/get_posts.html.erb:9
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2022)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 390)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5344)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 7807)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-22 21:55:41 +0600
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 2547)
+
+
+Started DELETE "/" for 127.0.0.1 at 2022-05-22 21:55:41 +0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:55:41 +0600
+Processing by YourPostsController#get_posts as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 311)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:55:42 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 611)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2086)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 269)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 52)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5194)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 6419)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:55:50 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin01@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin01@mail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/your_posts/get_posts
+Completed 302 Found in 414ms (ActiveRecord: 0.8ms | Allocations: 2816)
+
+
+Started GET "/your_posts/get_posts" for 127.0.0.1 at 2022-05-22 21:55:50 +0600
+Processing by YourPostsController#get_posts as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering your_posts/get_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/views/your_posts/get_posts.html.erb:4
+  Rendered your_posts/get_posts.html.erb within layouts/application (Duration: 0.7ms | Allocations: 618)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 403)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3681)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 5306)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:55:51 +0600
+Processing by HandlePostsController#posts_tobe_approved as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 0]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:8
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1883)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 427)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5188)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 7598)
+
+
+Started POST "/posts/4" for 127.0.0.1 at 2022-05-22 21:55:53 +0600
+Processing by PostsController#approve_post as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `approve_post'
+  [1m[36mPost Update (1.7ms)[0m  [1m[33mUPDATE "posts" SET "is_approved" = ? WHERE "posts"."id" = ?[0m  [["is_approved", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `approve_post'
+Redirected to http://127.0.0.1:3000/handle_posts/posts_tobe_approved
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms | Allocations: 2543)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:55:53 +0600
+Processing by HandlePostsController#posts_tobe_approved as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering handle_posts/posts_tobe_approved.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 0], ["LIMIT", 1]]
+  ↳ app/views/handle_posts/posts_tobe_approved.html.erb:4
+  Rendered handle_posts/posts_tobe_approved.html.erb within layouts/application (Duration: 1.1ms | Allocations: 556)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 402)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3616)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 5296)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-05-22 21:55:58 +0600
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1862)
+
+
+Started DELETE "/" for 127.0.0.1 at 2022-05-22 21:55:58 +0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:55:58 +0600
+Processing by HandlePostsController#posts_tobe_approved as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:55:58 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 160)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1055)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 229)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3941)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4607)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-05-22 21:56:05 +0600
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"you@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "you@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/handle_posts/posts_tobe_approved
+Completed 302 Found in 414ms (ActiveRecord: 0.2ms | Allocations: 2339)
+
+
+Started GET "/handle_posts/posts_tobe_approved" for 127.0.0.1 at 2022-05-22 21:56:06 +0600
+Processing by HandlePostsController#posts_tobe_approved as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/posts
+Filter chain halted as :is_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1505)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:56:06 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1757)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 365)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4782)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 6468)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2022-05-22 21:56:09 +0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:90:in `approved'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 1.3ms | Allocations: 480)
+  Rendered comments/_form.html.erb (Duration: 8.3ms | Allocations: 5040)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 6903)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 357)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 10015)
+Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 1.0ms | Allocations: 12588)
+
+
+Started DELETE "/posts/4" for 127.0.0.1 at 2022-05-22 21:56:13 +0600
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:84:in `correct_user_or_admin'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:67:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mPost Destroy (0.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:68:in `destroy'
+Redirected to http://127.0.0.1:3000/posts
+Completed 303 See Other in 18ms (ActiveRecord: 2.6ms | Allocations: 6287)
+
+
+Started GET "/posts" for 127.0.0.1 at 2022-05-22 21:56:13 +0600
+Processing by PostsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."is_approved" = ? LIMIT ?[0m  [["is_approved", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."is_approved" = ?[0m  [["is_approved", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1380)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 365)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 37)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4403)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 6059)
+
+
