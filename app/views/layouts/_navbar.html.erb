@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-light">
-<div></div>
+  &nbsp &nbsp &nbsp &nbsp
   <div class="container-fluid">
-    <%= link_to "Blogs", root_path, class: "navbar-brand"%>
+    <h4 style="color: #606060; justify-content: center; "><%= link_to "Blogs", root_path, class: "nav-link" %></h4>
+    &nbsp &nbsp &nbsp
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,22 +17,18 @@
               <li><%= link_to "Request for Admin Role", change_role_change_is_admin_path, class: "nav-link" %></li>
             <% end %>
           <% end %>
-          <li><%= link_to "All Posts", posts_path, class: "nav-link" %></li>
          
-
           <% if current_user.is_admin? %>
-            <li><%= link_to "Posts tobe Approved", handle_posts_posts_tobe_approved_path, class: "nav-link" %></li>
             <li><%= link_to "Requests", change_role_role_change_requests_path, class: "nav-link" %></li>
+            <li><%= link_to "Posts tobe Approved", handle_posts_posts_tobe_approved_path, class: "nav-link" %></li>
           <% end %>
+           <li><%= link_to "All Posts", posts_path, class: "nav-link" %></li>
         <% end %>
       </ul>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <li>
-          <li><%= link_to "Your Posts", your_posts_get_posts_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Your Posts", your_posts_get_posts_path, class: "nav-link" %></li>
           <li><%= link_to "Pending Posts", handle_posts_pending_posts_path, class: "nav-link" %></li>
-            <%= link_to "Edit Profile",  edit_user_registration_path, class: "nav-link" %>
-          </li>
           <li class="nav-item">
             <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link"  %>
           </li>
@@ -43,7 +40,23 @@
             <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+        <% if user_signed_in? %>
+          &nbsp 
+          <%= link_to edit_user_registration_path, class: "nav-link" do%>
+            <%if current_user.image.attached? %>
+              <%= image_tag current_user.image, style: "width: 40px; display: block; border-radius: 45px" %>
+            <% else %>
+            <li class="nav-item">Edit Profile</li>
+            <% end %>
+          <% end %>
+          &nbsp 
+        <% end %>
       </ul>
+
+      
+      
+      
+      
     </div>
   </div>
 </nav>

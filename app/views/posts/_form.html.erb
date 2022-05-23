@@ -22,7 +22,7 @@
 
   <p></p>
   <div>
-    <%= form.text_field :author, class: "form-control", placeholder: "Author", :required => true %>
+    <%= form.text_field :author, class: "form-control", placeholder: "Author", :required => true, value: current_user.username, type: :hidden %>
   </div>
 
   <p></p>

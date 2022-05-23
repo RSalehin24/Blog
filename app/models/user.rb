@@ -6,5 +6,7 @@ class User < ApplicationRecord
          
          has_many :posts, dependent: :destroy
          validates :first_name, :last_name, :username, :date_of_birth, presence: true
-         validates :date_of_birth, uniqueness: true
+         validates :username, uniqueness: true
+
+         has_one_attached :image
 end

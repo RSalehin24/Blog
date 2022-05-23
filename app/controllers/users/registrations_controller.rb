@@ -11,12 +11,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   
   def create
-    @user = User.find_by(email: resource_params[:email])
-    if @user.nil?
-      super
+    if resource_params[:password] == resource_params[:password_confirmation]
+      @user = User.find_by(email: resource_params[:email]) 
+      if @user.nil?
+        @user0 = User.find_by(username: resource_params[:username]) 
+        if @user0.nil?
+          super
+        else
+          redirect_to new_user_registration_path, notice: "Given username has already been used, please try with a different one!"
+        end
+      else
+        redirect_to new_user_session_path, notice: "User already exists with this Email, Please Sign in!"
+      end
     else
-      redirect_to new_user_session_path, notice: "User alredy exists with this Email, Please Sign in!"
+      redirect_to new_user_registration_path, notice: "Password doesn't match!"
     end
+  
+    
   end
 
   # GET /resource/edit
@@ -49,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :date_of_birth, :first_name, :last_name, :twitter, :instagram, :username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :date_of_birth, :first_name, :last_name, :twitter, :instagram, :username, :image])
   end
 
   # The path used after sign up.

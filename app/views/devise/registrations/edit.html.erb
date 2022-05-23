@@ -15,10 +15,7 @@
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
   </div>  <p></p>
-  <div class="field">
-    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", placeholder: "Date of birth", class: "form-control", :required => true %>
-  </div>
-  <p></p>
+  
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <p></p>
@@ -36,14 +33,35 @@
   <div class="field">
     <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control", :required => true %>
   </div>
+  <br>
+  <h6> Add Date of Birth and select Profile Image</h6>
+  <div class="field">
+    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", :required => true %>
+  </div>
+  <p></p>
+  <div class="field">
+    <%= f.file_field :image, class: "form-control"%>
+  </div>
   <p></p>
   <div class="actions">
     <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
 <% end %>
+<br><br>
 
-<br> <br>
+<h3></h3>
+<%if current_user.image.attached? %>
+  <div class="card text-center" style="align-items: center; justify-content: center; ">
+    <div class="card-body">
+      <h3 class="card-title">Uploaded Picture</h3> <br>
+      <%= image_tag current_user.image, style: "width: 200px; display: block; border-radius: 50px position: relative" %>
+    </div>
+  </div> 
+<% end %>
 
+
+
+<br><br>
 <div class="card text-center">
   <div class="card-body">
     <h3 class="card-title">Unhappy?</h3>
@@ -55,4 +73,4 @@
 
 <br><br><br>
 <%= link_to "Back", :back, class: "btn btn-outline-primary" %>
-<br><br><br>
+

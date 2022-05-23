@@ -1,104 +1,54 @@
 <footer class="text-center text-lg-start bg-light text-muted">
 
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-  >
-
-    <div class="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
+  
+  <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block"></div>
+    <div style="d-flex ">
+      <div class="me-5 d-none d-lg-block"></div>
+      <a href="" class="me-4 text-reset"></a><a href="" class="me-4 text-reset"></a>
+      <a href="" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
+      <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
     </div>
-
-    <div>
-      <a href="" class="me-4 text-reset">
-        <i class="bi bi-facebook"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-
-  </section>
-
+  </div>
+  
   <section class="">
     <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
       <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
+        <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            Links
           </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
+          <ul>
+            <li><%= link_to "About Us", home_about_us_path, class: "nav-link" %></li>
+            <li><%= link_to "All Posts", posts_path, class: "nav-link" %></li>
+            <% if user_signed_in? %>
+              <li class="nav-item"><%= link_to "Your Posts", your_posts_get_posts_path, class: "nav-link" %></li>
+              <% if !current_user.is_admin? %>
+                <% if !current_user.is_requested %>
+                  <li><%= link_to "Request for Admin Role", change_role_change_is_admin_path, class: "nav-link" %></li>
+                <% end %>
+              <% else %>
+                <li><%= link_to "Requests", change_role_role_change_requests_path, class: "nav-link" %></li>
+                <li><%= link_to "Posts tobe Approved", handle_posts_posts_tobe_approved_path, class: "nav-link" %></li>
+              <% end %>
+            <% else %>
+              <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "nav-link" %> </li>
+            <% end %>
+          </ul>
         </div>
         
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">React</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Laravel</a>
-          </p>
-        </div>
         
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
-          </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div>
-        <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p>Nascenia Ltd.<br>  
+          House 6/14, Block A, Lalmatia, Dhaka – 1207<br> 
+          mark@nascenia.com</p>
         </div>
       </div>
     </div>
@@ -106,5 +56,5 @@
 </footer>
 
 <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright
+    © 2022 Nascenia
 </div>
