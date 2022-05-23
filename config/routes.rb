@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+
   root 'home#index'
   get 'home/about_us', to: 'home#about_us'
 end

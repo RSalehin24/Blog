@@ -4,7 +4,19 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <p></p>
   <div class="field">
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First Name", class: "form-control", :required => true %>
+  </div>  <p></p>
+  <div class="field">
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control", :required => true %>
+  </div>  <p></p>
+  <div class="field">
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control", :required => true %>
+  </div>  <p></p>
+  <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
+  </div>  <p></p>
+  <div class="field">
+    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", placeholder: "Date of birth", class: "form-control", :required => true %>
   </div>
   <p></p>
   <div class="field">
