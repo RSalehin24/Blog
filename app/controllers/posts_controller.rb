@@ -64,7 +64,6 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    @post = Post.find_by(params["id"])
     @post.destroy
     redirect_to posts_path, status: :see_other, notice: "Post was successfully deleted"
   end
