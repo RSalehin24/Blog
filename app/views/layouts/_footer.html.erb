@@ -1,17 +1,17 @@
 <footer class="text-center text-lg-start bg-light text-muted">
 
-  
-  <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <div class="me-5 d-none d-lg-block"></div>
-    <div style="d-flex ">
-      <div class="me-5 d-none d-lg-block"></div>
-      <a href="" class="me-4 text-reset"></a><a href="" class="me-4 text-reset"></a>
-      <a href="" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
-      <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
+  <section>
+    <div class="container text-center text-md-start mt-5">
     </div>
-  </div>
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+        </div>
+      </div>
+    </div>
+  </section>
   
-  <section class="">
+  <section>
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
         <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
@@ -20,8 +20,8 @@
           </h6>
           <ul>
             <li><%= link_to "About Us", home_about_us_path, class: "nav-link" %></li>
-            <li><%= link_to "All Posts", posts_path, class: "nav-link" %></li>
             <% if user_signed_in? %>
+             <li><%= link_to "All Posts", posts_path, class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "Your Posts", your_posts_get_posts_path, class: "nav-link" %></li>
               <% if !current_user.is_admin? %>
                 <% if !current_user.is_requested %>
@@ -53,8 +53,22 @@
       </div>
     </div>
   </section>
-</footer>
 
-<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+   <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block"></div>
+    <div style="d-flex background-color: rgba(0, 0, 0, 0.05);">
+      <div class="me-5 d-none d-lg-block"></div>
+      <a href="" class="me-4 text-reset"></a><a href="" class="me-4 text-reset"></a>
+      <a href="" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
+      <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+
+  <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Nascenia
 </div>
+</footer>
+
+
+  
+

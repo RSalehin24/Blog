@@ -26,8 +26,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       redirect_to new_user_registration_path, notice: "Password doesn't match!"
     end
-  
-    
   end
 
   # GET /resource/edit
@@ -36,9 +34,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    if resource_params[:password] == resource_params[:password_confirmation]
+      user = User.find_for_authentication(email: resource_params[:email])
+      if user.nil?
+        redirect_to edit_user_registration_path, notice: "No user exists with the Email, please input correct Email!"
+      elsif !user.valid_password?(resource_params[:current_password])
+        redirect_to edit_user_registration_path, notice: "Current Password not valid, please input correct password!"
+      else
+        super
+      end
+    else
+      redirect_to edit_user_registration_path, notice: "New and Confirm Password doesn't match!"
+    end
+  end
 
   # DELETE /resource
   # def destroy

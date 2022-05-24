@@ -10,13 +10,19 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    @user = User.find_by(email: resource_params[:email])
-    if @user.nil?
+    user = User.find_for_authentication(email: resource_params[:email])
+    if user.nil?
       redirect_to new_user_registration_path, notice: "No user exists with the Email, Open an account!"
+    elsif !user.valid_password?(resource_params[:password])
+      redirect_to new_user_session_path, notice: "Password not valid, please try again!"
     else
-      super
+      @user = User.find_by(email: resource_params[:email])
+      if @user.nil?
+        redirect_to new_user_registration_path, notice: "No user exists with the Email, Open an account!"
+      else
+        super
+      end
     end
-    
   end
 
   # DELETE /resource/sign_out
