@@ -14,26 +14,27 @@
   <section>
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
-        <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-6">
+
+        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">
             <i class="fa-solid fa-link fa-lg"></i> Links
           </h6>
           <ul>
 
             <%= link_to home_about_us_path, class: "nav-link"  do %>
-              <i class="fa-solid fa-circle-info"></i> About Us 
+               <i class="bi bi-info-circle-fill"></i> About Us 
             <% end %>
             
 
             <% if user_signed_in? %>
             
               <%= link_to posts_path, class: "nav-link" do %>
-                <i class="bi bi-stickies-fill"></i> All Posts
+                <i class="bi bi-stickies"></i> All Posts
               <% end %>
                 
               
               <%= link_to your_posts_get_posts_path, class: "nav-link" do %>
-                 <i class="bi bi-stickies"></i> Your Posts
+                 <i class="bi bi-stickies-fill"></i> Your Posts
               <% end %>
                  
 
@@ -65,7 +66,7 @@
               <% end %>
               
               <%= link_to new_user_session_path, class: "nav-link" do %>
-                <i class="fa-solid fa-right-to-bracket"></i> Sign in
+                <i class="fa-solid fa-right-to-bracket"></i>&nbsp Sign in
               <% end %>
                 
             <% end %>
@@ -75,7 +76,7 @@
         
         
         <!-- Grid column -->
-        <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mb-md-0 mb-4">
+        <div class="text-center col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
             <i class="fa-solid fa-address-card"></i> Contact
@@ -84,19 +85,25 @@
           House 6/14, Block A, Lalmatia, Dhaka – 1207<br> 
           mark@nascenia.com</p>
         </div>
+
+        <div class="col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <div class="me-5 d-none d-lg-block"></div>
+           <br>
+          <div style="d-flex background-color: rgba(0, 0, 0, 0.05);">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="bi bi-globe2"></i> Socials
+          </h6>
+            <div class="text-center me-5 d-none d-lg-block">
+            &nbsp&nbsp&nbsp&nbsp
+            <a href="" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
+            <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-   <div class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <div class="me-5 d-none d-lg-block"></div>
-    <div style="d-flex background-color: rgba(0, 0, 0, 0.05);">
-      <div class="me-5 d-none d-lg-block"></div>
-      <a href="" class="me-4 text-reset"></a><a href="" class="me-4 text-reset"></a>
-      <a href="" class="me-4 text-reset"><i class="bi bi-twitter"></i></a>
-      <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
-    </div>
-  </div>
+   
 
   <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2022 Nascenia
