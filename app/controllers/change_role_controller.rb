@@ -1,7 +1,7 @@
 class ChangeRoleController < ApplicationController
   before_action :authenticate_user!
   before_action :admin, only: [:change_is_admin, :requested_admin_role]
-  before_action :is_admin, only: [:disapprove_request, :update_is_admin, :role_change_requests]
+  #before_action :is_admin, only: [:disapprove_request, :update_is_admin, :role_change_requests]
 
   def change_is_admin
   end
