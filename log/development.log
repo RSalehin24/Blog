@@ -42600,3 +42600,95 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 4571)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-23 18:59:26 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 493)
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 906)
+  Rendered layouts/_alerts.html.erb (Duration: 0.9ms | Allocations: 197)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 5652)
+Completed 200 OK in 26ms (Views: 24.7ms | Allocations: 6532)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-23 18:59:28 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 252)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 241)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3529)
+Completed 200 OK in 13ms (Views: 11.9ms | Allocations: 3813)
+
+
+Started GET "/home/about_us" for 127.0.0.1 at 2022-05-23 18:59:48 +0600
+Processing by HomeController#about_us as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about_us.html.erb within layouts/application
+  Rendered home/about_us.html.erb within layouts/application (Duration: 1.1ms | Allocations: 145)
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 979)
+  Rendered layouts/_alerts.html.erb (Duration: 1.1ms | Allocations: 197)
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 5599)
+Completed 200 OK in 23ms (Views: 21.5ms | Allocations: 6443)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-23 19:01:40 +0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 223)
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 545)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2633)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 291)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 6159)
+Completed 200 OK in 24ms (Views: 22.6ms | Allocations: 7713)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-23 19:06:08 +0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1273)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 251)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4555)
+Completed 200 OK in 16ms (Views: 13.6ms | Allocations: 5239)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-23 19:06:10 +0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1273)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 251)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 31)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 4555)
+Completed 200 OK in 24ms (Views: 21.1ms | Allocations: 5152)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-23 19:07:09 +0600
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1273)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 251)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 31)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4555)
+Completed 200 OK in 23ms (Views: 21.0ms | Allocations: 5158)
+
+
