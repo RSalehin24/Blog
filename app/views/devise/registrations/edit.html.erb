@@ -4,7 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
     <p></p>
   <div class="field">
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "First Name", class: "form-control", :required => true %>
+    <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control", :required => true %>
   </div>  <p></p>
   <div class="field">
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control", :required => true %>
@@ -36,7 +36,7 @@
   <br>
   <h6> Add Date of Birth and select Profile Image</h6>
   <div class="field">
-    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", :required => true %>
+    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control",  :required => true %>
   </div>
   <p></p>
   <div class="field">
