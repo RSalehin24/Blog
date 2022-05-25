@@ -1,7 +1,16 @@
 <nav class="navbar navbar-expand-lg bg-light">
-  &nbsp &nbsp &nbsp &nbsp
+  &nbsp &nbsp &nbsp
   <div class="container-fluid">
-    <h4 style="color: #606060; justify-content: center; "><%= link_to "Blogs", root_path, class: "nav-link" %></h4>
+    <% if user_signed_in? %>
+      <%= link_to posts_path, class: "nav-link" do %>
+        <%= image_tag "blogs.png", size: "110x40" %>
+      <% end %>
+    <% else %>
+      <%= link_to root_path, class: "nav-link" do%>
+        <%= image_tag "blogs.png", size: "110x40" %>
+      <% end %>
+    <% end %>
+    
     &nbsp &nbsp &nbsp
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,13 +23,6 @@
             <% end %>
         </li>
         <% if user_signed_in? %>
-          <% if !current_user.is_admin? %>
-            <% if !current_user.is_requested %>
-                <%= link_to change_role_change_is_admin_path, class: "nav-link" do %>
-                  <i class="fa-solid fa-arrow-up-from-bracket"></i>Request for Admin Role
-                <% end %>
-            <% end %>
-          <% end %>
          
           <% if current_user.is_admin? %>
             <%= link_to change_role_role_change_requests_path, class: "nav-link" do %>

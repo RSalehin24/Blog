@@ -1,18 +1,18 @@
-<h1>All Posts</h1>
+<h2 class="txt-title">All Posts</h2>
 <br>
 
 <% if @posts.empty? %>
-  <h4>None has not created any posts yet </h4> <p></p>
-  <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
+  <h5 class="txt-general">None has not created any posts yet </h4> <p></p>
+  <%= link_to "Add a post", new_post_path, class: "bttn-other-main" %>
 <% else %>
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="card text-center">
         <div class="card-body">
-          <h6 class="card-title"><%= post.title %></h6>
-          <p class="card-text"><%= post.body %>    <%= post.is_approved %></p>
-          
-          <%= link_to "Go to Post", post, class: "btn btn-primary" %>
+          <h6 class="card-title txt-general"><%= post.title %></h6>
+          <p class="card-text txt-general"><%= post.body %>   
+          <br><br>
+          <%= link_to "Go to Post", post, class: "bttn-post-details" %>
         </div>
         <div class="card-footer text-muted">
           <%= post.updated_at %>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
   <br>
-  <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+  <%= link_to "New post", new_post_path, class: "bttn-other-main" %>
 <% end %>
 
 

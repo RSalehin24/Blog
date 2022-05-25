@@ -1,17 +1,20 @@
 <%= render @post %>
 <br>
-<br><br>
-<h2>Add a comment</h2> <p></p>
-<%= render 'comments/form' %>
+ <div class="card">
+    <div class="card-body">
+      <h3 class="card-title txt-title">Add a comment</h3><p></p>
+      <%= render 'comments/form' %>
+   
 
-<br><br>
-<h2>Comments</h2>
-<p></p>
-<% if @post.comments.all.count <= 0 %>
-  <p>Be the first one to comment!...</p>
-<% else %>
-  <%= render @post.comments %>
-<% end %>
+<br><br><br>
 
+      <h3 class="card-title txt-title"> Posted Comments</h3><p></p>
+      <% if @post.comments.all.count <= 0 %>
+        <p class="txt-general">Be the first one to comment!...</p>
+      <% else %>
+        <%= render @post.comments %>
+      <% end %>
+    </div>
+  </div>
 <br><br>
-<%= link_to "Back to posts", posts_path, class: "btn btn-outline-primary" %>
+<%= link_to "Back to posts", posts_path, class: "bttn-back" %>

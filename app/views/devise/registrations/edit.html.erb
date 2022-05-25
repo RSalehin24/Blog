@@ -1,70 +1,73 @@
-<h2>Edit Profile</h2>
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title txt-title">Edit Profile</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-    <p></p>
-  <div class="field">
-    <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control", :required => true %>
-  </div>  <p></p>
-  <div class="field">
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control", :required => true %>
-  </div>  <p></p>
-  <div class="field">
-    <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control", :required => true %>
-  </div>  <p></p>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
-  </div>  <p></p>
-  
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+        <p></p>
+      <div class="field">
+        <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control", :required => true %>
+      </div>  <p></p>
+      <div class="field">
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control", :required => true %>
+      </div>  <p></p>
+      <div class="field">
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control", :required => true %>
+      </div>  <p></p>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
+      </div>  <p></p>
+      
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <p></p>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-  <p></p>
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control" %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p></p>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+      <p></p>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control" %>
+      </div>
+      <p></p>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control" %>
+      </div>
+      <p></p>
+      <div class="field">
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control", :required => true %>
+      </div>
+      <br>
+      <h6> Add Date of Birth and select Profile Image</h6>
+      <div class="field">
+        <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control",  :required => true %>
+      </div>
+      <p></p>
+      <div class="field">
+        <%= f.file_field :image, class: "form-control"%>
+      </div>
+      <p></p>
+      <div class="actions">
+        <%= f.submit "Update", class: "bttn-other-main" %>
+      </div>
+    <% end %>
   </div>
-  <p></p>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control" %>
-  </div>
-  <p></p>
-  <div class="field">
-    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control", :required => true %>
-  </div>
-  <br>
-  <h6> Add Date of Birth and select Profile Image</h6>
-  <div class="field">
-    <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control",  :required => true %>
-  </div>
-  <p></p>
-  <div class="field">
-    <%= f.file_field :image, class: "form-control"%>
-  </div>
-  <p></p>
-  <div class="actions">
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  </div>
-<% end %>
-<br><br>
+</div>
 
-<h3></h3>
-<%if current_user.image.attached? %>
-  <div class="card text-center" style="align-items: center; justify-content: center; ">
-    <div class="card-body">
-      <h3 class="card-title">Uploaded Picture</h3> <br>
-      <%= image_tag current_user.image, style: "width: 200px; display: block; border-radius: 50px position: relative" %>
-    </div>
-  </div> 
-<% end %>
+    <h3></h3>
+    <%if current_user.image.attached? %>
+      <div class="card text-center" style="align-items: center; justify-content: center; ">
+        <div class="card-body">
+          <h3 class="card-title txt-secondary">Uploaded Picture</h3> <br>
+          <%= image_tag current_user.image, style: "width: 200px; display: block; border-radius: 50px position: relative" %>
+        </div>
+      </div> 
+    <% end %>
 
 
 
 <br><br>
 <div class="card text-center">
   <div class="card-body">
-    <h3 class="card-title">Unhappy?</h3>
+    <h3 class="card-title txt-danger">Unhappy?</h3>
     <p class="card-text">Click the button below to cancel your account</p>
     <%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
   </div>
@@ -72,5 +75,5 @@
 
 
 <br><br><br>
-<%= link_to "Back", :back, class: "btn btn-outline-primary" %>
+<%= link_to "Back", :back, class: "btn btn-dark" %>
 

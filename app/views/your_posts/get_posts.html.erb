@@ -1,39 +1,38 @@
-<h1>Your Posts</h1>
-<br>
-
+<h2 class="txt-title">Your Posts</h2>
+<p></p>
 <% if @posts.empty? %>
-  <h4>You have not created any posts yet </h4> <p></p>
-  <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
+  <h5 class="txt-general">You have not created any posts yet </h5> <p></p>
+  <%= link_to "Add a post", new_post_path, class: "bttn-post-details" %>
 <% else %>
   <div id="posts">
     <% @posts.each do |post| %>
       <% if post.is_approved? %>
         <div class="card text-center">
-          <div class="card-body">
-            <h6 class="card-title"><%= post.title %></h6>
-            <p class="card-text"><%= post.body %></p>
-            <%= link_to "Go to Post", post, class: "btn btn-primary" %>
-          </div>
-          <div class="card-footer text-muted">
-            <%= post.updated_at %>
-          </div>
+        <div class="card-body">
+          <h6 class="card-title txt-general"><%= post.title %></h6>
+          <p class="card-text txt-general"><%= post.body %>   
+          <br><br>
+          <%= link_to "Go to Post", post, class: "bttn-post-details" %>
         </div>
-        <p></p>
+        <div class="card-footer text-muted">
+          <%= post.updated_at %>
+        </div>
+      </div>
+      <p></p>
       <% else %>
-         <div class="card text-center">
+        <div class="card text-center">
           <div class="card-body">
-            <h6 class="card-title"><%= post.title %></h6>
-            <p>This post has not been approved yet</p>
+            <h6 class="card-title txt-general"><%= post.title %></h6> <br>
+            <p class="card-text txt-general">This post has not been approved yet
           </div>
           <div class="card-footer text-muted">
             <%= post.updated_at %>
           </div>
         </div>
-        <p></p>
       <% end %>
     <% end %>
   </div>
   <br>
-  <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+  <%= link_to "New post", new_post_path, class: "bttn-other-main" %>
   <br><br>
 <% end %>

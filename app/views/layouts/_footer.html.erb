@@ -40,7 +40,6 @@
 
 
               <% if !current_user.is_admin? %>
-
                 <% if !current_user.is_requested %>
                   <%= link_to change_role_change_is_admin_path, class: "nav-link" do %>
                     <i class="fa-solid fa-arrow-up-from-bracket"></i> Request for Admin Role

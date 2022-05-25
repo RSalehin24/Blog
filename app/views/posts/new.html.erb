@@ -1,9 +1,10 @@
-<h1>New post</h1>
-
-<%= render "form", post: @post %>
-
-<br>
-<br>
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title txt-title">New Post</h2>
+    <%= render "form", post: @post %>
+  </div>
+</div>
+<br><br>
 <div>
-  <%= link_to "Back to posts", posts_path, class: "btn btn-outline-primary" %>
+  <%= link_to "Back to posts", posts_path, class: "bttn-back" %>
 </div>

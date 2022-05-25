@@ -1,20 +1,25 @@
 <div id="<%= dom_id post %>">
-  <div class="jumbotron">
-    <h3 class="display-4"><%= post.title %></h3>
-    <%= post.author %> | 
-    <%= post.updated_at %>
-    <hr class="my-4">
-    <%= post.body %>
-    <% if current_user.id == post.user_id || current_user.is_admin? %>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title txt-title"><%= post.title %></h2>
+      <p class="txt-general">
+        <%= post.author %> | 
+        <%= post.updated_at %>
+        <hr class="my-4">
+        <%= post.body %>
+      </p>
+      <% if current_user.id == post.user_id || current_user.is_admin? %>
 
-      <div>
-        <p></p>
-        <br>
-        <% if current_user.id == post.user_id %>
-          <%= link_to "Edit", edit_post_path(@post), class: "btn btn-primary" %>
-        <% end %>
-        <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger"%>
-      </div>
-    <% end %>
+        <div>
+          <p></p>
+          <br>
+          <% if current_user.id == post.user_id %>
+            <%= link_to "Edit", edit_post_path(@post), class: "bttn-other-main" %>
+          <% end %>
+          <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+        </div>
+      <% end %>
+      <br>
+    </div>
   </div>
 </div>

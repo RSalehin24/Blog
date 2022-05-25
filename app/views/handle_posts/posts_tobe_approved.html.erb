@@ -1,17 +1,18 @@
-<h1>Posts Tobe Approved</h1>
-<br>
+<h2 class="txt-title">Posts Tobe Approved</h1>
+<p></p>
 
 <% if @posts.empty? %>
-  <h4>Do not have any pending posts to be approved! </h4> <p></p>
+  <h5 class="txt-general">Do not have any pending posts to be approved! </h5> <p></p>
 <% else %>
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="card text-center">
         <div class="card-body">
-          <h6 class="card-title"><%= post.title %></h6>
-          <p class="card-text"><%= post.body %></p>
-          <%= link_to "Approve", post, data: { turbo_method: :post }, class: "btn btn-outline-primary" %>
-          <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-outline-danger"%>
+          <h6 class="card-title txt-general"><%= post.title %></h6>
+          <p class="card-text txt-general"><%= post.body %></p>
+          <br>
+          <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-post-details" %>
+          <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
         </div>
         <div class="card-footer text-muted">
           <%= post.updated_at %>

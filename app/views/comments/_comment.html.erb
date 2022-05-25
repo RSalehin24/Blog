@@ -2,8 +2,11 @@
 <% else %>
 <div class="card">
   <div class="card-body">
-    <%= comment.body %> <br>
-    - <small><%= comment.commenter %> | <%= comment.updated_at %></small>
+    <h5 class="card-title txt-general"><%= comment.commenter %></h5><br>
+    <p class="txt-general"><%= comment.body %> <br>
+  </div>
+  <div class="card-footer txt-general">
+    <%= comment.updated_at %></small></p>
   </div>
 </div>
 <p></p>
