@@ -6,16 +6,28 @@
       <%= render "devise/shared/error_messages", resource: resource %>
         <p></p>
       <div class="field">
-        <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control", :required => true %>
+        <span class="input-group-text padding">
+          <span class="fa fa-user padding-input-icon"></span> 
+          <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control input-radius", :required => true %>
+        </span>	
       </div>  <p></p>
       <div class="field">
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control", :required => true %>
+        <span class="input-group-text padding">
+          <span class="fa fa-user padding-input-icon"></span> 
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control input-radius", :required => true %>
+        </span>	
       </div>  <p></p>
       <div class="field">
-        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control", :required => true %>
+        <span class="input-group-text padding">
+          <span class="padding-input-username">@</span> 
+            <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control input-radius", :required => true %>
+        </span>	
       </div>  <p></p>
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control", :required => true %>
+        <span class="input-group-text padding">
+          <i class="fa fa-paper-plane padding-input-icon"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control input-radius", :required => true %>
+        </span>	
       </div>  <p></p>
       
 
@@ -25,22 +37,34 @@
       <% end %>
       <p></p>
       <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control" %>
+        <span class="input-group-text padding">
+          <i class="fa fa-lock padding-input-icon"></i>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius" %>
+        </span>
       </div>
       <p></p>
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control" %>
+        <span class="input-group-text padding">
+          <i class="bi bi-eye-fill padding-confirm-pass"></i>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control input-radius" %>
+        </span>
       </div>
       <p></p>
       <div class="field">
-        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control", :required => true %>
+      <span class="input-group-text padding">
+          <i class="bi bi-unlock-fill padding-confirm-pass"></i>
+          <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control input-radius", :required => true %>
+        </span>
+      </div>
+      <p></p>
+      <div class="field">
+        <span class="input-group-text padding">
+          <i class="fa-solid fa-cake-candles padding-confirm-pass"></i>
+          <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control input-radius",  :required => true %>
+        </span>
       </div>
       <br>
-      <h6> Add Date of Birth and select Profile Image</h6>
-      <div class="field">
-        <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control",  :required => true %>
-      </div>
-      <p></p>
+      <h6> Select Profile Image</h6>
       <div class="field">
         <%= f.file_field :image, class: "form-control"%>
       </div>

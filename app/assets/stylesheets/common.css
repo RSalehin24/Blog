@@ -205,3 +205,77 @@
   align-items: center;
   justify-content: center;
 }
+
+
+input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.bttn-new {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.padding {
+  padding: 0;
+}
+
+.padding-input-icon {
+  padding: 10px;
+}
+
+.input-radius {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+.padding-input-username {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+
+.padding-confirm-pass {
+  padding-right: 9px;
+  padding-left: 9px;
+}
