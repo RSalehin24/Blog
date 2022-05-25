@@ -2,7 +2,7 @@
 <p></p>
 <% if @posts.empty? %>
   <h5 class="txt-general">You have not created any posts yet </h5> <p></p>
-  <%= link_to "Add a post", new_post_path, class: "bttn-ohter_main" %>
+  <%= link_to "Add a post", new_post_path, class: "bttn-other-main" %>
 <% else %>
   <div id="posts">
     <% @posts.each do |post| %>
