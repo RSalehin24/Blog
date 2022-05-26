@@ -22,13 +22,15 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div style="position: relative; min-height: 100vh;">
+    <div style="position: relative;">
       <div class='container' style="padding-bottom: 2.5rem;">
         <br> 
+        <div style="min-height: calc(100vh - 480px);">
         <%= render 'layouts/alerts' %>
         <%= yield %>
       </div>
       <br><br>
+      </div>
       <%= render 'layouts/footer' %>
     </div>
     <!-- JavaScript Bundle with Popper -->
