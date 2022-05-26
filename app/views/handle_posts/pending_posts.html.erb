@@ -1,8 +1,8 @@
 <h2 class="txt-title">Your Pending Posts</h2>
-<p></p>
 <% if @your_pending_posts.empty? %>
-  <h5 class="txt-general">Do not have any pending posts... Congrats! </h5> <p></p>
+  <p class="txt-general">Do not have any pending posts... Congrats! </p> <p></p>
 <% else %>
+  <br>
   <div id="posts">
     <% @your_pending_posts.each do |post| %>
       <div class="card text-center">

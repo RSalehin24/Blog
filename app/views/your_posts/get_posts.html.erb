@@ -1,9 +1,9 @@
 <h2 class="txt-title">Your Posts</h2>
-<p></p>
 <% if @posts.empty? %>
-  <h5 class="txt-general">You have not created any posts yet </h5> <p></p>
+  <p class="txt-general">You have not created any posts yet </p> <p></p>
   <%= link_to "Add a post", new_post_path, class: "bttn-other-main" %>
 <% else %>
+  <br>
   <div id="posts">
     <% @posts.each do |post| %>
       <% if post.is_approved? %>

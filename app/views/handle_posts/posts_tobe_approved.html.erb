@@ -1,9 +1,8 @@
 <h2 class="txt-title">Posts Tobe Approved</h1>
-<p></p>
-
 <% if @posts.empty? %>
-  <h5 class="txt-general">Do not have any pending posts to be approved! </h5> <p></p>
+  <p class="txt-general">Do not have any pending posts to be approved! </p> <p></p>
 <% else %>
+  <br>
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="card text-center">
