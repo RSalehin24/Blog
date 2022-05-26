@@ -76,17 +76,15 @@
   </div>
 </div>
 
-    <h3></h3>
-    <%if current_user.image.attached? %>
-      <div class="card text-center" style="align-items: center; justify-content: center; ">
-        <div class="card-body">
-          <h3 class="card-title txt-title">Uploaded Picture</h3> <br>
-          <%= image_tag current_user.image, style: "width: 200px; display: block; border-radius: 50px position: relative" %>
-        </div>
-      </div> 
-    <% end %>
-
-
+<h3></h3>
+<%if current_user.image.attached? %>
+  <div class="card text-center" style="align-items: center; justify-content: center; ">
+    <div class="card-body">
+      <h3 class="card-title txt-title">Uploaded Picture</h3> <br>
+      <%= image_tag current_user.image, style: "width: 200px; display: block; position: relative" %>
+    </div>
+  </div> 
+<% end %>
 
 <br><br>
 <div class="card text-center">
@@ -96,7 +94,6 @@
     <%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "bttn-danger" %></p>
   </div>
 </div>
-
 
 <br><br><br>
 <%= link_to "Back", :back, class: "btn btn-dark" %>

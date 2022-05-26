@@ -6,6 +6,14 @@
         <%= post.author %> | 
         <%= post.updated_at %>
         <hr class="my-4">
+        <% if post.images.attached? %>
+         <div class="card-body" style= "align-items: center; justify-content: center;">
+          <% post.images.each do |image| %>
+            <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px" %>
+          <% end %>
+           </div>
+        <% end %>
+        
         <%= post.body %>
       </p>
       <% if current_user.id == post.user_id || current_user.is_admin? %>
