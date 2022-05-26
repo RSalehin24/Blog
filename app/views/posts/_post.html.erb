@@ -6,6 +6,7 @@
         <%= post.author %> | 
         <%= post.updated_at %>
         <hr class="my-4">
+        
         <% if post.images.attached? %>
          <div class="card-body" style= "align-items: center; justify-content: center;">
           <% post.images.each do |image| %>
@@ -16,11 +17,21 @@
         
         <%= post.body %>
       </p>
-      <% if current_user.id == post.user_id || current_user.is_admin? %>
-
-        <div>
+      <div>
           <p></p>
           <br>
+      
+      <% if current_user.id == post.user_id %>
+        <% like = post.likes.find_by(username: current_user.username) %>
+        <%= like %>
+        
+
+      <% end %>
+
+      
+      <% if current_user.id == post.user_id || current_user.is_admin? %>
+
+        
           <% if current_user.id == post.user_id %>
             <%= link_to "Edit", edit_post_path(@post), class: "bttn-other-main" %>
           <% end %>

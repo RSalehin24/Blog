@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'your_posts/get_posts'
 
   resources :posts do
+    resources :likes
     resources :comments
   end
   
