@@ -56,11 +56,11 @@
           <% end %>
         <% else %>
            <%= link_to new_user_registration_path, class: "nav-link" do %>
-                <i class="bi bi-person-plus-fill"></i> Sign up
+                <i class="fa-solid fa-user-plus"></i> Sign up
               <% end %>
               
               <%= link_to new_user_session_path, class: "nav-link" do %>
-                <i class="bi bi-box-arrow-in-right"></i> Sign in
+                 <i class="fa-solid fa-right-to-bracket fa-lg"></i> Sign in
               <% end %>
               &nbsp &nbsp &nbsp
         <% end %>
@@ -83,7 +83,7 @@
                 <li class="nav-link"><i class="bi bi-pencil-fill"></i> Edit Profile</li>
               <% end %>
               <%= link_to destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link dropdown-item" do %>
-                <li class="nav-link"><i class="bi bi-box-arrow-right"></i> Sign out</li>
+                <li class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</li>
               <% end %>
             </ul>
           </li>
