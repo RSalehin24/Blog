@@ -279,3 +279,10 @@ input-container {
   padding-right: 9px;
   padding-left: 9px;
 }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  position: block;
+  right: 10px;
+}
