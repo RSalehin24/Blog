@@ -285,4 +285,10 @@ input-container {
   margin-top: 0;
   position: block;
   right: 10px;
+  background-color: white;
+}
+
+.dropdown-item:focus {
+  background-color: white;
+  color: white;
 }
