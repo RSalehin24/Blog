@@ -3,7 +3,6 @@
   <%= form.text_area :body, class: "form-control", placeholder: "Write your comment here", :required => true %>
   </p>
   <p>
-    <%= form.submit class: "bttn-comment" %>
-    <%= link_to "Back to posts", posts_path, class: "bttn-comment-back" %>
+    <%= form.submit "Comment", class: "bttn-comment" %>
   </p>
 <% end %>

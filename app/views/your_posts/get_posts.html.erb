@@ -15,7 +15,14 @@
           <%= link_to "Go to Post", post, class: "bttn-post-details" %>
         </div>
         <div class="card-footer text-muted">
-          <%= post.updated_at %>
+          <div class="row">
+              <div class="txt-general col center">
+                <i class="fa-solid fa-thumbs-up fa-xl txt-general"></i> &nbsp <%= post.likes.all.count %>
+              </div>
+              <div class="col center">
+                <%= post.updated_at %>
+              </div>
+            </div> 
         </div>
       </div>
       <p></p>
@@ -26,7 +33,14 @@
             <p class="card-text txt-general">This post has not been approved yet
           </div>
           <div class="card-footer text-muted">
-            <%= post.updated_at %>
+            <div class="row">
+              <div class="txt-general col center">
+                <i class="fa-solid fa-thumbs-up fa-xl txt-general"></i> &nbsp <%= post.likes.all.count %>
+              </div>
+              <div class="col center">
+                <%= post.updated_at %>
+              </div>
+            </div> 
           </div>
         </div>
       <% end %>
@@ -34,5 +48,5 @@
   </div>
   <br>
   <%= link_to "New post", new_post_path, class: "bttn-other-main" %>
-  <br><br>
+  <br>
 <% end %>

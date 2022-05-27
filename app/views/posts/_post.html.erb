@@ -1,44 +1,81 @@
 <div id="<%= dom_id post %>">
   <div class="card">
     <div class="card-body">
-      <h2 class="card-title txt-title"><%= post.title %></h2>
-      <p class="txt-general">
-        <%= post.author %> | 
-        <%= post.updated_at %>
-        <hr class="my-4">
-        
-        <% if post.images.attached? %>
-         <div class="card-body" style= "align-items: center; justify-content: center;">
-          <% post.images.each do |image| %>
-            <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px" %>
-          <% end %>
-           </div>
-        <% end %>
-        
-        <%= post.body %>
-      </p>
-      <div>
-          <p></p>
-          <br>
-      
-      <% if current_user.id == post.user_id %>
-        <% like = post.likes.find_by(username: current_user.username) %>
-        <%= like %>
-        
+      <div style="margin-left: 12px;">
+        <h2 class="card-title txt-title" style="margin-left: 12px"><%= post.title %></h2>
+        <p class="txt-general" style="margin-left: 12px">
+          <%= post.author %> | 
+          <%= post.updated_at %>
+        </p>
+      </div>
 
-      <% end %>
-
-      
-      <% if current_user.id == post.user_id || current_user.is_admin? %>
-
-        
+      <div class="card-body" style= "align-items: center; justify-content: center;">
+        <% if current_user.id == post.user_id || current_user.is_admin? %>
           <% if current_user.id == post.user_id %>
-            <%= link_to "Edit", edit_post_path(@post), class: "bttn-other-main" %>
+            <%= link_to "Edit", edit_post_path(@post), class: "bttn-other-main", style: "margin-left: 10px" %>
           <% end %>
           <%= link_to "Delete", @post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+          <br> <br>
+        <% end %>
+
+        <hr class="my-4">
+      
+        <% if post.images.attached? %>
+          <div id="postImage">
+            <% post.images.each do |image| %>
+              <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px;" %>
+            <% end %>
+          </div><br>
+        <% end %>
+
+        <div style="margin-left: 10px">
+          <p class="txt-general">
+            <%= post.body %>
+          </p>
         </div>
-      <% end %>
-      <br>
+      </div>
+
+      <div class="card-footer">
+        <div class="row">
+          <div class="txt-general col center">
+           <% like = post.likes.find_by(username: current_user.username) %>
+            <% if !like.nil? %>
+              <div class="dropdwn">
+                <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
+                  <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
+                <% end %>
+                <div class="dropdown-content txt-general">
+                  <% post.likes.each do |like| %>
+                    <div style="padding: 10px"><%= like.username %></div>
+                  <% end %>
+                </div>
+              </div>
+            <% else %>
+              <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post } do %>
+                <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+              <% end %>
+            <% end %>
+            &nbsp &nbsp <%= post.likes.all.count %>
+          </div>
+          <div class="col center">
+            <a class="txt-general" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fa-solid fa-message fa-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse" id="collapseExample">
+        <br><br>
+        <h5 class="card-title txt-title"> Comments</h5><p></p>
+        <%= render 'comments/form' %>
+        <br><hr class="my-4">
+        <% if @post.comments.all.count <= 0 %>
+          <p class="txt-general">Be the first one to comment!...</p>
+        <% else %>
+          <%= render post.comments %>
+        <% end %> 
+      </div>
     </div>
   </div>
 </div>

@@ -1,7 +1,30 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :approved
+
   def create
     @post = Post.find(params[:post_id])
-    @like = @post.likes.create(params[:username])
-    redirect_to post_path(@post)
+    @like = @post.likes.create(create_params)
+    redirect_to post_path(@post), notice: "You have liked the post"
   end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.find(params[:like_id])
+    @like.destroy
+    redirect_to post_path(@post), status: :see_other, notice: "You have unliked the Post"
+  end
+
+  def approved
+    @post = Post.find(params[:post_id])
+    redirect_to your_posts_get_posts_path if !@post.is_approved
+  end
+
+  private
+    def create_params
+      params.permit(:username)
+    end
+    def delete_params
+      params.permit(:like_id)
+    end
 end

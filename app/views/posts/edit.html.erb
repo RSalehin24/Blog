@@ -1,11 +1,20 @@
 <div class="card ">
-        <div class="card-body">
-          <h6 class="card-title txt-general"><h2 class="txt-title">Editing post</h2></h6>
-          <%= render "form", post: @post %>
+  <div class="card-body">
+    <h6 class="card-title txt-general"><h2 class="txt-title">Editing post</h2></h6>
+     <% if @post.images.attached? %>
+        <div id="postImage">
+          <% @post.images.each do |image| %>
+            <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px;" %>
+            <!-- <%= link_to 'Remove', post_delete_image_path(post_id: @post.id, id: image.signed_id), data: { turbo_method: :delete } %> -->
+          <% end %>
+        </div><br>
+      <% end %>
+    <%= render "form", post: @post %>
+  </div>
 </div>
-</div>
-<br>
-<br>
+
+  <br><br>
+  
 <div>
   <%= link_to "Show this post", @post, class: "bttn-show-post" %> 
   <%= link_to "Back to posts", posts_path, class: "bttn-back" %>

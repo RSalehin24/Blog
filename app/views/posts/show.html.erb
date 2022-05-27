@@ -1,20 +1,3 @@
 <%= render @post %>
-<br>
- <div class="card">
-    <div class="card-body">
-      <h3 class="card-title txt-title">Add a comment</h3><p></p>
-      <%= render 'comments/form' %>
-   
-
-<br><br><br>
-
-      <h3 class="card-title txt-title"> Posted Comments</h3><p></p>
-      <% if @post.comments.all.count <= 0 %>
-        <p class="txt-general">Be the first one to comment!...</p>
-      <% else %>
-        <%= render @post.comments %>
-      <% end %>
-    </div>
-  </div>
 <br><br>
 <%= link_to "Back to posts", posts_path, class: "bttn-back" %>

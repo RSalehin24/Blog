@@ -68,10 +68,16 @@ class PostsController < ApplicationController
     redirect_to posts_path, status: :see_other, notice: "Post was successfully deleted"
   end
 
+  def delete_image
+    @image = ActiveStorage::Blob.find_signed(params[:id]).purge
+    @post = Post.find(params[:post_id])
+    redirect_to edit_post_path(@post), status: :see_other, notice: "Image was successfully removed"
+  end
+
   def approve_post
     @post = Post.find(params[:id])
     @post.update_column(:is_approved, true)
-    redirect_to  handle_posts_posts_tobe_approved_path, notice: "Post has been successfully approved!"
+    redirect_to handle_posts_posts_tobe_approved_path, notice: "Post has been successfully approved!"
   end
 
   def correct_user

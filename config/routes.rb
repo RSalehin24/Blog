@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get 'your_posts/get_posts'
 
   resources :posts do
-    resources :likes
+    post '/likes', to: 'likes#create'
+    delete '/likes', to: 'likes#destroy'
+    delete '/delete_image', to: "posts#delete_image"
     resources :comments
   end
   
