@@ -42,27 +42,26 @@
                 
                 <div class="txt-general col center">
                 <% like = post.likes.find_by(username: current_user.username) %>
-                  <div class="dropdwn">
-                    <% if !like.nil? %>
+                  <% if !like.nil? %>
+                    <div class="dropdwn">
                       <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
                         <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
                       <% end %>
-                    <% else %>
-                      <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, class: "dropbtn"  do %>
-                        <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
-                      <% end %>
-                    <% end %>
-                    
-                    <div class="dropdown-content txt-general">
-                      <% post.likes.each do |like| %>
-                        <div style="padding: 10px"><%= like.username %></div>
-                      <% end %>
+                      <div class="dropdown-content txt-general">
+                        <% post.likes.each do |like| %>
+                          <div style="padding: 10px"><%= like.username %></div>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
+                  <% else %>
+                    <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post } do %>
+                      <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+                    <% end %>
+                  <% end %>
                   &nbsp &nbsp <%= post.likes.all.count %>
                 </div>
                 <div class="col center">
-                  <a class="txt-general" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <a class="txt-general" data-bs-toggle="collapse" href=<%= "#comments" + post.id.to_s %> role="button" aria-expanded="false" aria-controls=<%= "comments" + post.id.to_s %>>
                     <i class="fa-solid fa-message fa-xl"></i>
                   </a>
                 </div>
@@ -74,7 +73,8 @@
               </div>
             </div>
 
-            <div class="collapse" id="collapseExample">
+            
+            <div class="collapse" id=<%= "comments" + post.id.to_s %>>
               <br><br>
               <h5 class="card-title txt-title"> Comments</h5><p></p>
               <%= form_with model: [ post, post.comments.build ] do |form| %>
@@ -95,7 +95,7 @@
           </div>
         </div>
       </div>
-      <p></p>
+      <br><br>
     <% end %>
   </div>
   <br>
