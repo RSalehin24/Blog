@@ -45,22 +45,23 @@
               <div class="row">
                 <div class="txt-general col center">
                 <% like = post.likes.find_by(username: current_user.username) %>
-                  <% if !like.nil? %>
-                    <div class="dropdwn">
+                   <div class="dropdwn">
+                    <% if !like.nil? %>
                       <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
                         <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
                       <% end %>
-                      <div class="dropdown-content txt-general">
-                        <% post.likes.each do |like| %>
-                          <div style="padding: 10px"><%= like.username %></div>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% else %>
-                    <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post } do %>
-                      <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+                    <% else %>
+                      <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, class: "dropbtn"  do %>
+                        <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+                      <% end %>
                     <% end %>
-                  <% end %>
+                    
+                    <div class="dropdown-content txt-general">
+                      <% post.likes.each do |like| %>
+                        <div style="padding: 10px"><%= like.username %></div>
+                      <% end %>
+                    </div>
+                  </div>
                   &nbsp &nbsp <%= post.likes.all.count %>
                 </div>
                 <div class="col center">
