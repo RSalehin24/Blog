@@ -5,18 +5,42 @@
   <br>
   <div id="posts">
     <% @posts.each do |post| %>
-      <div class="card text-center">
-        <div class="card-body">
-          <h6 class="card-title txt-general"><%= post.title %></h6>
-          <p class="card-text txt-general"><%= post.body %></p>
-          <br>
-          <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-post-details" %>
-          <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
-        </div>
-        <div class="card-footer text-muted">
-          <%= post.updated_at %>
+      <div id="<%= dom_id post %>">
+        <div class="card">
+          <div class="card-body">
+            <div style="margin-left: 12px;">
+              <h2 class="card-title txt-title" style="margin-left: 12px"><%= post.title %></h2>
+              <p class="txt-general" style="margin-left: 12px">
+                <%= post.author %> | 
+                <%= post.updated_at %>
+              </p>
+              
+              <hr class="my-4">
+            
+              <% if post.images.attached? %>
+                <div id="postImage">
+                  <% post.images.each do |image| %>
+                    <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px;" %>
+                  <% end %>
+                </div><br>
+              <% end %>
+
+              <div style="margin-left: 10px">
+                <p class="txt-general">
+                  <%= post.body %>
+                </p>
+              </div>
+            </div>
+            
+            <div class="card-footer">
+            <p></p>
+              <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-post-details" %>
+              &nbsp <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+            </div>
+          </div>
         </div>
       </div>
+      <p></p>
       <p></p>
     <% end %>
   </div>

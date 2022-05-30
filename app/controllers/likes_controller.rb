@@ -5,14 +5,14 @@ class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @like = @post.likes.create(create_params)
-    redirect_to post_path(@post), notice: "You have liked the post"
+    redirect_to posts_path
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @like = @post.likes.find(params[:like_id])
     @like.destroy
-    redirect_to post_path(@post), status: :see_other, notice: "You have unliked the Post"
+    redirect_to posts_path, status: :see_other
   end
 
   def approved
