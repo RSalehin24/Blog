@@ -13,7 +13,6 @@
     <!-- choose one -->
 
     <title>Blogs</title>
-
     
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -34,6 +33,17 @@
         <%= yield %>
       </div>
       <br><br>
+      <script>
+        const likeButtons = document.querySelectorAll('.dropbtn');
+        fn = function(e) { 
+          e.preventDefault(); 
+        };
+
+        for(button of buttons) {
+          button.addEventListener('click', fn);
+        }
+        console.log(likeButtons)
+      </script>
       </div>
       <%= render 'layouts/footer' %>
     </div>
