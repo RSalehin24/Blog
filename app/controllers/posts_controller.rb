@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit, :update]
-  before_action :correct_user_or_admin, only: [:destroy]
-  before_action :approved, only: [:show, :edit]
+  before_action :correct_user_or_admin, only: [:destroy, :edit, :update]
+  before_action :approved, only: [:show]
 
   # GET /posts or /posts.json
   def index
@@ -46,6 +45,13 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        if current_user.is_admin? && @post.author != "" && @post.author != current_user.username
+          format.html { redirect_to handle_posts_posts_tobe_approved_path, notice: "Post was successfully updated" }
+          format.json { render :show, status: :ok, location: @post }
+        else
+          format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
+          format.json { render :show, status: :ok, location: @post }
+        end
         format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -104,6 +110,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :author, :user_id, images: [])
+      params.require(:post).permit(:title, :body, :author, :user_id, :category, images: [])
     end
 end

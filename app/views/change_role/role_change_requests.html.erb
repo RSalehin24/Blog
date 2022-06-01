@@ -3,7 +3,7 @@
   <p class="txt-general">Do not have any more requests right now! </p> <p></p>
 <% else %>
   <br>
-  <table class="table table-bordered table-hover">
+  <table class="table table-bordered table-hover ">
     <thead class="table-light" style="background-color: 6d3c3c">
       <tr>
         <th class="txt-general">Email</th>
@@ -14,9 +14,9 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td class="txt-gerneral center"><%= user.email %></td>
-          <td class="txt-gerneral center"><p></p><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-post-details" %><p></p></td>
-          <td class="txt-gerneral center"><p></p><%= link_to "Disapprove", change_role_disapprove_request_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-danger" %><p></p></td>
+          <td class="txt-gerneral"><p></p><%= user.email %></td>
+          <td class="txt-gerneral"><p></p><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-post-details" %><p></p></td>
+          <td class="txt-gerneral"><p></p><%= link_to "Disapprove", change_role_disapprove_request_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-danger" %><p></p></td>
         </tr>
       <% end %>
     </tbody>

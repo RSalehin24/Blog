@@ -33,7 +33,8 @@
             </div>
             <div class="card-footer">
               <p></p>
-              <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+              <%= link_to "Edit", edit_post_path(id: post.id), class: "bttn-other-main", style: "margin-left: 10px" %>
+              &nbsp <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
               <p></p>
             </div>
           </div>

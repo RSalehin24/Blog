@@ -35,7 +35,8 @@
             <div class="card-footer">
             <p></p>
               <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-post-details" %>
-              &nbsp <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+              &nbsp <%= link_to "Edit", edit_post_path(id: post.id), class: "bttn-other-main", style: "margin-left: 10px" %>
+               <%= link_to "Delete", posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
               <p></p>
             </div>
           </div>
