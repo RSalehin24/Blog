@@ -12,7 +12,7 @@ Devise.setup do |config|
   # config.pepper = '1181ca73b181c63743fd1c0a369aa49d5fcb63f643b089db7d86ed8ac460aba43cb2d422608f5491f78998fb8932996fe8213da53e8713490922cbd180d00c65'
 
   # Send a notification to the original email when the user's email is changed.
-  config.send_email_changed_notification = true
+  # config.send_email_changed_notification = true
 
   # Send a notification email when the user's password is changed.
   config.send_password_change_notification = true
@@ -35,16 +35,16 @@ Devise.setup do |config|
   # Default is nil, meaning there is no restriction on how long a user can take
   # before confirming their account.
   config.confirm_within = 1.days
-
+  #config.allow_unconfirmed_access_for = 365.days
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = false
+  config.reconfirmable = true
   config.expire_all_remember_me_on_sign_out = true
   config.password_length = 6..128
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
-
+  
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
@@ -169,5 +169,4 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   # in Devise Initializer
-  # config.allow_unconfirmed_access_for = 0.days
 end
