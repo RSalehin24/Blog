@@ -1,0 +1,29 @@
+<div id="<%= "#{dom_id(post)}_like" %>" class="txt-general col center">
+  <% like = post.likes.find_by(username: current_user.username) %>
+  
+  <div class="dropdwn">
+    <div id="<%= "#{dom_id(post)}_like_button" %>">
+      <% if !like.nil? %>
+        <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
+          <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
+        <% end %>
+      <% else %>
+        <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, class: "dropbtn"  do %>
+          <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
+      <% post.likes.each do |like| %>
+        <div style="padding: 10px"><%= like.username %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="<%= "#{dom_id(post)}_like_count" %>">
+    &nbsp &nbsp
+    <%= post.likes.all.count %>
+  </div>
+  
+</div>

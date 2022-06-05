@@ -5,7 +5,14 @@ class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @like = @post.likes.create(create_params)
-    redirect_to posts_path
+
+    respond_to do |format|
+      if @like.save
+        format.html { redirect_to posts_path }
+      else
+        format.html { redirect_to posts_path, notice: "Something is wrong." }
+      end
+    end
   end
 
   def destroy

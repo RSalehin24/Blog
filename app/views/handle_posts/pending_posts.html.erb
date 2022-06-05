@@ -2,46 +2,5 @@
 <% if @your_pending_posts.empty? %>
   <p class="txt-general">Do not have any pending posts... Congrats! </p> <p></p>
 <% else %>
-  <br>
-  <div id="posts">
-    <% @your_pending_posts.each do |post| %>
-      <div id="<%= dom_id post %>">
-        <div class="card">
-          <div class="card-body">
-            <div style="margin-left: 12px;">
-              <h2 class="card-title txt-title" style="margin-left: 12px"><%= post.title %></h2>
-              <p class="txt-general" style="margin-left: 12px">
-                <%= post.author %> | 
-                <%= post.updated_at %>
-              </p>
-              
-              <hr class="my-4">
-            
-              <% if post.images.attached? %>
-                <div id="postImage">
-                  <% post.images.each do |image| %>
-                    <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px;" %>
-                  <% end %>
-                </div><br>
-              <% end %>
-
-              <div style="margin-left: 10px">
-                <p class="txt-general">
-                  <%= post.body %>
-                </p>
-              </div>
-            </div>
-            <div class="card-footer">
-              <p></p>
-              <%= link_to "Edit", edit_post_path(id: post.id), class: "bttn-other-main", style: "margin-left: 10px" %>
-              &nbsp <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p></p>
-      <p></p>
-    <% end %>
-  </div>
+  <%= render "handle_posts/pending_posts/pending_posts" %>
 <% end %>

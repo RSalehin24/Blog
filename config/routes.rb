@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  delete 'posts/delete', to: 'posts#delete'
+  delete 'your_posts/delete', to: 'your_posts#delete'
+  
+  delete 'handle_posts/pending/delete', to: 'handle_posts#pending_delete'
+  delete 'handle_posts/approve/delete', to: 'handle_posts#approve_delete'
+  
   post 'posts/:id', to: "posts#approve_post"
 
   get '/handle_posts/pending_posts', to: 'handle_posts#pending_posts'

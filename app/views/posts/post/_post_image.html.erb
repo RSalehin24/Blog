@@ -1,0 +1,9 @@
+<div id="<%= "#{dom_id(post)}_image" %>">
+  <% if post.images.attached? %>
+    <div id="postImage">
+      <% post.images.each do |image| %>
+        <%= image_tag image, style: "max-width: 400px; max-height: 400px;  relative; height: relative; padding: 10px;" %>
+      <% end %>
+    </div><br>
+  <% end %>
+</div>

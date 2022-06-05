@@ -1,0 +1,4 @@
+<% if current_user.id == post.user_id %>
+  <%= link_to "Edit", edit_post_path(id: post.id), class: "bttn-other-main", style: "margin-left: 10px" %>
+  <%= link_to "Delete", your_posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+<% end %>

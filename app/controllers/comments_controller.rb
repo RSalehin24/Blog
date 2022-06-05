@@ -1,8 +1,16 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
+    @comments = @post.comments.all
     @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+
+    respond_to do |format|
+      if @comment.save
+        format.turbo_stream
+      else
+        format.html { redirect_to posts_path, notice: "Something is wrong." }
+      end
+    end
   end
 
   private

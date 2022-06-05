@@ -11,6 +11,26 @@ class HandlePostsController < ApplicationController
     @your_pending_posts = Post.where(user_id: current_user.id, is_approved: false)
   end
 
+  def approve_delete
+    @posts = Post.where(is_approved: false)
+    @post = Post.find_by(id: params[:_id])
+    @post.destroy
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
+  def pending_delete
+    @posts = Post.where(user_id: current_user.id, is_approved: false)
+    @post = Post.find_by(id: params[:_id])
+    @post.destroy
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   def admin
     redirect_to posts_path, notice: "Not a path for you!" if current_user.is_admin?
   end

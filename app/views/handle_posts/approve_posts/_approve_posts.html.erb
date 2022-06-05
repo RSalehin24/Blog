@@ -1,0 +1,5 @@
+<div id="approve_posts">
+  <% @posts.each do |post| %>
+    <%= render "handle_posts/approve_posts/approve_post/approve_post", post: post %>
+  <% end %>
+</div>

@@ -61,17 +61,13 @@ class PostsController < ApplicationController
     end
   end
 
-
-  def delete
-    @post = Post.find_by(id: params[:_id])
-    @post.destroy
-    redirect_to handle_posts_posts_tobe_approved_path, status: :see_other, notice: "Post was successfully deleted"
-  end
-
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @posts = Post.all
     @post.destroy
-    redirect_to posts_path, status: :see_other, notice: "Post was successfully deleted"
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   def delete_image
@@ -81,9 +77,14 @@ class PostsController < ApplicationController
   end
 
   def approve_post
+    @posts = Post.where(is_approved: false)
     @post = Post.find(params[:id])
     @post.update_column(:is_approved, true)
-    redirect_to handle_posts_posts_tobe_approved_path, notice: "Post has been successfully approved!"
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+    
   end
 
   def correct_user
