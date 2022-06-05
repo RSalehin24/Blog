@@ -42,14 +42,15 @@
            
               <div class="dropdwn">
                 <% if !like.nil? %>
-                  <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
+                  <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, remote: true, class: "dropbtn" do %>
                     <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
                   <% end %>
                 <% else %>
-                  <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, class: "dropbtn"  do %>
+                  <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, remote: true, class: "dropbtn"  do %>
                     <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
                   <% end %>
                 <% end %>
+
                 
                 <div class="dropdown-content txt-general">
                   <% post.likes.each do |like| %>

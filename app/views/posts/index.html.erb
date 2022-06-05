@@ -88,11 +88,13 @@
                 </p>
               <% end %>
               <br><hr class="my-4">
-              <% if post.comments.all.count <= 0 %>
-                <p class="txt-general">Be the first one to comment!...</p>
-              <% else %>
-                <%= render post.comments %>
-              <% end %> 
+              <div id="comments">
+                <% if post.comments.all.count <= 0 %>
+                  <p class="txt-general">Be the first one to comment!...</p>
+                <% else %>
+                    <%= render post.comments %>
+                <% end %> 
+              </div>
             </div>
           </div>
         </div>
