@@ -8,7 +8,7 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to posts_path }
+        format.turbo_stream
       else
         format.html { redirect_to posts_path, notice: "Something is wrong." }
       end
@@ -18,8 +18,14 @@ class LikesController < ApplicationController
   def destroy
     @post = Post.find(params[:post_id])
     @like = @post.likes.find(params[:like_id])
-    @like.destroy
-    redirect_to posts_path, status: :see_other
+
+    respond_to do |format|
+      if @like.destroy
+        format.turbo_stream
+      else
+        format.html { redirect_to posts_path, notice: "Something is wrong." }
+      end
+    end
   end
 
   def approved
@@ -29,9 +35,9 @@ class LikesController < ApplicationController
 
   private
     def create_params
-      params.permit(:username)
+      params.permit(:username, :post_id)
     end
     def delete_params
-      params.permit(:like_id)
+      params.permit(:like_id, :post_id)
     end
 end

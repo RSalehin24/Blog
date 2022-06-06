@@ -1,15 +1,20 @@
 <div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer">
   <div class="row">
+    
     <%= render "posts/post/post_like", post: post %>
+    
     <div id="<%= "#{dom_id(post)}_comment_button" %>" class="col center">
-      <a class="txt-general" data-bs-toggle="collapse" href="#<%= "#{dom_id(post)}_comment" %>" role="button" aria-expanded="false" aria-controls="<%= "#{dom_id(post)}_comment" %>" >
+      <a class="txt-general comment-display-button" role="button" >
         <i class="fa-solid fa-message fa-xl"></i>
       </a>
     </div>
+
     <% if current_user.is_admin? %>
       <div id="<%= "#{dom_id(post)}_admin_delete" %>" class="txt-general col center">
-        <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+        <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger-sm"%>
       </div>
     <% end %>
+    
   </div>
 </div>
+    

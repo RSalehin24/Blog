@@ -1,0 +1,12 @@
+<%= form_with url: "/handle_posts/edit", method: :post do |form| %>
+  <div>
+    <%= form.select(:category, options_for_select([["Select Category", "Not Selected"],  ["Fashion", "Fashion"], ["Food", "Food"], ["Lifestyle", "Lifestyle"], ["Science", "Science"], ["Tech", "Tech"], ["Thoughts", "Thoughts"], ["Travel", "Travel"]]), {}, {class: "txt-general form-select"})%>
+  </div>
+  <div>
+    <%= form.text_field :post_id, class: "form-control", placeholder: "Post ID", value: post.id, type: :hidden, :required => true %>
+  </div>
+  <p></p>
+  <div>
+    <%= form.submit "Update", class: "bttn-comment" %>
+  </div>
+<% end %>

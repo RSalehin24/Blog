@@ -248,6 +248,23 @@ input-container {
   opacity: 0.9;
 }
 
+.bttn-custom-2 {
+  background-color: #4b4444; 
+  border: 1.5px solid; 
+  border-color:#4b4444; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+}
+
+.bttn-custom-2:hover {
+  color: #4b4444;
+  background-color: white;
+}
+
 .btn:hover {
   opacity: 1;
 }
@@ -351,5 +368,21 @@ input-container {
 
 .bttn-confirmation:hover {
   color: #424040;
+  background-color: white;
+}
+
+.bttn-danger-sm {
+  background-color: #b36a6a;
+  border: 1.5px solid; 
+  border-color:#b36a6a; 
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-danger-sm:hover {
+  color: #b36a6a;
   background-color: white;
 }

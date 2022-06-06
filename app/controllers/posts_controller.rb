@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user_or_admin, only: [:destroy, :edit, :update]
   before_action :approved, only: [:show]
+  before_action :not_approved, only: [:update]
 
   # GET /posts or /posts.json
   def index
@@ -45,18 +46,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        if current_user.is_admin? && @post.author != "" && @post.author != current_user.username
-          format.html { redirect_to handle_posts_posts_tobe_approved_path, notice: "Post was successfully updated" }
-          format.json { render :show, status: :ok, location: @post }
-        else
-          format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
-          format.json { render :show, status: :ok, location: @post }
-        end
-        format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.turbo_stream
       end
     end
   end
@@ -101,6 +91,11 @@ class PostsController < ApplicationController
   def approved
     @post = Post.find_by(id: params["id"])
     redirect_to your_posts_get_posts_path if !@post.is_approved
+  end
+
+  def not_approved
+    @post = Post.find_by(id: params["id"])
+    redirect_to posts_path if @post.is_approved
   end
 
   private

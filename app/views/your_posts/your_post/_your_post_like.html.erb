@@ -1,0 +1,25 @@
+<div id="<%= "#{dom_id(post)}_like" %>" class="txt-general col center">
+  <% likes = post.likes.all %>
+  
+  <div class="dropdwn">
+    <div id="<%= "#{dom_id(post)}_like_button" %>">
+      <% if !likes.empty? %>
+        <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
+      <% else %>
+        <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
+      <% end %>
+    </div>
+    
+    <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
+      <% post.likes.each do |like| %>
+        <div style="padding: 10px"><%= like.username %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="<%= "#{dom_id(post)}_like_count" %>">
+    &nbsp &nbsp
+    <%= post.likes.all.count %>
+  </div>
+  
+</div>

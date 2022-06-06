@@ -21,6 +21,20 @@ class HandlePostsController < ApplicationController
     end
   end
 
+  def edit_post_approve
+    @post = Post.find(params[:id])
+  end
+
+  def update_post_approve
+    @post = Post.find(params[:post_id])
+    respond_to do |format|
+      if @post.update(category: params[:category])
+        format.turbo_stream
+      end
+    end
+  end
+
+
   def pending_delete
     @posts = Post.where(user_id: current_user.id, is_approved: false)
     @post = Post.find_by(id: params[:_id])

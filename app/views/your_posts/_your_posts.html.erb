@@ -1,0 +1,11 @@
+<br>
+<%= link_to "Add a post", new_post_path, class: "bttn-other-main" %>
+<p><p>
+</p></p>
+
+<div id="posts">
+  <% posts.each do |post| %>
+    <%= render "your_posts/your_post/your_post", post: post %>
+  <% end %>
+</div>
+<br>

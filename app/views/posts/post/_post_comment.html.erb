@@ -1,13 +1,11 @@
-<div class="collapse" id="<%= "#{dom_id(post)}_comment" %>" %>
+<div class="display-comments-section" id="<%= "#{dom_id(post)}_comment" %>">
   
-  <br>
-  <br>
+  <br> <br>
 
   <h5 class="card-title txt-title"> Comments</h5><p></p>
   <%= render "comments/form", post: post %>
 
-  <br>
-  <hr class="my-4">
+  <br> <hr class="my-4">
   
   <div id="<%= "#{dom_id(post)}_comments" %>">
     <% if post.comments.all.count <= 0 %>
@@ -16,5 +14,5 @@
       <%= render post.comments %>
     <% end %> 
   </div>
-
 </div>
+    

@@ -1,0 +1,14 @@
+<script>
+  $( document ).ready(function() {
+      $('.comment-display-button').each(function() {
+          var grandParents = $(this).parents('.card-body');
+          var commentDisplaySection = grandParents.children('.display-comments-section')
+          commentDisplaySection.hide();
+
+          console.log("hello")
+          $(this).click(function(e) {
+              commentDisplaySection.toggle(); 
+          });
+      });
+  });
+</script>
