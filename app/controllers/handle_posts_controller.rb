@@ -1,7 +1,6 @@
 class HandlePostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_admin, only: [:posts_tobe_approved]
-  before_action :pending_posts, only: [:pending_posts]
+  before_action :for_admin, only: [:posts_tobe_approved, :approve_delete, :edit_post_approve, :update_post_approve]
 
   def posts_tobe_approved
     @posts = Post.where(is_approved: false)
@@ -27,9 +26,11 @@ class HandlePostsController < ApplicationController
 
   def update_post_approve
     @post = Post.find(params[:post_id])
-    respond_to do |format|
-      if @post.update(category: params[:category])
-        format.turbo_stream
+    if !@post.is_approved?
+      respond_to do |format|
+        if @post.update(category: params[:category])
+          format.turbo_stream
+        end
       end
     end
   end
@@ -45,11 +46,11 @@ class HandlePostsController < ApplicationController
     end
   end
 
-  def admin
+  def for_not_admin
     redirect_to posts_path, notice: "Not a path for you!" if current_user.is_admin?
   end
 
-  def is_admin
+  def for_admin
     redirect_to posts_path, notice: "Not a path for you!" if !current_user.is_admin?
   end
 end
