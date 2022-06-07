@@ -1,0 +1,13 @@
+<div id="<%= "#{dom_id(post)}_like_button" %>">
+   <div class="dropdwn">
+      <%= link_to post_likes_path(post_id: post.id, like_id: like.id), data: { turbo_method: :delete }, class: "dropbtn" do %>
+        <i class="fa-solid fa-thumbs-up fa-2x txt-general"></i>
+      <% end %>
+
+      <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
+        <% post.likes.each do |like| %>
+          <div style="padding: 10px"><%= like.username %></div>
+        <% end %>
+      </div>
+    </div>
+</div>

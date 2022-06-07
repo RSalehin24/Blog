@@ -248,6 +248,23 @@ input-container {
   opacity: 0.9;
 }
 
+.bttn-custom-2 {
+  background-color: #4b4444; 
+  border: 1.5px solid; 
+  border-color:#4b4444; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+}
+
+.bttn-custom-2:hover {
+  color: #4b4444;
+  background-color: white;
+}
+
 .btn:hover {
   opacity: 1;
 }
@@ -351,5 +368,93 @@ input-container {
 
 .bttn-confirmation:hover {
   color: #424040;
+  background-color: white;
+}
+
+.bttn-danger-sm {
+  background-color: #b36a6a;
+  border: 1.5px solid; 
+  border-color:#b36a6a; 
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-danger-sm:hover {
+  color: #b36a6a;
+  background-color: white;
+}
+
+
+.category-items-div {
+  position: relative;
+  border-color: #575656;
+  width: 35%;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  right: 0px;
+  border-top: 0.1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 0.1px solid;
+  border-radius: 10px;
+}
+
+.category-name {
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  left: 0px;
+}
+
+.category-delete-button {
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.between-category {
+  position: relative;
+  border-color: #575656;
+  width: 35%;
+  height: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name-title {
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  left: 0px;
+}
+
+.category-delete-title {
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.bttn-add-category {
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+  border: 2px solid; 
+  border-color:#575656; 
+  border-radius: 7px;
+  background-color: #575656;
+}
+
+.bttn-add-category:hover {
+  color: #575656;
   background-color: white;
 }

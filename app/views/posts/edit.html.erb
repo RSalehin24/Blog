@@ -1,6 +1,8 @@
+<%= turbo_frame_tag dom_id(@post) do %>
+<br>
 <div class="card ">
   <div class="card-body">
-    <h6 class="card-title txt-general"><h2 class="txt-title">Editing post</h2></h6>
+    <h6 class="card-title txt-general"><h2 class="txt-title">Edit post</h2></h6><p></p>
      <% if @post.images.attached? %>
         <div id="postImage">
           <% @post.images.each do |image| %>
@@ -12,10 +14,4 @@
     <%= render "form", post: @post %>
   </div>
 </div>
-
-  <br><br>
-  
-<div>
-  <%= link_to "Show this post", @post, class: "bttn-show-post" %> 
-  <%= link_to "Back to posts", posts_path, class: "bttn-back" %>
-</div>
+<% end %>

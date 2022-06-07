@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  delete 'posts/delete', to: 'posts#delete'
+  resources :categories
+  post "handle_posts/edit", to: "handle_posts#update_post_approve" 
+  get "handle_posts/edit_post_approve", to: "handle_posts#edit_post_approve" 
+
+  delete 'your_posts/delete', to: 'your_posts#delete'
+  
+  delete 'handle_posts/pending/delete', to: 'handle_posts#pending_delete'
+  delete 'handle_posts/approve/delete', to: 'handle_posts#approve_delete'
+  
   post 'posts/:id', to: "posts#approve_post"
 
   get '/handle_posts/pending_posts', to: 'handle_posts#pending_posts'

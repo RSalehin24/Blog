@@ -4,4 +4,14 @@ class YourPostsController < ApplicationController
   def get_posts
     @posts = Post.where(user_id: current_user.id, is_approved: true)
   end
+
+  def delete
+    @posts = Post.where(is_approved: false)
+    @post = Post.find_by(id: params[:_id])
+    @post.destroy
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
 end

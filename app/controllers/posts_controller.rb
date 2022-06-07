@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user_or_admin, only: [:destroy, :edit, :update]
   before_action :approved, only: [:show]
+  before_action :not_approved, only: [:update]
 
   # GET /posts or /posts.json
   def index
@@ -20,10 +21,20 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.name])
+    end
   end
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.name])
+    end
   end
 
   # POST /posts or /posts.json
@@ -45,33 +56,18 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        if current_user.is_admin? && @post.author != "" && @post.author != current_user.username
-          format.html { redirect_to handle_posts_posts_tobe_approved_path, notice: "Post was successfully updated" }
-          format.json { render :show, status: :ok, location: @post }
-        else
-          format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
-          format.json { render :show, status: :ok, location: @post }
-        end
-        format.html { redirect_to your_posts_get_posts_path, notice: "Post was successfully updated" }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.turbo_stream
       end
     end
   end
 
-
-  def delete
-    @post = Post.find_by(id: params[:_id])
-    @post.destroy
-    redirect_to handle_posts_posts_tobe_approved_path, status: :see_other, notice: "Post was successfully deleted"
-  end
-
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @posts = Post.all
     @post.destroy
-    redirect_to posts_path, status: :see_other, notice: "Post was successfully deleted"
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   def delete_image
@@ -81,9 +77,14 @@ class PostsController < ApplicationController
   end
 
   def approve_post
+    @posts = Post.where(is_approved: false)
     @post = Post.find(params[:id])
     @post.update_column(:is_approved, true)
-    redirect_to handle_posts_posts_tobe_approved_path, notice: "Post has been successfully approved!"
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+    
   end
 
   def correct_user
@@ -100,6 +101,11 @@ class PostsController < ApplicationController
   def approved
     @post = Post.find_by(id: params["id"])
     redirect_to your_posts_get_posts_path if !@post.is_approved
+  end
+
+  def not_approved
+    @post = Post.find_by(id: params["id"])
+    redirect_to posts_path if @post.is_approved
   end
 
   private

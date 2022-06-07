@@ -1,0 +1,14 @@
+<div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer">
+  <div class="row">
+    
+    <%= render "your_posts/your_post/your_post_like", post: post %>
+    
+    <div id="<%= "#{dom_id(post)}_comment_button" %>" class="col center">
+      <a class="txt-general comment-display-button" role="button" >
+        <i class="fa-solid fa-message fa-xl"></i>
+      </a>
+    </div>
+    
+  </div>
+</div>
+    

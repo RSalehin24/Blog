@@ -1,0 +1,25 @@
+<% if @is_empty %>
+  <%= turbo_stream.append "category-title-div" do %>
+    <%= render "category_list_title" %>
+  <% end %>
+
+  <%= turbo_stream.append "category-list" do %>
+    <%= render "category", category: @category %>
+  <% end %>
+  
+  <%= turbo_stream.replace "category-form" do %>
+    <%= render "form", category: Category.new %>
+  <% end %>
+
+  <%= turbo_stream.remove "no-category-message" %>
+
+<% else %>
+    <%= turbo_stream.append "category-list" do %>
+      <%= render "category", category: @category %>
+    <% end %>
+    
+    <%= turbo_stream.replace "category-form" do %>
+      <%= render "form", category: Category.new %>
+    <% end %>
+
+<% end %>

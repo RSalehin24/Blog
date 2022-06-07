@@ -1,0 +1,8 @@
+<div id="<%= "#{dom_id(post)}_header" %>" style="margin-left: 12px;">
+  <h2 class="card-title txt-title" style="margin-left: 0px"><%= post.title %></h2>
+  <h5 class="txt-general"><%= post.category %></h5>
+  <p class="txt-general" style="margin-left: 0px">
+    <%= post.author %> | 
+    <%= post.updated_at %>
+  </p>
+</div>

@@ -1,0 +1,7 @@
+<div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer">
+  <p></p>
+  <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-post-details" %>
+  &nbsp <%= link_to "Edit Category", handle_posts_edit_post_approve_path(id: post.id), class: "bttn-custom-2", style: "margin-left: 10px" %>
+  <%= link_to "Delete",  handle_posts_approve_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger"%>
+  <p></p>
+</div>

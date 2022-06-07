@@ -1,15 +1,15 @@
-<% if comment.body.nil? %>
-<% else %>
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title txt-general"><%= comment.commenter %></h5><br>
-    <p class="txt-general"><%= comment.body %> <br>
+<% if comment.body.present? %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title txt-general"><%= comment.commenter %></h5><br>
+      <p class="txt-general"><%= comment.body %> <br>
+    </div>
+    <div class="card-footer txt-general">
+      <%= comment.updated_at %></small></p>
+    </div>
   </div>
-  <div class="card-footer txt-general">
-    <%= comment.updated_at %></small></p>
-  </div>
-</div>
-<p></p>
+  <p></p>
 <% end %>
+
+
 

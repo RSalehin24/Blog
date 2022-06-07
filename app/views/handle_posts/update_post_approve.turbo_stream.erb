@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "#{dom_id(@post)}_item" do %>
+  <%= render "handle_posts/approve_posts/approve_post/approve_post", post: @post %>
+<% end %>

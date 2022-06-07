@@ -1,0 +1,38 @@
+<h2 class="txt-title">Category</h2>
+<%= render "form", category: Category.new %>
+<br><br>
+
+<h5 class="txt-general">Already added</h5>
+<p></p>
+
+<% if @categories.empty? %>
+  <div id="no-category-message">
+    <p>No category has been added yet </p>
+  </div>
+
+  <%= turbo_stream_from "category-title-div" %>
+  <div id="category-title-div"></div>
+  
+  <%= turbo_stream_from "category-list" %>
+  <div id="category-list"></div>
+<% else %>
+  <%= turbo_stream_from "category-title-div" %>
+  <div id="category-title-div">
+    <div id="category-items-title" class="category-items-div">
+      <div class="txt-general category-name-title">
+        Category Name
+      </div>
+      
+      <div class="txt-general category-delete-title">
+        Delete Category
+      </div>
+    </div>
+  </div>
+  
+  <%= turbo_stream_from "category-list" %>
+  <div id="category-list">
+    <% @categories.each do |category| %>
+      <%= render "category", category: category %>
+    <% end %>
+  </div>
+<% end %>
