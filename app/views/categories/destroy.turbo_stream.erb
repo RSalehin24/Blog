@@ -1,0 +1,14 @@
+<% if @is_empty %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Category has been deleted" %>
+  <% end %>
+  <%= turbo_stream.remove "#{dom_id(@category)}_item" %>
+  <%= turbo_stream.replace "category-items-title" do %>
+    <% render "categories/destroy" %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Category has been deleted" %>
+  <% end %>
+  <%= turbo_stream.remove "#{dom_id(@category)}_item" %>
+<% end %>

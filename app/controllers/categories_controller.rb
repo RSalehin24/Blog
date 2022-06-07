@@ -21,7 +21,9 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
+    @categories = Category.all
     @category = Category.new(category_params)
+    @is_empty = @categories.empty?
 
     respond_to do |format|
       if @category.save
@@ -49,10 +51,11 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1 or /categories/1.json
   def destroy
     @category.destroy
+    @categories = Category.all
+    @is_empty = @categories.empty?
 
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
-      format.json { head :no_content }
+      format.turbo_stream
     end
   end
 

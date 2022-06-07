@@ -22,10 +22,16 @@ class HandlePostsController < ApplicationController
 
   def edit_post_approve
     @post = Post.find(params[:id])
+    @categories = Category.all
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.name])
+    end
   end
 
   def update_post_approve
     @post = Post.find(params[:post_id])
+    
     if !@post.is_approved?
       respond_to do |format|
         if @post.update(category: params[:category])

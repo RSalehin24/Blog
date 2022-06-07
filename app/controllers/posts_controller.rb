@@ -21,10 +21,20 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.name])
+    end
   end
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.name])
+    end
   end
 
   # POST /posts or /posts.json

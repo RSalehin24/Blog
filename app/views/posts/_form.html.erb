@@ -18,7 +18,7 @@
   <p></p>
 
   <div>
-    <%= form.select(:category, options_for_select([["Select Category", "Not Selected"],  ["Fashion", "Fashion"], ["Food", "Food"], ["Lifestyle", "Lifestyle"], ["Science", "Science"], ["Tech", "Tech"], ["Thoughts", "Thoughts"], ["Travel", "Travel"]]), {}, {class: "txt-general form-select"})%>
+    <%= form.select(:category, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "txt-general form-select", required: true})%>
   </div>
 
   <p></p>
