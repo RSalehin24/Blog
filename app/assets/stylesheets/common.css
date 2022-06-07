@@ -337,3 +337,19 @@ input-container {
 .dropdwn:hover .dropdown-content {
   display: block;
 }
+
+.bttn-confirmation {
+  background-color: #635858; 
+  border: 1.5px solid; 
+  border-color:#635858; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-confirmation:hover {
+  color: #424040;
+  background-color: white;
+}

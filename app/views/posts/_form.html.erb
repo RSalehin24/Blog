@@ -15,6 +15,11 @@
   <div>
     <%= form.text_field :title, class: "form-control", placeholder: "Title", :required => true %>
   </div>
+  <p></p>
+
+  <div>
+    <%= form.select(:category, options_for_select([["Select Category", "Not Selected"],  ["Fashion", "Fashion"], ["Food", "Food"], ["Lifestyle", "Lifestyle"], ["Science", "Science"], ["Tech", "Tech"], ["Thoughts", "Thoughts"], ["Travel", "Travel"]]), {}, {class: "txt-general form-select"})%>
+  </div>
 
   <p></p>
   <div>
@@ -23,7 +28,13 @@
 
   <p></p>
   <div>
+
+  <% if current_user.is_admin? && post.author != "" && post.author != current_user.username %>
+    <%= form.text_field :author, class: "form-control", placeholder: "Author" %>
+  <% else %>
     <%= form.text_field :author, class: "form-control", placeholder: "Author", :required => true, value: current_user.username, type: :hidden %>
+  <% end %>
+    
   </div>
 
   <p></p>
@@ -33,7 +44,7 @@
 
   <h6> Upload Image</h6>
   <div>
-    <%= form.file_field :images, multiple: true%>
+    <%= form.file_field :images, multiple: true, class: "form-control" %>
   </div>
 
   <p></p>
