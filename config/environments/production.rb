@@ -43,16 +43,18 @@ Rails.application.configure do
   #mailer configs
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: ENV['PRODUCTION_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 '587',
-    domain:               'gmail.com',
-    user_name:            'blogs4248@gmail.com',
-    password:             'r1124.S@96#',
+    address:              ENV['EMAIL_ADDRESS'],
+    port:                 ENV['EMAIL_PORT'],
+    domain:               ENV['EMAIL_DOMAIN'],
+    user_name:            ENV['EMAIL_USERNAME'],
+    password:             ENV['EMAIL_PASSWORD'],
     authentication:       :plain,
     enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5
   }
 
   # Mount Action Cable outside main process or domain.

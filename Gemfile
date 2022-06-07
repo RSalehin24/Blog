@@ -14,6 +14,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
