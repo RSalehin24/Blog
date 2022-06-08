@@ -24,7 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to new_user_session_path, notice: "User already exists with this Email, Please Sign in!"
       end
     else
-      redirect_to new_user_registration_path, notice: "Password doesn't match!"
+      redirect_to new_user_registration_path, notice: "Passwords do not match!"
     end
   end
 
