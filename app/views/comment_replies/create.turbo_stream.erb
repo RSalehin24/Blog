@@ -2,7 +2,7 @@
   <%= turbo_stream.remove "no-comment-reply-posted" %>
 <% end %>
 
-<%= turbo_stream.prepend "#{dom_id(@comment)}_comment_replies" do %>
+<%= turbo_stream.append "#{dom_id(@comment)}_comment_replies" do %>
   <%= render "comment_reply", comment_reply: @comment_reply %>
 <% end %>
 
