@@ -1,24 +1,8 @@
-# README
+# Blogs4248
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app I have developed to learn the basics of the  ruby on rails web framework with some common features like:
+1. Creating Account
+2. Verifying the email
+3. Posting articles with picture in the blogs
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It took me 3 weeks, 9:45 hours of working per day.
