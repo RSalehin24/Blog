@@ -1,0 +1,11 @@
+<% if @comment_replies <= 0 %>
+  <%= turbo_stream.remove "no-comment-reply-posted" %>
+<% end %>
+
+<%= turbo_stream.prepend "#{dom_id(@comment)}_comment_replies" do %>
+  <%= render "comment_reply", comment_reply: @comment_reply %>
+<% end %>
+
+<%= turbo_stream.replace "#{dom_id(@comment)}_comment_reply_form" do %>
+  <% render "form", comment: @comment %>
+<% end %>

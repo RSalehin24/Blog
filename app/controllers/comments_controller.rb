@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.all
+    @comments = @post.comments.all.count
     @comment = @post.comments.create(comment_params)
 
     respond_to do |format|

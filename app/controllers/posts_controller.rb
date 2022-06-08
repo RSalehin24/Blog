@@ -7,11 +7,11 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.where(is_approved: true)
+    @posts = Post.where(is_approved: true).order(updated_at: :desc)
   end
 
   def your_posts
-    @posts = Post.where(user_id: current_user.id)
+    @posts = Post.where(user_id: current_user.id).order(updated_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json

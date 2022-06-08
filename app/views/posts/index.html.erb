@@ -7,10 +7,10 @@
   <br>
   <div id="posts">
     <%= render @posts %>
-    <%= render "posts/post/post_comment_jquery"%> 
+    <%= render "posts/post/post_comment_jquery" %> 
+    <%= render "posts/post/post_comment_reply_jquery" %> 
   </div>
   <br>
-  <%= link_to "New post", new_post_path, class: "bttn-other-main" %>
 <% end %>
 
 

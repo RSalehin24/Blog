@@ -1,0 +1,15 @@
+<script>
+  $( document ).ready(function() {
+      $('.comment-reply-display-button').each(function() {
+          var grandParents = $(this).parents('.card-body');
+          var commentReplyDisplaySection = grandParents.children('.display-comment-replies-section')
+          commentReplyDisplaySection.hide();
+
+          console.log("Hello");
+
+          $(this).click(function(e) {
+              commentReplyDisplaySection.toggle(); 
+          });
+      });
+  });
+</script>
