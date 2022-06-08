@@ -1,10 +1,11 @@
 <h2 class="txt-title">All Posts</h2>
 
 <% if @posts.empty? %>
-  <p class="txt-general">None has not created any posts yet </p> <p></p>
-  <%= link_to "Add a post", new_post_path, class: "bttn-other-main" %>
+  <p class="txt-general">None has not created any posts yet!   &nbsp Go to your posts to create a post</p>
+   <%= link_to your_posts_get_posts_path, class: "bttn-other-main" do %>
+      </i>Your Posts
+  <% end %>
 <% else %>
-  <br>
   <div id="posts">
     <%= render @posts %>
     <%= render "posts/post/post_comment_jquery" %> 
