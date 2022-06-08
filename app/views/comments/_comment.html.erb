@@ -2,8 +2,10 @@
   <div class="card">
     <div class="card-body">
       <%= render "comments/comment/comment_body", comment: comment %>
-      <%= render "comments/comment/comment_footer", comment: comment %>
-      <%= render "comments/comment/comment_replies", comment: comment %>
+      <div id="options" data-controller="visibility">
+        <%= render "comments/comment/comment_footer", comment: comment %>
+        <%= render "comments/comment/comment_replies", comment: comment %>
+      </div>
     </div>
   </div>
   <p></p>
