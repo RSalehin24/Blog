@@ -3,6 +3,6 @@
   <h5 class="txt-general"><%= post.category %></h5>
   <p class="txt-general" style="margin-left: 0px">
     <%= post.author %> | 
-    <%= post.updated_at %>
+    <%= distance_of_time_in_words(Time.now, post.updated_at) %>
   </p>
 </div>
