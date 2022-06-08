@@ -27,11 +27,12 @@
         </li>
          
         <% if user_signed_in? %>
-          <% if current_user.is_admin? %>
-
-            <%= link_to change_role_role_change_requests_path, class: "nav-link" do %>
+          <%= link_to change_role_role_change_requests_path, class: "nav-link" do %>
               <i class="fa-solid fa-file-pen"></i>Requests
             <% end %>
+          <% if current_user.is_admin? %>
+
+            
 
             <%= link_to handle_posts_posts_tobe_approved_path, class: "nav-link" do %>
               <i class="bi bi-bookmarks-fill"></i>Posts tobe Approved
