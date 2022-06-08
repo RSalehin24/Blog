@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
+
+  post "/comment/reply/new", to: "comment_replies#create"
+
   post "handle_posts/edit", to: "handle_posts#update_post_approve" 
   get "handle_posts/edit_post_approve", to: "handle_posts#edit_post_approve" 
 

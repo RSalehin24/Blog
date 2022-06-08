@@ -458,3 +458,17 @@ input-container {
   color: #575656;
   background-color: white;
 }
+
+.comments-section {
+  padding-left: 50px; 
+  padding-right: 50px; 
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.comment-replies-section {
+  padding-left: 50px; 
+  padding-right: 250px; 
+  padding-top: 20px;
+  padding-bottom: 0px;
+}

@@ -1,0 +1,15 @@
+<% if comment_reply.reply.present? %>
+  <div class="card">
+    <div class="card-body">
+      <strong class="card-title txt-general"><%= comment_reply.replier %></strong><br>
+      <p class="txt-general"><%= comment_reply.reply %> <br>
+    </div>
+    <div class="card-footer txt-general">
+      <%= comment_reply.updated_at %></small></p>
+    </div>
+  </div>
+  <p></p>
+<% end %>
+
+
+

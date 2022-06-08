@@ -1,0 +1,17 @@
+<div class="display-comment-replies-section comment-replies-section" id="<%= "#{dom_id(comment)}_comment_replies_section" %>">
+  
+  <h6 class="card-title txt-title"> Comment Replies </h6><p></p>
+
+  <div id="<%= "#{dom_id(comment)}_comment_replies" %>">
+    <% if comment.comment_replies.all.count <= 0 %>
+    <div id="no-comment-reply-posted">
+      <p class="txt-general">Be the first one to reply!...</p>
+    </div>
+    <% else %>
+      <%= render comment.comment_replies.order(updated_at: :desc) %>
+    <% end %> 
+  </div>
+  <p></p>
+  <hr class="my-4">
+  <%= render "comment_replies/form", comment: comment %>
+</div>

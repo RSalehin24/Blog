@@ -7,7 +7,7 @@ class HandlePostsController < ApplicationController
   end
 
   def pending_posts
-    @your_pending_posts = Post.where(user_id: current_user.id, is_approved: false)
+    @your_pending_posts = Post.where(user_id: current_user.id, is_approved: false).order(updated_at: :desc)
   end
 
   def approve_delete
