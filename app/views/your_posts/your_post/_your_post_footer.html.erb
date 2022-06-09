@@ -4,7 +4,7 @@
     <%= render "your_posts/your_post/your_post_like", post: post %>
     
     <div id="<%= "#{dom_id(post)}_comment_button" %>" class="col center">
-      <a class="txt-general comment-display-button" role="button" >
+      <a class="txt-general comment-display-button" data-action="comment-visibility#toggleTargets" role="button" >
         <i class="fa-solid fa-message fa-xl"></i>
       </a>
     </div>

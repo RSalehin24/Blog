@@ -2,7 +2,9 @@
 <div class="card">
   <div class="card-body">
     <%= render "posts/post/post_body", post: post %>
-    <%= render "posts/post/post_footer", post: post %>
-    <%= render "posts/post/post_comment", post: post %>
+    <div data-controller="comment-visibility">
+      <%= render "posts/post/post_footer", post: post %>
+      <%= render "posts/post/post_comment", post: post %>
+    </div>
   </div>
 </div>
