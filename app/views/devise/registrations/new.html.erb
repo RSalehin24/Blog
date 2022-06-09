@@ -29,17 +29,26 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control input-radius", :required => true %>
         </span>	
       </div>  <p></p>
-      <div class="field">
+
+      <div class="field dropdown-password">
         <span class="input-group-text padding">
           <i class="fa fa-lock padding-input-icon"></i>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius", :required => true %>
+          <%= f.password_field :password, id: 'psw', autocomplete: "new-password", placeholder: "Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius", pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", :required => true %>
         </span>	
+        <ul class="dropdown-content-password" id="message">
+          <h6 class="password-warning-text">Password must contain the following:</h6>
+          <li id="letter" class="invalid dropdown-item">One <b>lowercase</b> letter</li>
+          <li id="capital" class="invalid dropdown-item">One <b>uppercase</b> letter</li>
+          <li id="number" class="invalid dropdown-item">One <b>number</b></li>
+          <li id="length" class="invalid dropdown-item">Minimum <b>8</b> characters</li>
+        </ul>
       </div>
+
       <p></p>
       <div class="field">
         <span class="input-group-text padding">
           <i class="bi bi-eye-fill padding-confirm-pass"></i>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control input-radius padding-input", :required => true %>
+          <%= f.password_field :password_confirmation, autofocus: false, placeholder: "Confirm Password", class: "form-control input-radius padding-input", :required => true %>
 				</span>
       </div>
       <p></p>
@@ -49,6 +58,8 @@
     <% end %>
   </div>
 </div>
+
+<%= render "devise/registrations/password_script" %>
 
 <br> <br>
 <%= render "devise/shared/links" %>

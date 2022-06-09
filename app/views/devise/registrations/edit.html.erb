@@ -36,12 +36,21 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
       <p></p>
-      <div class="field">
+      
+      <div class="field dropdown-password">
         <span class="input-group-text padding">
           <i class="fa fa-lock padding-input-icon"></i>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius" %>
+          <%= f.password_field :password, autocomplete: "new-password", pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius" %>
         </span>
+        <ul class="dropdown-content-password" id="message">
+          <h6 class="password-warning-text">Password must contain the following:</h6>
+          <li id="letter" class="invalid dropdown-item">One <b>lowercase</b> letter</li>
+          <li id="capital" class="invalid dropdown-item">One <b>uppercase</b> letter</li>
+          <li id="number" class="invalid dropdown-item">One <b>number</b></li>
+          <li id="length" class="invalid dropdown-item">Minimum <b>8</b> characters</li>
+        </ul>
       </div>
+
       <p></p>
       <div class="field">
         <span class="input-group-text padding">
