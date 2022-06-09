@@ -1,0 +1,106 @@
+/* Style the input field with icons */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+
+.padding {
+  padding: 0;
+}
+
+.padding-input-icon {
+  padding: 10px;
+}
+
+.input-radius {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.padding-input-username {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+
+.padding-confirm-pass {
+  padding-right: 9px;
+  padding-left: 9px;
+}
+
+
+/* password contraints checking */
+.valid {
+  color: rgb(3, 95, 3);
+}
+
+.valid:before {
+  position: relative;
+  left: -5px;
+  content: "✔";
+}
+
+.invalid {
+  color: rgb(88, 9, 9);
+}
+
+.invalid:before {
+  position: relative;
+  left: -5px;
+  content: "✖";
+}
+
+/*password constraint dropdown*/
+.dropdown-password {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content-password {
+  margin-top: 7px;
+  padding: 20px;
+  left: 50px;
+  display: none;
+  position: absolute;
+  background-color: #e7e5e5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown-password:hover .dropdown-content-password {
+  display: block;
+}
+
+.password-warning-text {
+  color: #5a1d1d;
+}

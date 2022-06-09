@@ -12,5 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require common
+ *= require sections_alignment
+ *= require text_all
+ *= require buttons
+ *= require nav_profile_dropdown
+ *= require category
+ *= require user_inputfield
+ *= require comment_and_reply
  */

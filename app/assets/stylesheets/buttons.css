@@ -1,0 +1,214 @@
+/* button common properties */
+.bttn-common {
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+/* button text-weight */
+.bttn-text-bold {
+  font-weight: bold;
+}
+
+/* button background-colors */
+.bttn-main {
+  background-color: #575656; 
+  border-color:#575656; 
+}
+
+/* button border */
+.bttn-border-2 {
+  border: 2px solid; 
+  padding: 8px;
+  border-radius: 7px;
+}
+
+/* button padding */
+.bttn-padding-8 {
+  padding: 8px;
+}
+
+
+/* button hover */
+
+.bttn-other-main {
+  background-color: #575656; 
+  border: 2px solid; 
+  border-color:#575656; 
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  font-weight: bold;
+  color: white;
+}
+
+.bttn-other-main:hover {
+  color: #575656;
+  background-color: white;
+}
+
+.bttn-post-details {
+  background-color: #8b7c7c; 
+  border: 1.5px solid; 
+  border-color:#8b7c7c; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+}
+
+.bttn-post-details:hover {
+  color: #8b7c7c;
+  background-color: white;
+}
+
+.bttn-back {
+  background-color: #8b7c7c; 
+  border: 1.5px solid; 
+  border-color:#6d6e6e; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-back:hover {
+  color: #6d6e6e;
+  background-color: white;
+}
+
+
+.bttn-danger {
+  background-color: #b36a6a;
+  border: 1.5px solid; 
+  border-color:#b36a6a; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+}
+
+.bttn-danger:hover {
+  color: #b36a6a;
+  background-color: white;
+}
+
+.bttn-comment {
+  background-color: #575656; 
+  border: 1px solid; 
+  border-color:#575656; 
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-comment:hover {
+  color: #575656;
+  background-color: white;
+}
+
+.bttn-comment-back {
+  background-color: #8b7c7c; 
+  border: 1px solid; 
+  border-color:#6d6e6e; 
+  padding: 3.8px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-comment-back:hover {
+  color: #6d6e6e;
+  background-color: white;
+}
+
+
+.bttn-show-post {
+  background-color: #493838; 
+  border: 1.5px solid; 
+  border-color:#6d6e6e; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-show-post:hover {
+  color: #6d6e6e;
+  background-color: white;
+}
+
+.bttn-forgot-password {
+  background-color: #575656; 
+  border: 1px solid; 
+  border-color:#575656; 
+  padding: 7.5px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-forgot-password :hover{
+  color: #575656;
+  background-color: white;
+}
+
+.bttn-custom-2 {
+  background-color: #4b4444; 
+  border: 1.5px solid; 
+  border-color:#4b4444; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+  font-weight: bold;
+}
+
+.bttn-custom-2:hover {
+  color: #4b4444;
+  background-color: white;
+}
+
+
+.bttn-confirmation {
+  background-color: #635858; 
+  border: 1.5px solid; 
+  border-color:#635858; 
+  padding: 8.7px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-confirmation:hover {
+  color: #424040;
+  background-color: white;
+}
+
+.bttn-danger-sm {
+  background-color: #b36a6a;
+  border: 1.5px solid; 
+  border-color:#b36a6a; 
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration:none;
+  color: white;
+}
+
+.bttn-danger-sm:hover {
+  color: #b36a6a;
+  background-color: white;
+}

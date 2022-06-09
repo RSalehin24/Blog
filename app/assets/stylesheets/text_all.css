@@ -1,0 +1,23 @@
+.txt-title {
+  color: #464444;
+}
+
+.txt-header {
+  color: #021f7c;
+}
+
+.txt-secondary {
+  color: #1b1b6b;
+}
+
+.txt-danger {
+  color: #3f0d0d;
+}
+
+.txt-general {
+  color: #575656;
+}
+
+.txt-general:hover {
+  color: #242323;
+}
