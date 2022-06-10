@@ -1,32 +1,28 @@
-<div class="card bg-transparent">
+<div class="card bg-transparent" style="margin-top: 70px;">
   <div class="card-body bg-transparent">
     <h2 class="card-title txt-title">Sign in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <p></p><p></p>
-
-      <div class="field bg-transparent">
+    
+      <div class="field bg-transparent first-input-div-margin">
         <span class="input-group-text padding bg-transparent input-border">
-              <i class="fa fa-paper-plane padding-input-icon"></i>
+              <i class="fa fa-paper-plane padding-input-email-icon"></i>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-radius bg-transparent", placeholder: "Email", :required => true %>
         </span>	
       </div>
-      <p></p>
 
-      <div class="field bg-transparent">
+      <div class="field bg-transparent input-div-margin">
         <span class="input-group-text padding bg-transparent input-border">
             <i class="fa fa-lock padding-input-icon"></i>
             <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-radius bg-transparent", placeholder: "Password", :required => true %>
         </span>	
       </div>
-      <p></p>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field bg-transparent form-check" style="padding-left: 35px;">
-          <%= f.check_box :remember_me, class: "form-check-input input" %> &nbsp
-          <%= f.label :remember_me %>
+        <div class="field bg-transparent form-check" style="padding-left: 35px; padding-top: 10px; padding-bottom: 10px;">
+          <%= f.check_box :remember_me, class: "form-check-color form-check-input input" %>
+          <%= f.label :remember_me, class: "txt-general padding-left: 4px" %>
         </div>
       <% end %>
-      <p></p>
 
       <div class="actions">
         <%= f.submit "Sign in", class: "bttn-common bttn-main-common bttn-main-main-button bttn" %>

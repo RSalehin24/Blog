@@ -74,15 +74,14 @@
 }
 
 .bttn:hover {
-  border-color: #167204;
-  background-color: #167204; 
+  background-color: #1d600f; 
   color:white; 
 }
 
 .bttn {
-  color: #240707;
+  color: #1d600f;
   background-color: transparent;
-  border-color: #240707;
+  border-color: #1d600f;
 }
 
 .bttn-main:hover {

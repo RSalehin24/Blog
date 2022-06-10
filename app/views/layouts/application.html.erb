@@ -27,15 +27,11 @@
     <%= render 'layouts/navbar' %>
 
     <div class="bg-transparent" style="position: relative;">
-      <div class='container bg-transparent' style="padding-bottom: 2.5rem;">
-          <br> 
-
-        <div class="bg-transparent" style="min-height: calc(100vh - 200px);">
+      <div class='container bg-transparent' style="padding-bottom: 7.2rem;">
+        <div class="bg-transparent" style="min-height: calc(100vh - 200px); padding: 100px;">
           <%= render 'layouts/alerts' %>
           <%= yield %>
         </div>
-        
-          <br><br>
       </div>
       <%= render 'layouts/footer' %>
     </div>
