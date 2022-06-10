@@ -5,59 +5,82 @@
   color: white;
 }
 
-/* button text-weight */
-.bttn-text-bold {
-  font-weight: bold;
+
+.bttn-main-common {
+  font-size: 18px;
+  border: 2px solid;
+  border-radius: 7px;
 }
 
-/* button background-colors */
+.bttn-main-main-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.bttn-main-lone-button {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.bttn-secondary-common {
+  padding: 5px;
+  border: 1.5px solid;
+  border-radius: 5px;
+}
+
+
+.bttn-danger-common {
+  padding: 7px;
+  border: 1.5px solid;
+  border-radius: 5px;
+}
+
+.bttn-danger-sm {
+  padding: 5px;
+  border: 1.5px solid; 
+  border-radius: 7px;
+}
+
+
+.bttn-comment-common{
+  border: 1px solid; 
+  border-radius: 4px;
+}
+
+.bttn-comment-back-common {
+  padding: 3.8px;
+  border: 1px solid; 
+  border-radius: 4px;
+}
+
+
+.bttn-forgot-password-common { 
+  padding: 7.5px;
+  border: 1px solid; 
+  border-radius: 7px;
+}
+
+
+/* button background-colors & button hover */
 .bttn-main {
   background-color: #575656; 
   border-color:#575656; 
 }
 
-/* button border */
-.bttn-border-2 {
-  border: 2px solid; 
-  padding: 8px;
-  border-radius: 7px;
-}
-
-/* button padding */
-.bttn-padding-8 {
-  padding: 8px;
-}
-
-
-/* button hover */
-
-.bttn-other-main {
-  background-color: #575656; 
-  border: 2px solid; 
-  border-color:#575656; 
-  padding: 8px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  font-weight: bold;
-  color: white;
-}
-
-.bttn-other-main:hover {
-  color: #575656;
+.bttn-main:hover {
+  color: #2b2929;
   background-color: white;
 }
 
+
 .bttn-post-details {
-  background-color: #8b7c7c; 
-  border: 1.5px solid; 
+  background-color: #8b7c7c;
   border-color:#8b7c7c; 
-  padding: 8.7px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
-  font-weight: bold;
 }
 
 .bttn-post-details:hover {
@@ -65,33 +88,21 @@
   background-color: white;
 }
 
+
 .bttn-back {
-  background-color: #8b7c7c; 
-  border: 1.5px solid; 
-  border-color:#6d6e6e; 
-  padding: 8.7px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
+  background-color: #8b7c7c;
+  border-color:#8b7c7c; 
 }
 
 .bttn-back:hover {
-  color: #6d6e6e;
+  color: #4e2e2e;
   background-color: white;
 }
 
 
 .bttn-danger {
   background-color: #b36a6a;
-  border: 1.5px solid; 
   border-color:#b36a6a; 
-  padding: 8.7px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
-  font-weight: bold;
 }
 
 .bttn-danger:hover {
@@ -99,14 +110,11 @@
   background-color: white;
 }
 
+
 .bttn-comment {
   background-color: #575656; 
   border: 1px solid; 
   border-color:#575656; 
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
 }
 
 .bttn-comment:hover {
@@ -114,48 +122,32 @@
   background-color: white;
 }
 
+
 .bttn-comment-back {
   background-color: #8b7c7c; 
-  border: 1px solid; 
-  border-color:#6d6e6e; 
-  padding: 3.8px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
+  border-color:#8b7c7c; 
 }
 
 .bttn-comment-back:hover {
-  color: #6d6e6e;
+  color: #8b7c7c;
   background-color: white;
 }
 
 
 .bttn-show-post {
-  background-color: #493838; 
-  border: 1.5px solid; 
-  border-color:#6d6e6e; 
-  padding: 8.7px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
+  background-color: #493838;  
+  border-color:#493838; 
 }
 
 .bttn-show-post:hover {
-  color: #6d6e6e;
+  color:  #382222;
   background-color: white;
 }
 
+
 .bttn-forgot-password {
   background-color: #575656; 
-  border: 1px solid; 
   border-color:#575656; 
-  padding: 7.5px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
 }
 
 .bttn-forgot-password :hover{
@@ -163,16 +155,21 @@
   background-color: white;
 }
 
+
+.bttn-confirmation {
+  background-color: #635858;  
+  border-color:#635858; 
+}
+
+.bttn-confirmation:hover {
+  color: #473b3b;
+  background-color: white;
+}
+
+
 .bttn-custom-2 {
-  background-color: #4b4444; 
-  border: 1.5px solid; 
+  background-color: #4b4444;  
   border-color:#4b4444; 
-  padding: 8.7px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
-  font-weight: bold;
 }
 
 .bttn-custom-2:hover {
@@ -180,35 +177,49 @@
   background-color: white;
 }
 
+/* button text-weight */
+.bttn-txt-bold {
+  font-weight: bold;
+}
 
-.bttn-confirmation {
-  background-color: #635858; 
-  border: 1.5px solid; 
-  border-color:#635858; 
-  padding: 8.7px;
+
+/* button border */
+.bttn-border-1 {
+  border: 1px solid;
+}
+
+.bttn-border-15 {
+  border: 1.5px solid;
+}
+
+.bttn-border-2 {
+  border: 2px solid;
+}
+
+
+/* button border-radius */
+.border-radius-4 {
+  border-radius: 4px;
+}
+
+.border-radius-7 {
   border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
 }
 
-.bttn-confirmation:hover {
-  color: #424040;
-  background-color: white;
-}
 
-.bttn-danger-sm {
-  background-color: #b36a6a;
-  border: 1.5px solid; 
-  border-color:#b36a6a; 
+/* button padding */
+.bttn-padding-5 {
   padding: 5px;
-  border-radius: 7px;
-  cursor: pointer;
-  text-decoration:none;
-  color: white;
 }
 
-.bttn-danger-sm:hover {
-  color: #b36a6a;
-  background-color: white;
+.bttn-padding-7 {
+  padding: 7px;
+}
+
+.bttn-padding-75 {
+  padding: 7.5px;
+}
+
+.bttn-padding-8 {
+  padding: 8px;
 }

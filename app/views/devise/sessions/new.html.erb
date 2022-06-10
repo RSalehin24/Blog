@@ -18,14 +18,14 @@
     </div>
     <p></p>
     <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
+      <div class="field" style="padding-left: 7px;">
+        <%= f.check_box :remember_me %> &nbsp
         <%= f.label :remember_me %>
       </div>
     <% end %>
     <p></p>
     <div class="actions">
-      <%= f.submit "Sign in", class: "bttn-other-main" %>
+      <%= f.submit "Sign in", class: "bttn-common bttn-main-common bttn-main-main-button bttn-main" %>
     </div>
   <% end %>
   </div>

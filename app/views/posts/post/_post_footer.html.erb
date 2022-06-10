@@ -11,7 +11,7 @@
 
     <% if current_user.is_admin? %>
       <div id="<%= "#{dom_id(post)}_admin_delete" %>" class="txt-general col center">
-        <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger-sm"%>
+        <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-sm bttn-danger"%>
       </div>
     <% end %>
     

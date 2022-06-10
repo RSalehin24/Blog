@@ -1,3 +1,3 @@
 <% if current_user.id == post.user_id %>
-  <%= link_to "Delete", your_posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-danger", style: "margin-left: 10px"%>
+  <%= link_to "Delete", your_posts_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-common bttn-danger", style: "margin-left: 10px"%>
 <% end %>
