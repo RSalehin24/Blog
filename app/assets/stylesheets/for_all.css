@@ -1,0 +1,23 @@
+.center {
+  display: flex;
+  border: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-image {
+  background-image: url("bg_pic.jpg");
+}
+
+
+.bg-sign-in {
+  background-image: url("sign_in.jpg");
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.input {
+  background-color: transparent;
+}

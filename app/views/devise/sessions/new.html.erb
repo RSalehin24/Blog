@@ -1,36 +1,39 @@
-<div class="card">
-  <div class="card-body">
+<div class="card bg-transparent">
+  <div class="card-body bg-transparent">
     <h2 class="card-title txt-title">Sign in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <p></p><p></p>
-    <div class="field">
-      <span class="input-group-text padding">
-            <i class="fa fa-paper-plane padding-input-icon"></i>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-radius", placeholder: "Email", :required => true %>
-      </span>	
+      <p></p><p></p>
+
+      <div class="field bg-transparent">
+        <span class="input-group-text padding bg-transparent input-border">
+              <i class="fa fa-paper-plane padding-input-icon"></i>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-radius bg-transparent", placeholder: "Email", :required => true %>
+        </span>	
       </div>
-    <p></p>
-    <div class="field">
-      <span class="input-group-text padding">
-          <i class="fa fa-lock padding-input-icon"></i>
-          <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-radius", placeholder: "Password", :required => true %>
-      </span>	
-    </div>
-    <p></p>
-    <% if devise_mapping.rememberable? %>
-      <div class="field" style="padding-left: 7px;">
-        <%= f.check_box :remember_me %> &nbsp
-        <%= f.label :remember_me %>
+      <p></p>
+
+      <div class="field bg-transparent">
+        <span class="input-group-text padding bg-transparent input-border">
+            <i class="fa fa-lock padding-input-icon"></i>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-radius bg-transparent", placeholder: "Password", :required => true %>
+        </span>	
+      </div>
+      <p></p>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field bg-transparent form-check" style="padding-left: 35px;">
+          <%= f.check_box :remember_me, class: "form-check-input input" %> &nbsp
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+      <p></p>
+
+      <div class="actions">
+        <%= f.submit "Sign in", class: "bttn-common bttn-main-common bttn-main-main-button bttn" %>
       </div>
     <% end %>
-    <p></p>
-    <div class="actions">
-      <%= f.submit "Sign in", class: "bttn-common bttn-main-common bttn-main-main-button bttn-main" %>
-    </div>
-  <% end %>
   </div>
 </div>
-
 
 <br> <br>
 <%= render "devise/shared/links" %>

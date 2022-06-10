@@ -1,5 +1,9 @@
 .txt-title {
-  color: #464444;
+  color: #240707;
+}
+
+.txt-white {
+  color: white;
 }
 
 .txt-header {
@@ -15,9 +19,9 @@
 }
 
 .txt-general {
-  color: #575656;
+  color: #3d3d3d;
 }
 
 .txt-general:hover {
-  color: #242323;
+  color: #1f1f1f;
 }

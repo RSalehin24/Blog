@@ -1,0 +1,21 @@
+.footer-align {
+  position: absolute; 
+  bottom: 0; 
+  width: 100%; 
+  height: 2.5rem;  
+}
+
+.footer-start {
+  height: 30px;
+  width: 100%; 
+  background-color: #ecdda4;
+}
+
+.footer-bg-color {
+  background-color: #c6e2bd;
+}
+
+.footer-body-bg-color {
+  background-color: #fbeec1;
+}
+

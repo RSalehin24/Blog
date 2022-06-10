@@ -23,20 +23,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-image">
     <%= render 'layouts/navbar' %>
-    <div style="position: relative;">
-      <div class='container' style="padding-bottom: 2.5rem;">
-        <br> 
-        <div style="min-height: calc(100vh - 470px);">
-        <%= render 'layouts/alerts' %>
-        <%= yield %>
-      </div>
-      <br><br>
+
+    <div class="bg-transparent" style="position: relative;">
+      <div class='container bg-transparent' style="padding-bottom: 2.5rem;">
+          <br> 
+
+        <div class="bg-transparent" style="min-height: calc(100vh - 200px);">
+          <%= render 'layouts/alerts' %>
+          <%= yield %>
+        </div>
+        
+          <br><br>
       </div>
       <%= render 'layouts/footer' %>
     </div>
-    <!-- JavaScript Bundle with Popper -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

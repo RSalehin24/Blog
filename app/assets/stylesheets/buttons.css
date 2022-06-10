@@ -7,8 +7,9 @@
 
 
 .bttn-main-common {
+  font-weight: bold;
   font-size: 18px;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 7px;
 }
 
@@ -25,7 +26,6 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-
 
 .bttn-secondary-common {
   padding: 5px;
@@ -68,113 +68,126 @@
 
 /* button background-colors & button hover */
 .bttn-main {
-  background-color: #575656; 
-  border-color:#575656; 
+  color: #240707;
+  background-color: transparent;
+  border-color: #240707;
+}
+
+.bttn:hover {
+  border-color: #167204;
+  background-color: #167204; 
+  color:white; 
+}
+
+.bttn {
+  color: #240707;
+  background-color: transparent;
+  border-color: #240707;
 }
 
 .bttn-main:hover {
-  color: #2b2929;
-  background-color: white;
+  border-color: #167204;
+  background-color: #167204; 
+  color:white; 
 }
 
-
 .bttn-post-details {
-  background-color: #8b7c7c;
-  border-color:#8b7c7c; 
+  background-color: transparent;
+  color:#220000; 
 }
 
 .bttn-post-details:hover {
-  color: #8b7c7c;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-back {
-  background-color: #8b7c7c;
-  border-color:#8b7c7c; 
+  background-color: transparent;
+  color:#220000; 
 }
 
 .bttn-back:hover {
-  color: #4e2e2e;
-  background-color: white;
+  background-color: #167204; 
+  border-color: #167204;
+  color:white; 
 }
 
 
 .bttn-danger {
-  background-color: #b36a6a;
-  border-color:#b36a6a; 
+  background-color: transparent;
+  color:#b36a6a; 
 }
 
 .bttn-danger:hover {
-  color: #b36a6a;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-comment {
-  background-color: #575656; 
-  border: 1px solid; 
-  border-color:#575656; 
+  color: #575656; 
+  background-color: transparent; 
 }
 
 .bttn-comment:hover {
-  color: #575656;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-comment-back {
-  background-color: #8b7c7c; 
-  border-color:#8b7c7c; 
+  background-color: transparent; 
+  color:#8b7c7c; 
 }
 
 .bttn-comment-back:hover {
-  color: #8b7c7c;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-show-post {
-  background-color: #493838;  
-  border-color:#493838; 
+  background-color: transparent;  
+  color:#493838; 
 }
 
 .bttn-show-post:hover {
-  color:  #382222;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-forgot-password {
-  background-color: #575656; 
-  border-color:#575656; 
+  background-color: transparent; 
+  color:#575656; 
 }
 
-.bttn-forgot-password :hover{
-  color: #575656;
-  background-color: white;
+.bttn-forgot-password:hover{
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-confirmation {
-  background-color: #635858;  
-  border-color:#635858; 
+  background-color: transparent;  
+  color:#635858; 
 }
 
 .bttn-confirmation:hover {
-  color: #473b3b;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 
 .bttn-custom-2 {
-  background-color: #4b4444;  
-  border-color:#4b4444; 
+  background-color: transparent;  
+  color:#4b4444; 
 }
 
 .bttn-custom-2:hover {
-  color: #4b4444;
-  background-color: white;
+  background-color: #167204; 
+  color:white; 
 }
 
 /* button text-weight */

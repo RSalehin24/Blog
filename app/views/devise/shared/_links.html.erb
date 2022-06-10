@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Sign in", new_session_path(resource_name), class: "bttn-common bttn-secondary-common bttn-show-post" %>
+  <%= link_to "Sign in", new_session_path(resource_name), class: "bttn-common bttn-secondary-common bttn" %>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot password?", new_password_path(resource_name), class: "bttn-secondary-common bttn-common bttn-show-post" %>
+  <%= link_to "Forgot password?", new_password_path(resource_name), class: "bttn-secondary-common bttn-common bttn" %>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -11,7 +11,7 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Resend Confirmation", new_user_confirmation_path(resource_name), class: "bttn-common bttn-secondary-common bttn-confirmation" %>
+  <%= link_to "Resend Confirmation", new_user_confirmation_path(resource_name), class: "bttn-common bttn-secondary-common bttn" %>
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
