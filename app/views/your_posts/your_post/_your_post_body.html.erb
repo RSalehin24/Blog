@@ -1,9 +1,9 @@
 <%= render "posts/post/post_header", post: post %>
-<div id="<%= "#{dom_id(post)}_body" %>" style= "align-items: center; justify-content: center;">
+<div class="bg-transparent" id="<%= "#{dom_id(post)}_body" %>" style= "align-items: center; justify-content: center;">
   <%= render "your_posts/your_post/your_post_buttons", post: post %>
   <hr class="my-4">
   <%= render "posts/post/post_image", post: post %>
-  <div id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
+  <div class="bg-transparent" id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
     <p class="txt-general">
       <%= post.body %>
     </p>

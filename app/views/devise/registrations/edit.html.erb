@@ -1,46 +1,43 @@
-<div class="card">
-  <div class="card-body">
+
+<div class="card bg-transparent card-border" style="margin-top: 10px;">
+  <div class="card-body bg-transparent">
     <h2 class="card-title txt-title">Edit Profile</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-        <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <span class="fa fa-user padding-input-icon"></span> 
-          <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control input-radius", :required => true %>
+        
+      <div class="field bg-transparent first-input-div-margin">
+        <span class="input-group-text padding bg-transparent input-border">
+          <span class="txt-general fa fa-user padding-input-icon"></span> 
+          <%= f.text_field :first_name, autofocus: true, placeholder: "First Name", class: "form-control input-radius bg-transparent txt-general", :required => true %>
         </span>	
-      </div>  <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <span class="fa fa-user padding-input-icon"></span> 
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control input-radius", :required => true %>
-        </span>	
-      </div>  <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <span class="padding-input-username">@</span> 
-            <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control input-radius", :required => true %>
-        </span>	
-      </div>  <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <i class="fa fa-paper-plane padding-input-icon"></i>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control input-radius", :required => true %>
-        </span>	
-      </div>  <p></p>
-      
+      </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p></p>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-      <p></p>
+      <div class="field bg-transparent input-div-margin">
+        <span class="input-group-text padding bg-transparent input-border">
+          <span class="txt-general fa fa-user padding-input-icon"></span> 
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "Last Name", class: "form-control input-radius bg-transparent txt-general", :required => true %>
+        </span>	
+      </div>
+
+      <div class="field bg-transparent input-div-margin">
+        <span class="input-group-text padding bg-transparent input-border">
+          <span class="txt-general padding-input-username">@</span> 
+            <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Username (has to be unique)", class: "form-control input-radius bg-transparent txt-general", :required => true %>
+        </span>	
+      </div>
+
+      <div class="field bg-transparent input-div-margin">
+        <span class="input-group-text padding bg-transparent input-border">
+          <i class="txt-general fa fa-paper-plane padding-input-email-icon"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control input-radius bg-transparent txt-general", :required => true %>
+        </span>	
+      </div>
       
-      <div class="field dropdown-password">
-        <span class="input-group-text padding">
-          <i class="fa fa-lock padding-input-icon"></i>
-          <%= f.password_field :password, autocomplete: "new-password", pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", placeholder: "New Password (minimum " + @minimum_password_length.to_s + " characters)", class: "form-control input-radius" %>
+      <div class="field bg-transparent input-div-margin dropdown-password">
+        <span class="input-group-text padding bg-transparent input-border">
+          <i class="txt-general fa fa-lock padding-input-icon"></i>
+          <%= f.password_field :password, id: "psw", autocomplete: "new-password", pattern: "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", placeholder: "New Password", class: "form-control input-radius bg-transparent txt-general" %>
         </span>
         <ul class="dropdown-content-password" id="message">
           <h6 class="password-warning-text">Password must contain the following:</h6>
@@ -52,55 +49,65 @@
       </div>
 
       <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <i class="bi bi-eye-fill padding-confirm-pass"></i>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control input-radius" %>
+      <div class="field bg-transparent input-div-margin dropdown-password">
+        <span class="input-group-text padding bg-transparent input-border">
+           <i class="txt-general txt-general bi bi-eye-fill padding-confirm-pass"></i>
+          <%= f.password_field :password_confirmation, id: "psw0", autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control input-radius bg-transparent txt-general" %>
+        </span>
+
+        <ul class="dropdown-content-password" id="message0">
+          <h6 class="password-warning-text">Passwords must be same </h6>
+          <li id="letter0" class="invalid dropdown-item">One <b>lowercase</b> letter</li>
+          <li id="capital0" class="invalid dropdown-item">One <b>uppercase</b> letter</li>
+          <li id="number0" class="invalid dropdown-item">One <b>number</b></li>
+          <li id="length0" class="invalid dropdown-item">Minimum <b>8</b> characters</li>
+        </ul>
+      </div>
+
+      <div class="field bg-transparent input-div-margin">
+      <span class="input-group-text padding bg-transparent input-border">
+          <i class="txt-general bi bi-unlock-fill padding-confirm-pass"></i>
+          <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control input-radius bg-transparent txt-general", :required => true %>
         </span>
       </div>
-      <p></p>
-      <div class="field">
-      <span class="input-group-text padding">
-          <i class="bi bi-unlock-fill padding-confirm-pass"></i>
-          <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password (require for updating data)", class: "form-control input-radius", :required => true %>
+
+      <div class="field bg-transparent input-div-margin">
+        <span class="input-group-text padding bg-transparent input-border">
+          <i class="txt-general fa-solid fa-cake-candles padding-confirm-pass"></i>
+          <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control input-radius bg-transparent txt-general txt-general",  :required => true %>
         </span>
       </div>
-      <p></p>
-      <div class="field">
-        <span class="input-group-text padding">
-          <i class="fa-solid fa-cake-candles padding-confirm-pass"></i>
-          <%= f.date_field :date_of_birth, autofocus: true, autocomplete: "date_of_birth", class: "form-control input-radius",  :required => true %>
-        </span>
+
+      <h6 class="txt-general bg-transparent first-input-div-margin"> Select Profile Image</h6>
+      <div class="field bg-transparent">
+        <%= f.file_field :image, class: "form-control bg-transparent input-border txt-general"%>
       </div>
-      <br>
-      <h6> Select Profile Image</h6>
-      <div class="field">
-        <%= f.file_field :image, class: "form-control"%>
-      </div>
-      <p></p>
-      <div class="actions">
-        <%= f.submit "Update", class: "bttn-common bttn-main-common bttn-main-main-button bttn-main" %>
+
+      <div class="actions bg-transparent first-input-div-margin">
+        <%= f.submit "Update", class: "bttn-common bttn-main-common bttn-main-main-button bttn" %>
       </div>
     <% end %>
   </div>
 </div>
 
-<h3></h3>
 <%if current_user.image.attached? %>
-  <div class="card text-center" style="align-items: center; justify-content: center; ">
-    <div class="card-body">
+  <div class="card text-center bg-transparent edit-card-top-margin card-border" style="align-items: center; justify-content: center; ">
+    <div class="card-body bg-transparent">
       <h3 class="card-title txt-title">Uploaded Picture</h3> <p></p>
       <%= image_tag current_user.image, style: "width: 200px; display: block; position: relative" %>
     </div>
   </div> 
 <% end %>
 
-<br><br>
-<div class="card text-center">
-  <div class="card-body">
+
+<div class="card text-center bg-transparent edit-card-top-margin card-border-cancel-acc">
+  <div class="card-body bg-transparent">
     <h3 class="card-title txt-danger">Unhappy?</h3>
-    <p class="card-text">Click the button below to cancel your account</p>
+    <p class="card-text txt-danger">Click the button below to cancel your account</p>
     <%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "bttn-common bttn-danger-common bttn-danger" %></p>
   </div>
 </div>
 
+
+<%= render "devise/registrations/password_script" %>
+<%= render "devise/registrations/password_confirm_script" %>

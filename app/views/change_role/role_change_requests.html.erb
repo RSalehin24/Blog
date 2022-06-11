@@ -15,7 +15,7 @@
       <% @users.each do |user| %>
         <tr>
           <td class="txt-gerneral"><p></p><%= user.email %></td>
-          <td class="txt-gerneral"><p></p><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn-post-details" %><p></p></td>
+          <td class="txt-gerneral"><p></p><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn" %><p></p></td>
           <td class="txt-gerneral"><p></p><%= link_to "Disapprove", change_role_disapprove_request_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn-danger" %><p></p></td>
         </tr>
       <% end %>

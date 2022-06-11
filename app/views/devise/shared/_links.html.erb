@@ -7,7 +7,7 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "bttn-common bttn-secondary-common bttn-back" %>
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "bttn-common bttn-secondary-common bttn" %>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
