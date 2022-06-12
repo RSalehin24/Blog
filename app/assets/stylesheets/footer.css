@@ -19,3 +19,12 @@
   background-color: #fbeec1;
 }
 
+
+.footer-txt {
+  color: #292929;
+  text-decoration:none;
+}
+
+.footer-txt:hover {
+  color: #020202;
+}

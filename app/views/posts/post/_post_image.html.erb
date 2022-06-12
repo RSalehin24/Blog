@@ -1,6 +1,6 @@
-<div id="<%= "#{dom_id(post)}_image" %>">
+<div class="bg-transparent" id="<%= "#{dom_id(post)}_image" %>">
   <% if post.images.attached? %>
-    <div id="postImage">
+    <div class="bg-transparent" id="postImage">
       <% post.images.each do |image| %>
         <%= image_tag image, style: "max-width: 400px; max-height: 400px;  relative; height: relative; padding: 10px;" %>
       <% end %>

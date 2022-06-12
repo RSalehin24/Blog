@@ -1,9 +1,6 @@
-<br>
-<%= link_to "Add a post", new_post_path, class: "bttn-common bttn-main-common bttn-main-lone-button bttn" %>
-<p><p>
-</p></p>
+<%= render "new_post_modal", post: Post.new  %>
 
-<div id="posts">
+<div id="posts" style="margin-top: 10px">
   <% posts.each do |post| %>
     <%= render "your_posts/your_post/your_post", post: post %>
   <% end %>

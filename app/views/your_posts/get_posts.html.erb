@@ -1,7 +1,6 @@
 <h2 class="txt-title">Your Posts</h2>
 <% if @posts.empty? %>
-  <br>
-  <%= link_to "Add a post", new_post_path, class: "bttn-common bttn-main-common bttn-main-lone-button bttn" %> <p><p></p></p>
+  <%= render "new_post_modal", post: Post.new %>
   <p class="txt-general">You have not created any posts yet </p> <p></p>
 <% else %>
   <%= render "your_posts/your_posts", posts: @posts %>

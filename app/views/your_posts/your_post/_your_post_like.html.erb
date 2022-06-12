@@ -10,7 +10,7 @@
       <% end %>
     </div>
     
-    <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general " style="background-color: rgba(230, 255, 220, 0.95);">
+    <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
       <% post.likes.each do |like| %>
         <div style="padding: 10px"><%= like.username %></div>
       <% end %>

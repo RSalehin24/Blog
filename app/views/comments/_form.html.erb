@@ -1,7 +1,7 @@
 <div id="<%= "#{dom_id(post)}_comment_form" %>">
   <%= form_with model: [ post, post.comments.build ] do |form| %>
-    <%= form.text_field :commenter, class: "form-control", placeholder: "Put your name", value: current_user.username, type: :hidden, :required => true %> <p></p>
-    <%= form.text_area :body, class: "form-control", placeholder: "Write your comment here", :required => true %>
+    <%= form.text_field :commenter, class: "form-control", placeholder: "Put your username", value: current_user.username, type: :hidden, :required => true %> <p></p>
+    <%= form.text_area :body, class: "form-control input-border bg-transparent txt-general", placeholder: "Write your comment here", :required => true %>
     </p>
     <p>
       <%= form.submit "Comment", class: "bttn-common bttn-comment-common bttn" %>

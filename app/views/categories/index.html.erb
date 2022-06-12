@@ -1,13 +1,12 @@
 <h2 class="txt-title">Category</h2>
-<%= render "form", category: Category.new %>
+  <%= render "form", category: Category.new %>
 <br><br>
 
 <h5 class="txt-general">Already added</h5>
-<p></p>
 
 <% if @categories.empty? %>
-  <div id="no-category-message">
-    <p>No category has been added yet </p>
+  <div id="no-category-message" style="margin-top: 10px">
+    <p class="txt-general">No category has been added yet </p>
   </div>
 
   <%= turbo_stream_from "category-title-div" %>
@@ -17,7 +16,7 @@
   <div id="category-list"></div>
 <% else %>
   <%= turbo_stream_from "category-title-div" %>
-  <div id="category-title-div">
+  <div id="category-title-div" style="margin-top: 10px">
     <div id="category-items-title" class="category-items-div">
       <div class="txt-general category-name-title">
         Category Name

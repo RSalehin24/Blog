@@ -125,7 +125,7 @@
 
 .form-control:focus {
   box-shadow: 0 0 0 0.37rem rgba(112, 185, 98, 0.3);
-  border-color: transparent;
+  border-color: #6c9c74;
 }
 
 .form-check-color { 
@@ -144,7 +144,7 @@
 input[type=file]::file-selector-button {
   background-color: transparent;
   color: #2b5c22;
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 .form-control::placeholder {
@@ -158,4 +158,18 @@ input[type=file]::file-selector-button {
 
 .card-border-cancel-acc {
   border-color: #e8c4c4;
+}
+
+.edit-input-border {
+  border-color: #6c9c74
+}
+
+.form-select:focus {
+  box-shadow: 0 0 0 0.37rem rgba(112, 185, 98, 0.3);
+  border-color: #6c9c74
+}
+
+select option:focus {
+  background-color: rgba(190, 228, 175, 0.95);
+  border-color: #6c9c74
 }

@@ -19,7 +19,8 @@
         <%= link_to post_likes_path(post_id: post.id, username: current_user.username), data: { turbo_method: :post }, class: "dropbtn"  do %>
           <i class="fa-regular fa-thumbs-up fa-2x txt-general"></i>
         <% end %>
-          <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
+        
+        <div id="<%= "#{dom_id(post)}_like_person" %>" class="dropdown-content txt-general">
           <% post.likes.each do |like| %>
             <div style="padding: 10px"><%= like.username %></div>
           <% end %>

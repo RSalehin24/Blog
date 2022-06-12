@@ -1,0 +1,66 @@
+<!-- Button trigger modal -->
+<button type="button" class="bttn-common bttn-main-common bttn-main-lone-button bttn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 5px; margin-bottom: 5px;">
+  Add a post
+</button>
+
+<!-- Modal -->
+<div class="modal bg-transparent" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered bg-transparent">
+    <div class="modal-content bg-transparent">
+      <div class="modal-header post-new-post-modal post-line-hr">
+        <h3 class="modal-title txt-title" id="exampleModalLabel">New Post</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body post-new-post-modal">
+        <%= form_with(model: post) do |form| %>
+          <% if post.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+              <ul>
+                <% post.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="input-div-margin">
+            <%= form.text_field :title, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Title", :required => true %>
+          </div>
+
+          <div class="input-div-margin">
+            <%= form.select(:category, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "form-select txt-general bg-transparent edit-input-border", required: true})%>
+          </div>
+
+          <div class="input-div-margin">
+            <%= form.text_area :body, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Body", :required => true %>
+          </div>
+
+          <div class="input-div-margin">
+
+            <% if current_user.is_admin? && post.author != "" && post.author != current_user.username %>
+              <%= form.text_field :author, class: "form-control", placeholder: "Author" %>
+            <% else %>
+              <%= form.text_field :author, class: "form-control", placeholder: "Author", :required => true, value: current_user.username, type: :hidden %>
+            <% end %>
+            
+          </div>
+
+          <div>
+            <%= form.text_field :user_id, class: "form-control", placeholder: "User ID", value: current_user.id, type: :hidden, :required => true %>
+          </div>
+
+          <h6 class="txt-general bg-transparent first-input-div-margin" style="padding-left: 10px;"> Upload Image</h6>
+          <div>
+            <%= form.file_field :images, multiple: true, class: "form-control txt-general bg-transparent edit-input-border" %>
+          </div>
+      </div>
+      <div class="modal-footer post-new-post-modal post-line-hr">
+        <button type="button" class="bttn-common bttn-danger-common bttn-danger" data-bs-dismiss="modal">Close</button>
+          <%= form.submit class: "bttn-common bttn-danger-common bttn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

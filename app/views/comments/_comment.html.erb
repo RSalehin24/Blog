@@ -1,5 +1,5 @@
 <% if comment.body.present? %>
-  <div class="card">
+  <div class="card bg-transparent card-border">
     <div class="card-body">
       <%= render "comments/comment/comment_body", comment: comment %>
       <div id="options" data-controller="reply-visibility">
