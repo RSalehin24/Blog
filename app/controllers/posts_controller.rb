@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
       @categories_array.push([category.name, category.name])
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
       @categories_array.push([category.name, category.name])
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.turbo_stream
+        format.html {redirect_to handle_posts_pending_posts_path, notice: "Your post was successfully placed for Admin approval" }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
