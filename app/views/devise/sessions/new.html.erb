@@ -1,19 +1,19 @@
-<div class="card bg-transparent" style="margin-top: 70px;">
+<div class="card bg-transparent card-border" style="margin-top: 40px;">
   <div class="card-body bg-transparent">
     <h2 class="card-title txt-title">Sign in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     
       <div class="field bg-transparent first-input-div-margin">
         <span class="input-group-text padding bg-transparent input-border">
-              <i class="fa fa-paper-plane padding-input-email-icon"></i>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-radius bg-transparent", placeholder: "Email", :required => true %>
+              <i class="txt-general fa fa-paper-plane padding-input-email-icon"></i>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control input-radius bg-transparent txt-general", placeholder: "Email", :required => true %>
         </span>	
       </div>
 
       <div class="field bg-transparent input-div-margin">
         <span class="input-group-text padding bg-transparent input-border">
-            <i class="fa fa-lock padding-input-icon"></i>
-            <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-radius bg-transparent", placeholder: "Password", :required => true %>
+            <i class="txt-general fa fa-lock padding-input-icon"></i>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control input-radius bg-transparent txt-general", placeholder: "Password", :required => true %>
         </span>	
       </div>
 

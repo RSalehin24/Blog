@@ -1,6 +1,6 @@
 <%= render "posts/post/post_header", post: post %>
 <div id="<%= "#{dom_id(post)}_body" %>" style= "align-items: center; justify-content: center;">
-  <hr class="my-4">
+  <hr class="post-line-hr">
   <%= render "posts/post/post_image", post: post %>
   <div id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
     <p class="txt-general">

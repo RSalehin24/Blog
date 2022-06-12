@@ -19,13 +19,13 @@
 }
 
 .txt-danger {
-  color: #3f0d0d;
+  color: #803d3d;
 }
 
 .txt-general {
-  color: #2b5c22;
+  color: #15460c;
 }
 
 .txt-general:hover {
-  color: #0e3506;
+  color: #082b01;
 }

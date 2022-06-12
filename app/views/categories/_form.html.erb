@@ -13,13 +13,13 @@
     <% end %>
 
     <div>
-      <%= form.text_field :name, placeholder: "Category Name", class: "form-control", required: true %>
+      <%= form.text_field :name, autofocus: true, placeholder: "Category Name", class: "form-control txt-general bg-transparent input-border", required: true %>
     </div>
 
     <p></p>
 
     <div>
-      <%= form.submit "Add Category", class: "bttn-add-category" %>
+      <%= form.submit "Add Category", class: "bttn-common bttn-main-common bttn-main-main-button bttn" %>
     </div>
   <% end %>
 </div>

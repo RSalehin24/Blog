@@ -43,8 +43,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to handle_posts_pending_posts_path, notice: "Your post was successfully placed for Admin approval" }
-        format.json { render :show, status: :created, location: @post }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }

@@ -11,23 +11,20 @@
       </ul>
     </div>
   <% end %>
-  <p></p>
-  <div>
-    <%= form.text_field :title, class: "form-control", placeholder: "Title", :required => true %>
-  </div>
-  <p></p>
 
-  <div>
-    <%= form.select(:category, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "txt-general form-select", required: true})%>
+  <div class="first-input-div-margin">
+    <%= form.text_field :title, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Title", :required => true %>
   </div>
 
-  <p></p>
-  <div>
-    <%= form.text_area :body, class: "form-control", placeholder: "Body", :required => true %>
+  <div class="input-div-margin">
+    <%= form.select(:category, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "form-select txt-general bg-transparent edit-input-border", required: true})%>
   </div>
 
-  <p></p>
-  <div>
+  <div class="input-div-margin">
+    <%= form.text_area :body, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Body", :required => true %>
+  </div>
+
+  <div class="input-div-margin">
 
   <% if current_user.is_admin? && post.author != "" && post.author != current_user.username %>
     <%= form.text_field :author, class: "form-control", placeholder: "Author" %>
@@ -37,18 +34,16 @@
     
   </div>
 
-  <p></p>
   <div>
     <%= form.text_field :user_id, class: "form-control", placeholder: "User ID", value: current_user.id, type: :hidden, :required => true %>
   </div>
 
-  <h6> Upload Image</h6>
+  <h6 class="txt-general bg-transparent first-input-div-margin" style="padding-left: 10px;"> Upload Image</h6>
   <div>
-    <%= form.file_field :images, multiple: true, class: "form-control" %>
+    <%= form.file_field :images, multiple: true, class: "form-control txt-general bg-transparent edit-input-border" %>
   </div>
 
-  <p></p>
-  <div>
-    <%= form.submit class: "bttn-common bttn-main-common bttn-main-main-button bttn-main" %>
+  <div class="first-input-div-margin">
+    <%= form.submit class: "bttn-common bttn-danger-common bttn" %>
   </div>
 <% end %>

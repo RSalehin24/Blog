@@ -3,7 +3,7 @@
   <h5 class="card-title txt-title"> Comments</h5><p></p>
   <%= render "comments/form", post: post %>
 
-  <hr class="my-4">
+  <hr class="my-4 post-line-hr">
   
   <div id="<%= "#{dom_id(post)}_comments" %>">
     <% if post.comments.all.count <= 0 %>

@@ -8,57 +8,57 @@
           <div class="col-md-6 d-flex flex-column" style="padding-top: 35px;">
             <div class="align-self-center">
             
-              <h6 class="fw-bold text-uppercase">
+              <h6 class="fw-bold text-uppercase footer-txt">
                 <i class="fa-solid fa-link fa-lg"></i> Links
               </h6>
 
               <div style="padding-left: 35px">
-                <%= link_to home_about_us_path, class: "nav-link"  do %>
+                <%= link_to home_about_us_path, class: "footer-txt footer-txt"  do %>
                   <i class="bi bi-info-circle-fill"></i> About Us 
-                <% end %>
+                <% end %><br>
                 
 
                 <% if user_signed_in? %>
                 
-                  <%= link_to posts_path, class: "nav-link" do %>
+                  <%= link_to posts_path, class: "footer-txt" do %>
                     <i class="bi bi-stickies"></i> All Posts
-                  <% end %>
+                  <% end %><br>
                     
                   
-                  <%= link_to your_posts_get_posts_path, class: "nav-link" do %>
+                  <%= link_to your_posts_get_posts_path, class: "footer-txt" do %>
                     <i class="bi bi-stickies-fill"></i> Your Posts
-                  <% end %>
+                  <% end %><br> 
 
-                  <%= link_to handle_posts_pending_posts_path, class: "nav-link" do %>
+                  <%= link_to handle_posts_pending_posts_path, class: "footer-txt" do %>
                     <i class="bi bi-hourglass-split"></i>Pending Posts
-                  <% end %>
+                  <% end %><br>
 
                   <% if !current_user.is_admin? %>
                     <% if !current_user.is_requested %>
-                      <%= link_to change_role_change_is_admin_path, class: "nav-link" do %>
+                      <%= link_to change_role_change_is_admin_path, class: "footer-txt" do %>
                         <i class="fa-solid fa-arrow-up-from-bracket"></i> Request for Admin Role
-                      <% end %>
+                      <% end %> <br>
                     <% end %>
 
                   <% else %>
 
-                    <%= link_to change_role_role_change_requests_path, class: "nav-link" do %>
+                    <%= link_to change_role_role_change_requests_path, class: "footer-txt" do %>
                       <i class="fa-solid fa-file-pen"></i> Requests
-                    <% end %>
+                    <% end %> <br>
 
-                    <%= link_to handle_posts_posts_tobe_approved_path, class: "nav-link" do %>
+                    <%= link_to handle_posts_posts_tobe_approved_path, class: "footer-txt" do %>
                       <i class="bi bi-bookmarks-fill"></i> Posts tobe Approved
-                    <% end %>
+                    <% end %> <br>
 
                   <% end %>
 
                 <% else %>
 
-                  <%= link_to new_user_registration_path, class: "nav-link" do %>
+                  <%= link_to new_user_registration_path, class: "footer-txt" do %>
                     <i class="fa-solid fa-user-plus"></i> Sign up
-                  <% end %>
+                  <% end %> <br>
                   
-                  <%= link_to new_user_session_path, class: "nav-link" do %>
+                  <%= link_to new_user_session_path, class: "footer-txt" do %>
                     <i class="fa-solid fa-right-to-bracket"></i>&nbsp Sign in
                   <% end %>
                     
@@ -70,12 +70,14 @@
           
           <div class="col-md-6 d-flex flex-column justify-content-center text-center">
             <div class="align-self-center">
-              <h6 class="fw-bold text-uppercase">
+              <h6 class="fw-bold text-uppercase footer-txt">
                 <i class="fa-solid fa-address-card"></i> Contact
               </h6>
-              Nascenia Ltd.<br>  
-              House 6/14, Block A, Lalmatia, Dhaka – 1207<br> 
-              reyanus@nascenia.com
+              <p class=" footer-txt">
+                Nascenia Ltd.<br>  
+                House 6/14, Block A, Lalmatia, Dhaka – 1207<br> 
+                reyanus@nascenia.com
+              </p>
             </div>
           </div>
         </div>
@@ -83,12 +85,12 @@
   </div>
 
   <div class="row p-3 text-center footer-bg-color" style="padding-top: 35px">
-    <div class="col col-md-6" style="font-size: 16px">
+    <div class="col col-md-6 footer-txt footer-txt" style="font-size: 16px">
       © 2022 Nascenia
     </div>
     <div class="col col-md-6">
-        <a href="" class="me-5 text-reset"><i class="fa-brands fa-twitter fa-xl"></i></i></a>
-        <a href="" class="me-5 text-reset"><i class="fa-brands fa-facebook fa-xl"></i></a>
+        <a href="" class="me-5 text-reset"><i class="fa-brands fa-twitter fa-xl footer-txt"></i></i></a>
+        <a href="" class="me-5 text-reset"><i class="fa-brands fa-facebook fa-xl footer-txt"></i></a>
     </div>
   </div> 
   

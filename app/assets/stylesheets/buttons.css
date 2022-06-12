@@ -5,7 +5,6 @@
   color: white;
 }
 
-
 .bttn-main-common {
   font-weight: bold;
   font-size: 18px;
@@ -33,7 +32,6 @@
   border-radius: 5px;
 }
 
-
 .bttn-danger-common {
   padding: 7px;
   border: 1.5px solid;
@@ -46,18 +44,10 @@
   border-radius: 7px;
 }
 
-
 .bttn-comment-common{
   border: 1px solid; 
   border-radius: 4px;
 }
-
-.bttn-comment-back-common {
-  padding: 3.8px;
-  border: 1px solid; 
-  border-radius: 4px;
-}
-
 
 .bttn-forgot-password-common { 
   padding: 7.5px;
@@ -66,11 +56,10 @@
 }
 
 
-/* button background-colors & button hover */
-.bttn-main {
-  color: #240707;
+.bttn {
+  color: #1d600f;
   background-color: transparent;
-  border-color: #240707;
+  border-color: #1d600f;
 }
 
 .bttn:hover {
@@ -78,160 +67,13 @@
   color:white; 
 }
 
-.bttn {
-  color: #1d600f;
-  background-color: transparent;
-  border-color: #1d600f;
-}
-
-.bttn-main:hover {
-  border-color: #167204;
-  background-color: #167204; 
-  color:white; 
-}
-
-.bttn-post-details {
-  background-color: transparent;
-  color:#220000; 
-}
-
-.bttn-post-details:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-back {
-  background-color: transparent;
-  color:#220000; 
-}
-
-.bttn-back:hover {
-  background-color: #167204; 
-  border-color: #167204;
-  color:white; 
-}
-
-
 .bttn-danger {
   background-color: transparent;
-  color:#b36a6a; 
+  color:#a12d2d; 
 }
 
 .bttn-danger:hover {
-  background-color: #167204; 
+  background-color: #a12d2d;
+  border-color: #a12d2d; 
   color:white; 
-}
-
-
-.bttn-comment {
-  color: #575656; 
-  background-color: transparent; 
-}
-
-.bttn-comment:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-comment-back {
-  background-color: transparent; 
-  color:#8b7c7c; 
-}
-
-.bttn-comment-back:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-show-post {
-  background-color: transparent;  
-  color:#493838; 
-}
-
-.bttn-show-post:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-forgot-password {
-  background-color: transparent; 
-  color:#575656; 
-}
-
-.bttn-forgot-password:hover{
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-confirmation {
-  background-color: transparent;  
-  color:#635858; 
-}
-
-.bttn-confirmation:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-
-.bttn-custom-2 {
-  background-color: transparent;  
-  color:#4b4444; 
-}
-
-.bttn-custom-2:hover {
-  background-color: #167204; 
-  color:white; 
-}
-
-/* button text-weight */
-.bttn-txt-bold {
-  font-weight: bold;
-}
-
-
-/* button border */
-.bttn-border-1 {
-  border: 1px solid;
-}
-
-.bttn-border-15 {
-  border: 1.5px solid;
-}
-
-.bttn-border-2 {
-  border: 2px solid;
-}
-
-
-/* button border-radius */
-.border-radius-4 {
-  border-radius: 4px;
-}
-
-.border-radius-7 {
-  border-radius: 7px;
-}
-
-
-/* button padding */
-.bttn-padding-5 {
-  padding: 5px;
-}
-
-.bttn-padding-7 {
-  padding: 7px;
-}
-
-.bttn-padding-75 {
-  padding: 7.5px;
-}
-
-.bttn-padding-8 {
-  padding: 8px;
 }

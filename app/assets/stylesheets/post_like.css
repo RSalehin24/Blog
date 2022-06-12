@@ -13,7 +13,7 @@
   margin-top: 15px;
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: rgb(246, 251, 244, 0.7);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -28,4 +28,17 @@
 
 .dropdwn:hover .dropdown-content {
   display: block;
+}
+
+
+.post-footer-bg {
+  background-color: rgba(230, 255, 220, 0.95) ;
+}
+
+.post-line-hr {
+  border-color: #027a08 ;
+}
+
+.post-new-post-modal {
+  background-color: rgb(246, 251, 244) ;
 }

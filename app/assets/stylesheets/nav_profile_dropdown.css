@@ -7,20 +7,26 @@
   margin-top: 0;
   position: block;
   right: 10px;
-  background-color: white;
-}
-
-.dropdwn:focus .dropdown-menu0{
-  display: block;
-  margin-top: 0;
-  position: block;
-  right: 10px;
-  background-color: white;
+  background-color: rgba(230, 255, 220, 0.95);
 }
 
 .dropdown-item:focus {
-  background-color: white;
+  background-color: rgba(230, 255, 220, 0.95) ;
   color: white;
 }
 
+.nav-profile-item {
+  background-color: rgba(230, 255, 220, 0.95) ;
+}
 
+.nav-profile-item:hover {
+  background-color: rgba(190, 228, 175, 0.95) ;
+}
+
+.nav-link-navbar {
+  color: #3f3e3e;
+}
+
+.nav-link:hover {
+ color: #020202;
+}
