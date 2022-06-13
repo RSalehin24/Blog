@@ -44,20 +44,20 @@
 
       </div>
   
-      <% if !current_user.instagram.empty? || !current_user.twitter.empty? %>
+      <% if !current_user.instagram.nil? || !current_user.twitter.nil? %>
         <div id="profile-info-social" style="margin-top: 37px">
           <div id="profile-info-social-title">
             <h5 class="txt-general">Socials</h5>
           </div>
           
           <div id="profile-info-social-items">
-            <% if !current_user.instagram.empty? %>
+            <% if !current_user.instagram.nil? %>
               <a href=<%= "https://instagram.com/" + current_user.instagram %> style="padding-right: 10px; text-decoration: none;"> 
                 <i class="txt-general fa-brands fa-instagram fa-2x"></i><%= current_user.twitter %>
               </a>
             <% end %>
 
-            <% if !current_user.twitter.empty? %>
+            <% if !current_user.twitter.nil? %>
               <a href=<%= "https://twitter.com/" + current_user.twitter %> >
                 <i class="txt-general fa-brands fa-twitter fa-2x"></i>
               </a> 
