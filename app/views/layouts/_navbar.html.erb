@@ -83,6 +83,9 @@
             </div>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to profile_path, class: "nav-link" do%>
+                <li class="nav-link txt-general nav-profile-item"><i class="fa-solid fa-user"></i> Profile</li>
+              <% end %>
               <%= link_to edit_user_registration_path, class: "nav-link" do%>
                 <li class="nav-link txt-general nav-profile-item"><i class="bi bi-pencil-fill"></i> Edit Profile</li>
               <% end %>
