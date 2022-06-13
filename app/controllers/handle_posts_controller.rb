@@ -32,11 +32,9 @@ class HandlePostsController < ApplicationController
   def update_post_approve
     @post = Post.find(params[:post_id])
     
-    if !@post.is_approved?
-      respond_to do |format|
-        if @post.update(category: params[:category])
-          format.turbo_stream
-        end
+    respond_to do |format|
+      if @post.update(category: params[:category])
+        format.turbo_stream
       end
     end
   end

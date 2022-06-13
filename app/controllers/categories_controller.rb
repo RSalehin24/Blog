@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :for_admin, only: [ :index, :show, :new, :edit, :create, :update, :destroy ] 
   
   # GET /categories or /categories.json
   def index
@@ -57,6 +58,10 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.turbo_stream
     end
+  end
+
+  def for_admin
+    redirect_to posts_path, notice: "Not a path for you!" if !current_user.is_admin?
   end
 
   private

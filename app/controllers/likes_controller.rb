@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
-  before_action :approved
+  before_action :approved, only: [ :create, :destroy ]
 
   def create
     @post = Post.find(params[:post_id])
@@ -30,7 +30,7 @@ class LikesController < ApplicationController
 
   def approved
     @post = Post.find(params[:post_id])
-    redirect_to your_posts_get_posts_path if !@post.is_approved
+    redirect_to posts_path, notice: "Post has not been approved yet!" if !@post.is_approved
   end
 
   private

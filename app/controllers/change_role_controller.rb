@@ -1,7 +1,7 @@
 class ChangeRoleController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin, only: [:change_is_admin, :requested_admin_role]
-  before_action :is_admin, only: [:disapprove_request, :update_is_admin, :role_change_requests]
+  before_action :for_not_admin, only: [:change_is_admin, :requested_admin_role]
+  before_action :for_admin, only: [:disapprove_request, :update_is_admin, :role_change_requests]
 
   def change_is_admin
   end
@@ -39,11 +39,11 @@ class ChangeRoleController < ApplicationController
     end
   end
 
-  def admin
+  def for_not_admin
     redirect_to posts_path, notice: "Not a path for you!" if current_user.is_admin?
   end
 
-  def is_admin
+  def for_admin
     redirect_to posts_path, notice: "Not a path for you!" if !current_user.is_admin?
   end
 end
