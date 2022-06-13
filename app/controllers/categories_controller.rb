@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
+  
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.order(:name);
   end
 
   # GET /categories/1 or /categories/1.json
@@ -22,15 +23,14 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @categories = Category.all
-    @category = Category.new(category_params)
     @is_empty = @categories.empty?
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save
         format.turbo_stream
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("alerts42", partial: "layouts/alerts", locals: { notice: "The Category already exists" }) }
       end
     end
   end

@@ -3,10 +3,11 @@ class YourPostsController < ApplicationController
   
   def get_posts
     @posts = Post.where(user_id: current_user.id, is_approved: true).order(updated_at: :desc)
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
-      @categories_array.push([category.name, category.name])
+      @categories_array.push([category.name, category.id])
+      puts category.id
     end
   end
 

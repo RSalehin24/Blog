@@ -16,24 +16,25 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    format.html {redirect_to posts_path, notice: "The path is void" }
   end
 
   # GET /posts/new
   def new
     @post = Post.new
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
-      @categories_array.push([category.name, category.name])
+      @categories_array.push([category.name, category.id])
     end
   end
 
   # GET /posts/1/edit
   def edit
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
-      @categories_array.push([category.name, category.name])
+      @categories_array.push([category.name, category.id])
     end
   end
 
@@ -41,12 +42,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+    @categories = Category.all.order(:name)
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.id])
+    end
+
     respond_to do |format|
       if @post.save
-        format.turbo_stream
+        format.html { redirect_to handle_posts_pending_posts_path, notice: "Your post was successfully placed for Admin approval" }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.html { redirect_to your_posts_get_posts_path, notice: @post.errors }
       end
     end
   end
@@ -115,6 +121,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :author, :user_id, :category, images: [])
+      params.require(:post).permit(:title, :body, :author, :user_id, :category_id, images: [])
     end
 end
