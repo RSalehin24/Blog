@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
 
+  get "/profile", to: "profile#get_profile"
+
   get "/posts/update_category", to: "posts#edit_post_approved"
   post "/posts/update_category", to: "posts#update_after_approved"
 
