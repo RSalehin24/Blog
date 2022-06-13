@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :correct_user_or_admin, only: [:destroy, :edit, :update]
   before_action :approved, only: [:show]
   before_action :not_approved, only: [:update]
+  before_action :for_admin, only: [ :update_after_approve ]
 
   # GET /posts or /posts.json
   def index
@@ -89,7 +90,27 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.turbo_stream
     end
+  end
+
+  def edit_post_approved
+    @post = Post.find(params[:id])
+    @categories = Category.all.order("name")
+    @categories_array = Array.new
+    @categories.each do |category|
+      @categories_array.push([category.name, category.id])
+    end
+  end
+
+  def update_after_approved
+    @post = Post.find(params[:post_id])
     
+    if @post.is_approved?
+      respond_to do |format|
+        if @post.update(category_id: params[:category])
+          format.turbo_stream
+        end
+      end
+    end
   end
 
   def correct_user
@@ -111,6 +132,10 @@ class PostsController < ApplicationController
   def not_approved
     @post = Post.find_by(id: params["id"])
     redirect_to posts_path if @post.is_approved
+  end
+
+  def for_admin
+    redirect_to posts_path, notice: "Not a path for you!" if !current_user.is_admin?
   end
 
   private

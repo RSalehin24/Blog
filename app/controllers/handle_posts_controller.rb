@@ -22,19 +22,21 @@ class HandlePostsController < ApplicationController
 
   def edit_post_approve
     @post = Post.find(params[:id])
-    @categories = Category.all
+    @categories = Category.all.order("name")
     @categories_array = Array.new
     @categories.each do |category|
-      @categories_array.push([category.name, category.name])
+      @categories_array.push([category.name, category.id])
     end
   end
 
   def update_post_approve
     @post = Post.find(params[:post_id])
     
-    respond_to do |format|
-      if @post.update(category: params[:category])
-        format.turbo_stream
+    if !@post.is_approved?
+      respond_to do |format|
+        if @post.update(category_id: params[:category])
+          format.turbo_stream
+        end
       end
     end
   end

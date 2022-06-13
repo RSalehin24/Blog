@@ -1,0 +1,12 @@
+<%= form_with url: "/posts/update_category", method: :post do |form| %>
+  <div>
+    <%= form.select(:category, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "txt-general form-select bg-transparent input-border", required: true})%>
+  </div>
+  <div>
+    <%= form.text_field :post_id, class: "form-control", placeholder: "Post ID", value: post.id, type: :hidden, :required => true %>
+  </div>
+  <p></p>
+  <div>
+    <%= form.submit "Update", class: "bttn-common bttn-comment-common bttn" %>
+  </div>
+<% end %>
