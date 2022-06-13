@@ -3,7 +3,7 @@
   
   <% if !post.category_id.nil? %>
     <% post_category = Category.find(post.category_id) %>
-    <h5 class="txt-general"><%= post_category %></h5>
+    <h5 class="txt-general"><%= post_category.name %></h5>
   <% end %>
  
   <p class="txt-general" style="margin-left: 0px">
