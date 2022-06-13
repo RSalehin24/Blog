@@ -1,6 +1,11 @@
 <div id="<%= "#{dom_id(post)}_header" %>" style="margin-left: 12px;">
   <h2 class="card-title txt-title" style="margin-left: 0px"><%= post.title %></h2>
-  <h5 class="txt-general"><%= post.category %></h5>
+  
+  <% if !post.category_id.nil? %>
+    <% post_category = Category.find(post.category_id) %>
+    <h5 class="txt-general"><%= post_category %></h5>
+  <% end %>
+ 
   <p class="txt-general" style="margin-left: 0px">
     <%= post.author %> | 
     <%= distance_of_time_in_words(Time.now, post.updated_at) %>

@@ -24,31 +24,13 @@ class CategoriesController < ApplicationController
   def create
     @categories = Category.all
     @is_empty = @categories.empty?
-
-    @category0 = Category.find_by(name: params[:name])
     @category = Category.new(category_params)
-
-    respond_to do |format|
-      if @category0.nil?
-        if @category.save
-          format.turbo_stream
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @category.errors, status: :unprocessable_entity }
-        end
-      else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("alerts42", partial: "layouts/alerts", locals: { notice: "The Category already exists" }) }
-      end
-    end
-
-    
 
     respond_to do |format|
       if @category.save
         format.turbo_stream
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("alerts42", partial: "layouts/alerts", locals: { notice: "The Category already exists" }) }
       end
     end
   end

@@ -6,7 +6,8 @@ class YourPostsController < ApplicationController
     @categories = Category.all.order(:name)
     @categories_array = Array.new
     @categories.each do |category|
-      @categories_array.push([category.name, category.name])
+      @categories_array.push([category.name, category.id])
+      puts category.id
     end
   end
 
