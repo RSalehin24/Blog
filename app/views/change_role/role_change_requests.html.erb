@@ -3,20 +3,24 @@
   <p class="txt-general">Do not have any more requests right now! </p> <p></p>
 <% else %>
   <br>
-  <table class="table table-bordered table-hover ">
-    <thead class="table-light" style="background-color: 6d3c3c">
+  <table class="table table-bordered table-hover edit-input-border">
+    <thead class="table-light edit-input-border">
       <tr>
-        <th class="txt-general">Email</th>
-        <th class="txt-gerneral">Approve</th>
-        <th class="txt-gerneral">Delete</th>
+        <th class="txt-general bg-transparent" style="padding: 10px; text-align: center">Name</th>
+        <th class="txt-general bg-transparent" style="padding: 10px; text-align: center">Username</th>
+        <th class="txt-general bg-transparent" style="padding: 10px; text-align: center">Email</th>
+        <th class="txt-general bg-transparent" style="padding: 10px; text-align: center">Approve</th>
+        <th class="txt-general bg-transparent" style="padding: 10px; text-align: center">Delete</th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr>
-          <td class="txt-gerneral"><p></p><%= user.email %></td>
-          <td class="txt-gerneral"><p></p><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn" %><p></p></td>
-          <td class="txt-gerneral"><p></p><%= link_to "Disapprove", change_role_disapprove_request_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn-danger" %><p></p></td>
+        <tr class="admin_role_request_table_body">
+          <td class="txt-general" style="padding: 10px; text-align: center"><%= user.first_name + " " + user.last_name %></td>
+           <td class="txt-general" style="padding: 10px; text-align: center"><%= user.username %></td>
+            <td class="txt-general" style="padding: 10px; text-align: center"><%= user.email %></td>
+          <td class="txt-general" style="padding: 10px; text-align: center; vertical-align: middle;"><%= link_to "Approve", change_role_change_is_admin_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn" %></td>
+          <td class="txt-general" style="padding: 10px; text-align: center;  vertical-align: middle;"><%= link_to "Disapprove", change_role_disapprove_request_path(:_id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-sm bttn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

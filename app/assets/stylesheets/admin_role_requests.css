@@ -1,0 +1,7 @@
+.admin_role_request_table_header_bg {
+  background-color: rgb(124, 199, 94);
+}
+
+.table-hover tbody tr:hover td {
+  color: #15460c;
+}
