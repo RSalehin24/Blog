@@ -7,6 +7,7 @@
   margin-top: 0;
   position: block;
   right: 10px;
+  border-radius: 10px;
   background-color: rgba(230, 255, 220, 0.95);
 }
 
@@ -29,4 +30,11 @@
 
 .nav-link:hover {
  color: #020202;
+}
+
+.profile-dropdown-item {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
 }

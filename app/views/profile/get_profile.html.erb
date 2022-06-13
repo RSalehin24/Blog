@@ -4,12 +4,15 @@
   </div>
 
   <div class="row" id="profile-body" style="margin-top: 10px">
+   
     <%if current_user.image.attached? %>
-      <div id="profile-image" class="col col-md-4" style="margin-top: 10px">
+      <div id="profile-image" class="col col-md-4" style="margin-top: 10px; padding-right: 30px;">
         <%= image_tag current_user.image, style: "max-width:100%; height:auto; display: block; border-radius: 40px" %>
       </div>
     <% end %>
-    <div id="profile-info" class="col col-md-8" style="padding-left: 50px">
+
+    <div id="profile-info" class="col col-md-8" style="margin-top: 10px; padding-left: 20px">
+      
       <div class="profile-info-header" style="margin-bottom: 20px;">
         <div id="profile-name">
           <h3 class="txt-general"><%= current_user.first_name + " " + current_user.last_name %></h3>
@@ -21,37 +24,47 @@
       </div>
       
       <div id="profile-info-body">
+       
         <div class="profile-email txt-general">
           <i class="fa-solid fa-envelope fa-lg" style="padding-right: 5px;"></i>
           <%= current_user.email %>
         </div>
 
-        <div class="profile-dob txt-general" style="margin-top: 10px">
-          <i class="fa-solid fa-cake-candles fa-xl" style="padding-right: 5px;"></i>
-          <%= current_user.date_of_birth %>
-        </div>
+        <% if !current_user.date_of_birth.nil? %>
+          <div class="profile-dob txt-general" style="margin-top: 10px">
+            <i class="fa-solid fa-cake-candles fa-xl" style="padding-right: 5px;"></i>
+            <%= current_user.date_of_birth %>
+          </div>
 
-        <div class="profile-age txt-general" style="margin-top: 10px">
-          <%= image_tag "age.png", size: "26x25", style: "padding-right: 5px;" %>
-          <%= ((Time.zone.now - current_user.date_of_birth.to_time) / 1.year.seconds).floor.to_s + " years"  %>
-        </div>
+          <div class="profile-age txt-general" style="margin-top: 10px">
+            <%= image_tag "age.png", size: "26x25", style: "padding-right: 5px;" %>
+            <%= ((Time.zone.now - current_user.date_of_birth.to_time) / 1.year.seconds).floor.to_s + " years"  %>
+          </div>
+        <% end %>
+
       </div>
+  
+      <% if !current_user.instagram.empty? || !current_user.twitter.empty? %>
+        <div id="profile-info-social" style="margin-top: 37px">
+          <div id="profile-info-social-title">
+            <h5 class="txt-general">Socials</h5>
+          </div>
+          
+          <div id="profile-info-social-items">
+            <% if !current_user.instagram.empty? %>
+              <a href=<%= "https://instagram.com/" + current_user.instagram %> style="padding-right: 10px; text-decoration: none;"> 
+                <i class="txt-general fa-brands fa-instagram fa-2x"></i><%= current_user.twitter %>
+              </a>
+            <% end %>
 
-      <div id="profile-info-social" style="margin-top: 37px">
-        <div id="profile-info-social-title">
-          <h5 class="txt-general">Socials</h5>
+            <% if !current_user.twitter.empty? %>
+              <a href=<%= "https://twitter.com/" + current_user.twitter %> >
+                <i class="txt-general fa-brands fa-twitter fa-2x"></i>
+              </a> 
+            <% end %>
+          </div>
         </div>
-        
-        <div id="profile-info-social-items">
-          <a href=<%= "https://instagram.com/" + current_user.instagram %> style="padding-right: 10px; text-decoration: none;"> 
-            <i class="txt-general fa-brands fa-instagram fa-2x"></i>
-          </a>
-
-          <a href=<%= "https://twitter.com/" + current_user.twitter %> >
-            <i class="txt-general fa-brands fa-twitter fa-2x"></i>
-          </a> 
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

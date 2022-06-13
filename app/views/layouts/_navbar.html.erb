@@ -83,14 +83,14 @@
             </div>
             <% end %>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to profile_path, class: "nav-link" do%>
-                <li class="nav-link txt-general nav-profile-item"><i class="fa-solid fa-user"></i> Profile</li>
+              <%= link_to profile_path, style: "text-decoration: none;" do%>
+                <li class="txt-general nav-profile-item profile-dropdown-item"><i class="fa-solid fa-user"></i> Profile</li>
               <% end %>
-              <%= link_to edit_user_registration_path, class: "nav-link" do%>
-                <li class="nav-link txt-general nav-profile-item"><i class="bi bi-pencil-fill"></i> Edit Profile</li>
+              <%= link_to edit_user_registration_path, style: "text-decoration: none;" do%>
+                <li class="txt-general nav-profile-item profile-dropdown-item"><i class="bi bi-pencil-fill"></i> Edit Profile</li>
               <% end %>
-              <%= link_to destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" do %>
-                <li class="nav-link txt-general nav-profile-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</li>
+              <%= link_to destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, style: "text-decoration: none;" do %>
+                <li class="txt-general nav-profile-item profile-dropdown-item"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</li>
               <% end %>
             </ul>
           </li>
