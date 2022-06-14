@@ -20,6 +20,8 @@ log/*
 tmp/*
 
 log/*.log
+/storage/*
+
 
 # various artifacts
 **.war

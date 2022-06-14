@@ -1,7 +1,6 @@
 <div id="<%= "#{dom_id(post)}_item" %>">
   <%= turbo_frame_tag dom_id(post) do %>
-    <br>
-    <div class="card bg-transparent card-border">
+    <div class="card bg-transparent card-border" style="margin-top: 20px">
       <div class="card-body">
         <%= render "posts/post/post_body", post: post %>
         <%= render "handle_posts/approve_posts/approve_post/approve_footer", post: post %>
@@ -9,4 +8,5 @@
     </div>
   <% end %>
 </div>
-<br>
+
+<%= render "posts/post/author/post_author_profile", post_author: post.author %>

@@ -1,5 +1,4 @@
-<br>
-<div class="card bg-transparent card-border">
+<div class="card bg-transparent card-border" style="margin-top: 20px">
   <div class="card-body">
     <%= render "posts/post/post_body", post: post %>
     <div data-controller="comment-visibility">
@@ -8,3 +7,5 @@
     </div>
   </div>
 </div>
+
+<%= render "posts/post/author/post_author_profile", post_author: post.author %>

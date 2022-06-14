@@ -19,6 +19,6 @@
  *= require category
  *= require user_inputfield
  *= require comment_and_reply
- *= require post_like
+ *= require post_and_like
  *= require footer
  */
