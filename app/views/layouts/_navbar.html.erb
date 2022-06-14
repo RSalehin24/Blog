@@ -1,19 +1,13 @@
 <nav class="navbar navbar-expand-lg nav-bg-color">
   <div class="container-fluid">
 
-    &nbsp &nbsp &nbsp
-    <% if user_signed_in? %>
-      <%= link_to posts_path, class: "nav-link" do %>
-        <%= image_tag "blogs.png", size: "110x40" %>
-      <% end %>
-    <% else %>
+    <div style="padding-left: 10px; padding-right: 14px;">
       <%= link_to root_path, class: "nav-link" do%>
         <%= image_tag "blogs.png", size: "110x40" %>
       <% end %>
-    <% end %>
-    &nbsp &nbsp &nbsp
+    </div>
 
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -47,6 +41,11 @@
             <i class="bi bi-stickies"></i>All Posts
           <% end %>
 
+          <%= form_with url: "/search", class: "d-flex nav-link", method: :get do |form| %>
+            <%= form.text_field :search_string, class: "bg-transparent input-search-string-nav", placeholder: "Search Posts" %>
+            <%= form.submit "Search", id: "search-button", class: "bttn-search input-search-button-nav" %>
+          <% end %>
+
         <% end %>
 
       </ul>
@@ -59,14 +58,14 @@
             <i class="bi bi-hourglass-split"></i>Pending Posts
           <% end %>
         <% else %>
-           <%= link_to new_user_registration_path, class: "nav-link nav-link-navbar" do %>
-                <i class="fa-solid fa-user-plus fa-sm"></i> Sign up
-              <% end %>
-              
-              <%= link_to new_user_session_path, class: "nav-link nav-link-navbar" do %>
-                 <i class="fa-solid fa-right-to-bracket"></i> Sign in
-              <% end %>
-              &nbsp &nbsp &nbsp
+          <%= link_to new_user_registration_path, class: "nav-link nav-link-navbar" do %>
+            <i class="fa-solid fa-user-plus fa-sm"></i> Sign up
+          <% end %>
+            
+          <%= link_to new_user_session_path, class: "nav-link nav-link-navbar" do %>
+              <i class="fa-solid fa-right-to-bracket"></i> Sign in
+          <% end %>
+          &nbsp &nbsp &nbsp
         <% end %>
       </ul>
 

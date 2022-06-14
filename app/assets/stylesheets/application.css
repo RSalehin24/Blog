@@ -21,4 +21,5 @@
  *= require comment_and_reply
  *= require post_and_like
  *= require footer
+ *= require search
  */

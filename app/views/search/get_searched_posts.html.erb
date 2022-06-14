@@ -1,0 +1,13 @@
+<% if @searched_posts.empty? %>
+  <h2 class="txt-title" style="margin-bottom: 20px">Searched Posts</h2>
+  <p class="txt-general">No posts has been found with the keywords...</p>
+<% else %>
+  <h2 class="txt-title">Searched Posts</h2>
+
+  <div id="posts" style="padding-top: 10px; margin-bottom: 20px;">
+    <% @searched_posts.each do |post| %>
+      <%= render "posts/post", post: post %>
+    <% end %>
+  </div>
+<% end %>
+

@@ -29,8 +29,8 @@
             <%= form.text_field :title, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Title", :required => true %>
           </div>
 
-          <div class="input-div-margin">
-            <%= form.select(:category_id, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "form-select txt-general bg-transparent edit-input-border", required: true})%>
+          <div class="input-div-margin ">
+            <%= form.select(:category_id, options_for_select(@categories_array, selected: post.category), {prompt: "Select Category"}, {class: "txt-general form-select bg-transparent edit-input-border", required: true})%>
           </div>
 
           <div class="input-div-margin">

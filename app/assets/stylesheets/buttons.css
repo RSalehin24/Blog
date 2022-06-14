@@ -77,3 +77,15 @@
   border-color: #a12d2d; 
   color:white; 
 }
+
+.bttn-search {
+  color: white;
+  border-color: #1d600f;
+  background-color: #1d600f;
+}
+
+.bttn-search:hover {
+  color: white;
+  background-color: #0c3a03;
+  border-color: #0c3a03;
+}

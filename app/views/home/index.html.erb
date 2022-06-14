@@ -2,5 +2,7 @@
 <p class="txt-general">No matter what your thoughts are, you can share it here with us...</p>
 <br>
 <% if user_signed_in? %>
-  <%= link_to "Go to Posts", posts_path, class: "bttn-common bttn-main-common bttn-main-lone-button bttn" %>
+  <div id="search" style="margin-top: 50px;">
+    <%= render "search/form" %>
+  </div>
 <% end %>

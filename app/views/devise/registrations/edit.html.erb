@@ -30,7 +30,7 @@
       <div class="field bg-transparent input-div-margin">
         <span class="input-group-text padding bg-transparent input-border">
           <i class="txt-general fa-solid fa-envelope padding-input-email-icon"></i>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control input-radius bg-transparent txt-general", :required => true %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", pattern: "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-.]+$)", class: "form-control input-radius bg-transparent txt-general", :required => true %>
         </span>	
       </div>
 

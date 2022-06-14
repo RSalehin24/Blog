@@ -1,0 +1,11 @@
+<%= form_with url: "/search", method: :get do |form| %>
+  <div class="search-div">
+    <div class="search-category">
+      <%= form.select(:category_id, options_for_select(@categories_array), {prompt: "Select Category"}, {class: "txt-general bg-transparent input-search-category"})%>
+    </div>
+    <div class="search-string">
+      <%= form.text_field :search_string, class: "form-control bg-transparent input-search-string", placeholder: "Search Posts" %>
+    </div>
+    <%= form.submit "Search", id: "search-button", class: "btn bttn-search input-search-button" %>
+  </div>
+<% end %>
