@@ -1,0 +1,41 @@
+<div id="dashboard">
+  <div id="dashboard-title" class="dashboard-title" style="margin-bottom: 20px">
+    <h2 class="txt-title">Admin dashboard</h2>
+  </div>
+
+  <div class="dashboard_body row" id="dashboard-body" >
+    <div class="row">
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to handle_posts_posts_tobe_approved_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt">Posts tobe Approved</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @posts_tobe_approved %></Strong></p>
+        </div>
+      </div>
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to categories_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt">Categories Added</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @categories %></Strong></p>
+        </div>
+      </div>
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to change_role_role_change_requests_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt">Requests for Admin role</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @requests %></Strong></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center" style="margin-top: 20px;">
+      <h5 class="txt">Please Click on the name of the section to open them</h5>
+    </div>
+  </div>
+</div>

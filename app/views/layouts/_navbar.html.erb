@@ -14,16 +14,16 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <%= link_to home_about_us_path, class: "nav-link nav-link-navbar"  do %>
               <i class="bi bi-info-circle-fill"></i> About Us 
             <% end %>
-        </li>
+        </li> -->
          
         <% if user_signed_in? %>
           <% if current_user.is_admin? %>
           
-            <%= link_to change_role_role_change_requests_path, class: "nav-link nav-link-navbar" do %>
+            <!-- <%= link_to change_role_role_change_requests_path, class: "nav-link nav-link-navbar" do %>
               <i class="fa-solid fa-file-pen"></i>Requests
             <% end %>
 
@@ -33,17 +33,25 @@
 
             <%= link_to categories_path, class: "nav-link nav-link-navbar" do %>
               <i class="fa-solid fa-list"></i>Category
-            <% end %>
+            <% end %> -->
 
+          <% end %>
+
+          <%= link_to your_posts_get_posts_path, class: "nav-link nav-link-navbar" do %>
+              <i class="bi bi-stickies-fill"></i>Your Posts
+          <% end %>
+          <%= link_to handle_posts_pending_posts_path, class: "nav-link nav-link-navbar" do %>
+            <i class="bi bi-hourglass-split"></i>Pending Posts
+          <% end %>
+
+          <% if current_user.is_admin? %>
+            <%= link_to admin_dashboard_path, class: "nav-link nav-link-navbar" do %>
+              <i class="bi bi-speedometer"></i>Admin Dashboard
+            <% end %>
           <% end %>
 
           <%= link_to posts_path, class: "nav-link nav-link-navbar" do %>
             <i class="bi bi-stickies"></i>All Posts
-          <% end %>
-
-          <%= form_with url: "/search", class: "d-flex nav-link", method: :get do |form| %>
-            <%= form.text_field :search_string, class: "bg-transparent input-search-string-nav", placeholder: "Search Posts" %>
-            <%= form.submit "Search", id: "search-button", class: "bttn-search input-search-button-nav" %>
           <% end %>
 
         <% end %>
@@ -51,13 +59,16 @@
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <%= link_to your_posts_get_posts_path, class: "nav-link nav-link-navbar" do %>
-              <i class="bi bi-stickies-fill"></i>Your Posts
-          <% end %>
-          <%= link_to handle_posts_pending_posts_path, class: "nav-link nav-link-navbar" do %>
-            <i class="bi bi-hourglass-split"></i>Pending Posts
-          <% end %>
+          
+          <%= form_with url: "/search", class: "d-flex nav-link", method: :get do |form| %>
+            <%= form.text_field :search_string, class: "input-search-string-nav", placeholder: "Search Posts" %>
+            <%= form.submit "Search", id: "search-button", class: "bttn-search input-search-button-nav" %>
+          <% end %> &nbsp &nbsp
+          
+         
+
         <% else %>
+
           <%= link_to new_user_registration_path, class: "nav-link nav-link-navbar" do %>
             <i class="fa-solid fa-user-plus fa-sm"></i> Sign up
           <% end %>
@@ -66,6 +77,7 @@
               <i class="fa-solid fa-right-to-bracket"></i> Sign in
           <% end %>
           &nbsp &nbsp &nbsp
+
         <% end %>
       </ul>
 

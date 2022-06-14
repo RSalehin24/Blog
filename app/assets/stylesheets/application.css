@@ -22,4 +22,6 @@
  *= require post_and_like
  *= require footer
  *= require search
+ *= require alert
+ *= require admin_dashboard
  */

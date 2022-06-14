@@ -33,12 +33,11 @@
   padding: 5px;
   border: 1px solid;
   border-color: #3f3e3e;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 0px;
+  border-radius: 5px;
   height: 30px;
   width: 200px;
+  margin-right: 10px;
+  background-color: rgba(222, 255, 209, 0.95);
 }
 
 .input-search-string-nav::placeholder {
@@ -53,13 +52,11 @@
 
 .input-search-button-nav {
   height: 30px;
-  background-color: #3f3e3e;
-  color: white;
+  background-color: transparent;
+  border: 1px solid;
+  color: #3f3e3e;
   border-color: #3f3e3e;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-radius: 5px;
 }
 
 .input-search-button-nav:hover {

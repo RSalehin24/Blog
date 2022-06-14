@@ -1,0 +1,25 @@
+.dashboard_body {
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.admin_dashboard_section_card {
+  width: 18rem;
+  background-color: rgba(79, 165, 45, 0.1);
+  border-color: #27910c;
+  padding-bottom: 30px;
+  padding-top: 43px;
+}
+
+.admin_dashboard_section_card:hover {
+  background-color: rgba(140, 233, 104, 0.1);
+}
+
+.txt {
+  color: #0a2503;
+}
+
+
+.txt:hover {
+  color: #0d3d01;
+}

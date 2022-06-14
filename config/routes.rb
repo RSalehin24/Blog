@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
 
+  get "/admin/dashboard", to: "admin_dashboard#get_admin_dashboard"
+
   get "/search", to: "search#get_searched_posts"
 
   get "/profile", to: "profile#get_profile"
