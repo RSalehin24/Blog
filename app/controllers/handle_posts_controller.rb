@@ -44,10 +44,17 @@ class HandlePostsController < ApplicationController
   def disapprove
     @posts = Post.where(is_approved: false, disapprove: false)
     @post = Post.find_by(id: params[:post_id])
+    
+    if @post.disapprove_count.nil?
+      @disapprove_count = 1
+    else
+      @disapprove_count = @post.disapprove_count + 1
+    end
+    
 
     if !@post.is_approved?
       respond_to do |format|
-        if Post.where(id: params[:post_id]).update_all(disapprove: true, disapprove_message: params[:disapprove_message])
+        if Post.where(id: params[:post_id]).update_all(disapprove: true, disapprove_message: params[:disapprove_message], disapprove_count: @disapprove_count)
           format.turbo_stream
         end
       end
