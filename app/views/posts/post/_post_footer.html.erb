@@ -12,7 +12,7 @@
     <% if current_user.is_admin? %>
       <div id="<%= "#{dom_id(post)}_admin_delete" %>" class="txt-general col center">
         <%= link_to "Edit Category", posts_update_category_path(id: post.id), class: "bttn-common bttn-danger-sm bttn", style: "margin-left: 10px" %> &nbsp
-        <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-sm bttn-danger"%>
+        <!-- <%= link_to "Delete", post, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-sm bttn-danger"%> -->
       </div>
     <% end %>
     
