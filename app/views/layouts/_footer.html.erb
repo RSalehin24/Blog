@@ -19,18 +19,17 @@
                 
 
                 <% if user_signed_in? %>
-                
-                  <%= link_to posts_path, class: "footer-txt" do %>
-                    <i class="bi bi-stickies"></i> All Posts
-                  <% end %><br>
                     
-                  
                   <%= link_to your_posts_get_posts_path, class: "footer-txt" do %>
                     <i class="bi bi-stickies-fill"></i> Your Posts
                   <% end %><br> 
 
                   <%= link_to handle_posts_pending_posts_path, class: "footer-txt" do %>
                     <i class="bi bi-hourglass-split"></i>Pending Posts
+                  <% end %><br>
+
+                  <%= link_to posts_path, class: "footer-txt" do %>
+                    <i class="bi bi-stickies"></i> Posts from others
                   <% end %><br>
 
                   <% if !current_user.is_admin? %>
