@@ -23,16 +23,12 @@
             </div>
 
             <% if !author.date_of_birth.nil? %>
-              <div class="profile-dob txt-general" style="margin-top: 10px">
-                <i class="fa-solid fa-cake-candles fa-xl" style="padding-right: 5px;"></i>
-                <%= author.date_of_birth %>
-              </div>
-
               <div class="profile-age txt-general" style="margin-top: 10px">
                 <%= image_tag "age.png", size: "26x25", style: "padding-right: 5px;" %>
                 <%= ((Time.zone.now - author.date_of_birth.to_time) / 1.year.seconds).floor.to_s + " years"  %>
               </div>
             <% end %>
+            
           </div>
       
           <% if !author.instagram.nil? || !author.twitter.nil? %>
