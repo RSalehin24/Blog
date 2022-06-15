@@ -1,0 +1,18 @@
+<div hidden class="display-comment-replies-section" id="<%= "#{dom_id(post)}_comment_replies_section" %>" style="padding-left: 100px; padding-right: 100px; padding-top: 40px; padding-bottom: 40px;" data-reply-visibility-target="hideableReply">
+  
+  <%= form_with url: "/handle_posts/post_disapprove", method: :post do |form| %>
+
+    <div style="margin-bottom: 10px;">
+      <%= form.text_field :post_id, class: "form-control", placeholder: "Post ID", value: post.id, type: :hidden, :required => true %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <%= form.text_area :disapprove_message, class: "form-control bg-transparent txt-general input-border", placeholder: "Write a message to clarify the dissaproval of the post...", :required => true %>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <%= form.submit "Disapprove", class: "bttn-common bttn-comment-common bttn" %>
+    </div>
+
+  <% end %>
+</div>

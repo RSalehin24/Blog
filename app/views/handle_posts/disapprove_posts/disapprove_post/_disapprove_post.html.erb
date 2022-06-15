@@ -1,0 +1,6 @@
+<div id="<%= "#{dom_id(post)}_item" %>">
+  <%= turbo_frame_tag dom_id(post) do %>
+    <%= render "handle_posts/disapprove_posts/disapprove_post/disapprove_post_div", post: post %>
+  <% end %>
+</div>
+<br>

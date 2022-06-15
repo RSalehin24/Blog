@@ -39,21 +39,27 @@
 
           <% end %>
 
-          <%= link_to your_posts_get_posts_path, class: "nav-link nav-link-navbar" do %>
-              <i class="bi bi-stickies-fill"></i>Your Posts
-          <% end %>
-          <%= link_to handle_posts_pending_posts_path, class: "nav-link nav-link-navbar" do %>
+          
+          <!-- <%= link_to handle_posts_pending_posts_path, class: "nav-link nav-link-navbar" do %>
             <i class="bi bi-hourglass-split"></i>Pending Posts
-          <% end %>
+          <% end %> -->
 
-          <%= link_to posts_path, class: "nav-link nav-link-navbar" do %>
-            <i class="bi bi-stickies"></i>Posts from others
+          <%= link_to user_dashboard_path, class: "nav-link nav-link-navbar" do %>
+              <i class="fa-solid fa-gauge-high"></i>User Dashboard
           <% end %>
 
           <% if current_user.is_admin? %>
             <%= link_to admin_dashboard_path, class: "nav-link nav-link-navbar" do %>
               <i class="bi bi-speedometer"></i>Admin Dashboard
             <% end %>
+          <% end %>
+
+          <%= link_to your_posts_get_posts_path, class: "nav-link nav-link-navbar" do %>
+              <i class="bi bi-stickies-fill"></i>Your Posts
+          <% end %>
+
+          <%= link_to posts_path, class: "nav-link nav-link-navbar" do %>
+            <i class="bi bi-stickies"></i>Posts from others
           <% end %>
 
         <% end %>

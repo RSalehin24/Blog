@@ -1,0 +1,13 @@
+<div id="<%= "#{dom_id(post)}_header" %>" style="margin-left: 12px;">
+  <div class="row">
+    <div class="col col-md-9">
+      <%= render "posts/post/post_header", post: post %>
+    </div>
+    <div class="col col-md-3 post-disapprove-count-div txt-danger" style="font-size: 25px; font-weight:bold;">
+      <% if !post.disapprove_count.nil? %>
+        <%= post.disapprove_count %>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

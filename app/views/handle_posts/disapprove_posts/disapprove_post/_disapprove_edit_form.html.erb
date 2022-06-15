@@ -1,0 +1,16 @@
+ <%= form_with url: "/handle_posts/post_disapprove/edit", method: :post do |form| %>
+  
+  <%= form.text_field :post_id, value: post.id, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Post ID", type: :hidden, :required => true %>
+  
+  <div class="first-input-div-margin">
+    <%= form.text_field :title, value: post.title, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Title", :required => true %>
+  </div>
+
+  <div class="input-div-margin">
+    <%= form.text_area :body,  value: post.body, class: "form-control txt-general bg-transparent edit-input-border", placeholder: "Body", :required => true %>
+  </div>
+
+  <div class="first-input-div-margin">
+    <%= form.submit "Update", class: "bttn-common bttn-danger-common bttn" %>
+  </div>
+<% end %>

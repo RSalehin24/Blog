@@ -1,13 +1,13 @@
 <% if(@posts.empty?) %>
   <%= turbo_stream.replace "alerts42" do %>
-    <%= render "layouts/alerts", notice: "The Post has been deleted" %>
+    <%= render "layouts/alerts", notice: "The Post has been deleted!" %>
   <% end %>
   <%= turbo_stream.replace "#{dom_id(@post)}_item" do %>
-    <% render "handle_posts/approve_posts/approve_post/approve_destroy" %>
+    <% render "handle_posts/disapprove_posts/disapprove_post/disapprove_destroy" %>
   <% end %>
 <% else %>
   <%= turbo_stream.replace "alerts42" do %>
-    <%= render "layouts/alerts", notice: "The Post has been deleted" %>
+    <%= render "layouts/alerts", notice: "The Post has been deleted!" %>
   <% end %>
   <%= turbo_stream.remove "#{dom_id(@post)}_item" %>
 <% end %>

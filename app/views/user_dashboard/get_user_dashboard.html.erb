@@ -1,0 +1,41 @@
+<div id="dashboard">
+  <div id="dashboard-title" class="dashboard-title" style="margin-bottom: 20px">
+    <h2 class="txt-title"><%= current_user.first_name %>'s dashboard</h2>
+  </div>
+
+  <div class="dashboard_body row" id="dashboard-body" >
+    <div class="row">
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to  handle_posts_disapproved_posts_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt"><i class="fa-solid fa-triangle-exclamation"></i> Disapproved Posts</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @disapproved_posts %></Strong></p>
+        </div>
+      </div>
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to handle_posts_pending_posts_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt"><i class="bi bi-hourglass-split"></i> Pending Posts</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @pending_posts %></Strong></p>
+        </div>
+      </div>
+
+      <div class="col col-md-4">
+        <div class="card admin_dashboard_section_card text-center">
+          <%= link_to your_posts_get_posts_path, class: "bttn-common", style: "vertical-align: middle;" do %>
+            <h5 class="card-title txt"><i class="bi bi-stickies-fill"></i> Your Posts</h5>
+          <% end %>
+          <p><Strong class="txt" style="margin-top: 5px;"><%= @your_posts %></Strong></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center" style="margin-top: 20px;">
+      <h5 class="txt">Please Click on Section Name to Open them</h5>
+    </div>
+  </div>
+</div>

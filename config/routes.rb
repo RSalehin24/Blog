@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
 
+  get "/user/dashboard", to: "user_dashboard#get_user_dashboard"
   get "/admin/dashboard", to: "admin_dashboard#get_admin_dashboard"
 
   get "/search", to: "search#get_searched_posts"
@@ -11,6 +12,13 @@ Rails.application.routes.draw do
   post "/posts/update_category", to: "posts#update_after_approved"
 
   post "/comment/reply/new", to: "comment_replies#create"
+
+  delete "handle_posts/post_disapprove/delete", to: "handle_posts#disapprove_delete" 
+  get "handle_posts/post_disapprove/edit", to: "handle_posts#disapprove_edit" 
+  post "handle_posts/post_disapprove/edit", to: "handle_posts#disapprove_update"
+  get "handle_posts/disapproved_posts", to: "handle_posts#disapproved_posts" 
+  post "handle_posts/post_disapprove", to: "handle_posts#disapprove" 
+
 
   post "handle_posts/edit", to: "handle_posts#update_post_approve" 
   get "handle_posts/edit_post_approve", to: "handle_posts#edit_post_approve" 

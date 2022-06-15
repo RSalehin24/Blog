@@ -1,0 +1,24 @@
+<%= turbo_frame_tag dom_id(@post) do %>
+<br>
+<div class="card card-border bg-transparent">
+  <div class="card-body bg-transparent">
+    <h6 class="card-title txt-general"><h2 class="txt-title">Edit post</h2></h6><p></p>
+    
+    <hr class="post-line-hr">
+    <div class="txt-danger post-disapprove-count-div" style="padding: 10px; font-size: 20px;">
+      <%= @post.disapprove_message %>
+    </div>
+    <hr class="post-line-hr">
+
+     <% if @post.images.attached? %>
+        <div id="postImage">
+          <% @post.images.each do |image| %>
+            <%= image_tag image, style: "max-width: 520px; max-height: 500px;  relative; height: relative; padding: 10px;" %>
+            <!-- <%= link_to 'Remove', post_delete_image_path(post_id: @post.id, id: image.signed_id), data: { turbo_method: :delete } %> -->
+          <% end %>
+        </div><br>
+      <% end %>
+    <%= render "handle_posts/disapprove_posts/disapprove_post/disapprove_edit_form", post: @post %>
+  </div>
+</div>
+<% end %>

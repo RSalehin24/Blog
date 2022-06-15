@@ -55,6 +55,8 @@
           <div>
             <%= form.file_field :images, multiple: true, class: "form-control txt-general bg-transparent edit-input-border" %>
           </div>
+
+          <%= form.hidden_field :disapprove, value: false %>
       </div>
       <div class="modal-footer post-new-post-modal post-line-hr">
         <button type="button" class="bttn-common bttn-danger-common bttn-danger" data-bs-dismiss="modal">Close</button>

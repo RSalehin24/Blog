@@ -1,4 +1,4 @@
-<% if(@posts.all.empty?) %>
+<% if(@posts.empty?) %>
   <%= turbo_stream.replace "alerts42" do %>
     <%= render "layouts/alerts", notice: "The Post has been deleted" %>
   <% end %>

@@ -2,8 +2,11 @@
   <%= turbo_frame_tag dom_id(post) do %>
     <div class="card bg-transparent card-border" style="margin-top: 20px">
       <div class="card-body">
-        <%= render "posts/post/post_body", post: post %>
-        <%= render "handle_posts/approve_posts/approve_post/approve_footer", post: post %>
+        <%= render "handle_posts/approve_posts/approve_post/approve_body", post: post %>
+        <div id="options" data-controller="reply-visibility">
+          <%= render "handle_posts/approve_posts/approve_post/approve_footer", post: post %>
+          <%= render "handle_posts/approve_posts/approve_post/disapprove_message", post: post %>
+        </div>
       </div>
     </div>
   <% end %>

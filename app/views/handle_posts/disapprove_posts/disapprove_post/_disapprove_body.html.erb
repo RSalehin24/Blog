@@ -1,15 +1,13 @@
 <%= render "handle_posts/approve_posts/approve_post/approve_header", post: post %>
 <div id="<%= "#{dom_id(post)}_body" %>" style= "align-items: center; justify-content: center;">
-  <hr class="my-4 post-line-hr">
+  <hr class="post-line-hr">
+  <% if !post.disapprove_message.nil? %>
+    <div class="txt-danger post-disapprove-count-div" style="padding: 10px; font-size: 20px;">
+      <%= post.disapprove_message %>
+    </div>
+    <hr class="post-line-hr">
+  <% end %>
   
-  <div id="<%= "#{dom_id(post)}_category_edit_form bf-transparent" %>" style="margin-left: 10px">
-    <p></p>
-    <h5 class="txt-general", style="margin-left: 5px">Update Category</h5>
-    <%= render "handle_posts/approve_posts/approve_post/approve_edit_form", post: post %>
-    <p></p>
-  </div>
- 
-  <hr class="my-4 post-line-hr">
   <%= render "posts/post/post_image", post: post %>
   <div id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
     <p class="txt-general">
