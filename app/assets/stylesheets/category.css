@@ -20,7 +20,7 @@
 }
 
 .category-delete-button {
-  padding-right: 50px;
+  padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
   position: absolute;
@@ -46,6 +46,23 @@
   padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
+  position: absolute;
+  right: 0px;
+}
+
+.category-name-edit {
+  width: 80%;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: absolute;
+  left: 0px;
+}
+
+.category-edit-button {
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   position: absolute;
   right: 0px;
 }

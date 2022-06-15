@@ -1,14 +1,16 @@
-<div id="<%= "#{dom_id(category)}_item" %>">
-  <div class="between-category"></div>
-  <div class="category-items-div">
-    <div class="txt-general category-name">
-      <%= category.name %>
-    </div>
-    
-    <div class="category-delete-button">
-      <%= link_to "Delete", category_path(category), data: { turbo_method: :delete }, class: "bttn-common bttn-danger-sm bttn-danger" %>
+<%= turbo_frame_tag dom_id(category) do %>
+  <div id="<%= "#{dom_id(category)}_item" %>">
+    <div class="between-category"></div>
+    <div class="category-items-div">
+      <div class="txt-general category-name">
+        <%= category.name %>
+      </div>
+      
+      <div class="category-delete-button">
+        <%= link_to "Edit", edit_category_path(id: category.id), class: "bttn-common bttn-danger-sm bttn" %>
+        <%= link_to "Delete", category_path(category), data: { turbo_method: :delete }, class: "bttn-common bttn-danger-sm bttn-danger" %>
+      </div>
     </div>
   </div>
-</div>
-
+<% end %>
 

@@ -1,0 +1,14 @@
+<div id="<%= "#{dom_id(category)}_edit_item" %>">
+  <div class="between-category"></div>
+    <div class="category-items-div">
+      <%= form_with(model: category) do |form| %>
+        <div class="txt-general category-name-edit">
+          <%= form.text_field :name, autofocus: true, placeholder: "Category Name", class: "form-control txt-general bg-transparent input-border", required: true %>
+        </div>
+        <div class="category-edit-button">
+          <%= form.submit "Edit", class: "bttn-common bttn-danger-sm bttn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
