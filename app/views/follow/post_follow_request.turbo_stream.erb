@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "#{dom_id(@requester)}_user_follow_request" do %>
+  <%= render "follow_requested_button", user: @requester %>
+<% end %>

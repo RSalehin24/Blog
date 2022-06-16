@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
 
+  post "/user/follow", to: "follow#post_follow_request"
+
   get "/user/dashboard", to: "user_dashboard#get_user_dashboard"
   get "/admin/dashboard", to: "admin_dashboard#get_admin_dashboard"
 

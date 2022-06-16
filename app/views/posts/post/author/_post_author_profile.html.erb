@@ -4,20 +4,31 @@
       <div class="modal-header post-new-post-modal post-line-hr">
         <% author = User.find_by(username: post_author) %>
         <h3 class="modal-title txt-title" id="exampleModalLabel"><%= author.first_name + " " + author.last_name %></h3>
+       
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
       <div class="modal-body post-new-post-modal">
         <%if author.image.attached? %>
           <div id="profile-image" class="col col-md-12" style="margin-top: 10px;">
-            <%= image_tag author.image, style: "max-width: 100%; height: 100%; display: block; border-radius: 40px" %>
+            <%= image_tag author.image, style: "max-width: 100%; height: 100%; display: block;" %>
           </div>
         <% end %>
 
-        <div id="profile-info" class="col col-md-12" style="margin-top: 40px; padding-left: 20px">
+       <div class="row" style="margin-left: 20px; margin-top: 15px;  margin-bottom: 10px;">
+        <div class="col col-md-6">
           <div id="profile-info-body">
-          
-            <div class="profile-email txt-general">
+
+            <div id="profile-info-title">
+              <h5 class="txt-general">Info</h5>
+            </div>
+
+            <div id="profile-username" class="txt-general">
+              <i class="fa-solid fa-at fa-lg" style="padding-right: 5px;"></i>
+              <%= author.username %> 
+            </div>
+
+            <div class="profile-email txt-general" style="margin-top: 10px">
               <i class="fa-solid fa-envelope fa-lg" style="padding-right: 5px;"></i>
               <%= author.email %>
             </div>
@@ -28,12 +39,13 @@
                 <%= ((Time.zone.now - author.date_of_birth.to_time) / 1.year.seconds).floor.to_s + " years"  %>
               </div>
             <% end %>
-            
           </div>
-      
+        </div>
+
+        <div class="col col-md-6 text-center">
           <% if !author.instagram.nil? || !author.twitter.nil? %>
             <% if !author.instagram.empty? || !author.twitter.empty? %>
-              <div id="profile-info-social" style="margin-top: 37px">
+              <div id="profile-info-social">
                 <div id="profile-info-social-title">
                   <h5 class="txt-general">Socials</h5>
                 </div>
@@ -41,7 +53,7 @@
                 <div id="profile-info-social-items">
                   <% if !author.instagram.nil? %>
                     <% if  !author.instagram.empty? %>
-                      <a href=<%= "https://instagram.com/" + author.instagram %> style="text-decoration: none;"> 
+                      <a href=<%= "https://instagram.com/" + author.instagram %> style="text-decoration: none; padding-left: 10px;"> 
                         <i class="txt-general fa-brands fa-instagram fa-2x"></i>
                       </a>
                     <% end %>
@@ -58,7 +70,17 @@
               </div>
             <% end %>
           <% end %>
+
+          <div id="<%= "#{dom_id(author)}_user_follow_request" %>" style="padding-top: 20px;">
+            <% if @requesters.include?(author) %>
+              <button type="button" class="bttn-common bttn-danger-common btn btn-secondary" disabled>Requested to follow</button>
+            <% else %>
+              <%= link_to "Request to Follow", user_follow_path(:id => author.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn", style: "width: 80%; height: 50%;" %>
+            <% end %>
+          </div>
+           
         </div>
+      </div>
       </div>
         
       <div class="modal-footer post-new-post-modal post-line-hr">

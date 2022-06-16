@@ -1,13 +1,48 @@
-<% if @searched_posts.empty? %>
-  <h2 class="txt-title" style="margin-bottom: 20px">Searched Posts</h2>
-  <p class="txt-general">No posts has been found with the keywords...</p>
-<% else %>
-  <h2 class="txt-title">Searched Posts</h2>
+<% if @is_user %>
 
-  <div id="posts" style="padding-top: 10px; margin-bottom: 20px;">
-    <% @searched_posts.each do |post| %>
-      <%= render "posts/post", post: post %>
-    <% end %>
-  </div>
+  <% if @searched_users.empty? %>
+    <h2 class="txt-title" style="margin-bottom: 20px">Searched Users</h2>
+    <p class="txt-general">No users has been found with the Username...</p>
+  <% else %>
+   
+    <div class="search-user-div">
+      <h2 class="txt-title">Searched Users</h2>
+    </div>
+
+    <div class="search-user-div-items">
+      <div class="card-border" style="margin-top: 10px; overflow: auto; height: 120vh; padding-right: 5px;">
+        <div id="searched-users" style=" margin-bottom: 20px;">
+        
+          <% @searched_users.each do |user| %>
+            <%= render "users/user", user: user %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <% if @searched_posts.empty? %>
+    <h2 class="txt-title" style="margin-bottom: 20px">Searched Posts</h2>
+    <p class="txt-general">No posts has been found with the keywords...</p>
+  <% else %>
+
+   <div class="search-user-div">
+       <h2 class="txt-title">Searched Posts</h2>
+    </div>
+   
+
+    <div class="search-user-div-items">
+      <div id="searched-posts" style="padding-top: 10px; margin-bottom: 20px;">
+        <% @searched_posts.each do |post| %>
+          <%= render "posts/post", post: post %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
 <% end %>
+
 

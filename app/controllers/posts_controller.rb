@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    @requesters = current_user.requesters
     @posts = Post.where(is_approved: true).where.not(user_id: current_user.id).order(updated_at: :desc)
   end
 

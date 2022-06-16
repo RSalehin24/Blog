@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_15_083901) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_16_104005) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -63,6 +63,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_083901) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.integer "followee_id"
+    t.integer "follower_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.string "username"
     t.integer "post_id", null: false
@@ -85,6 +92,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_083901) do
     t.text "disapprove_message"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer "requestee_id"
+    t.integer "requester_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

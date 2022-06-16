@@ -37,5 +37,98 @@
     <div class="text-center" style="margin-top: 20px;">
       <h5 class="txt">Please Click on Section Name to Open them</h5>
     </div>
+
+    
+    <% if !@requestees.empty? || !@requesters.empty? || !followees.empty? || !@followers.empty? %>
+      <div class="follow">
+        
+        <% if !@requestees.empty? || !@requesters.empty?%>
+          <div class="row request follow-section">
+            
+            <h4 class="txt-general">Requests</h4>
+
+            <% if !@requestees.empty? %>
+              <div class="col col-md-6 requesters section" style="margin-right: 10px;">
+                <div class="row center">
+                  <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
+                  <% @requestees.each do |requestee| %>
+                    <div class="col col-md-12 follow-items ">
+                        <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
+                          <%= requestee.first_name + " " + requestee.last_name %>
+                        </a>
+                        <div style="float: right; padding-right: 5px;">
+                          <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                        </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+
+            <% if !@requesters.empty? %>
+              <div class="col col-md-6 requesters section">
+                <div class="row center">
+                  <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
+                  <% @requesters.each do |requester| %>
+                    <div class="col col-md-12 follow-items ">
+                        <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
+                          <%= requester.first_name + " " + requester.last_name %>
+                        </a>
+                        <div style="float: right; padding-right: 5px;">
+                          <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                        </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if !@followees.empty? || !@followers.empty?%>
+          <div class="row following follow-section">
+            
+            <h4 class="txt-general">Followings</h4>
+            
+            <% if !@followees.empty? %>
+              <div class="col col-md-6 followees">
+
+                <% @followees.each do |followee| %>
+                  <div class="col col-md-6 requesters section" style="margin-right: 10px;">
+                    <div class="row center">
+                      <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
+                      <% @followees.each do |followee| %>
+                        <div class="col col-md-12 follow-items ">
+                            <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
+                              <%= followee.first_name + " " + followee.last_name %>
+                            </a>
+                            <div style="float: right; padding-right: 5px;">
+                              <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                            </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+
+              </div>
+            <% end %>
+
+            <% if !@followers.empty? %>
+              <div class="col col-md-6 followers">
+
+                <% @followers.each do |follower| %>
+                  <%= follower.username %>
+                <% end %>
+
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    
+    
   </div>
 </div>
