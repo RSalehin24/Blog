@@ -64,13 +64,16 @@
           <% end %>
 
           <div id="<%= "#{dom_id(user)}_user_follow_request" %>" style="padding-top: 20px;">
-            <% if !@followers.include?(user) %>
+            <% if @followers.include?(user) %>
+               <button type="button" class="bttn-common bttn-danger-common bttn-following" disabled>Following</button>
+            <% else %>
               <% if @requesters.include?(user) %>
                 <button type="button" class="bttn-common bttn-danger-common btn btn-secondary" disabled>Requested to follow</button>
               <% else %>
                 <%= link_to "Request to Follow", user_follow_path(:id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn", style: "width: 80%; height: 50%;" %>
               <% end %>
             <% end %>
+
           </div>
            
         </div>

@@ -22,3 +22,16 @@
 .input {
   background-color: transparent;
 }
+
+.scroll-div {
+  display: flex;
+  justify-content: center;
+
+  
+  padding: 10px;
+  padding-bottom: 0px;
+  background-color: rgba(79, 165, 45, 0.1);
+
+  overflow-y: scroll;
+  max-height: 30vh;
+}

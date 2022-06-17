@@ -73,6 +73,8 @@
 
           <div id="<%= "#{dom_id(author)}_user_follow_request" %>" style="padding-top: 20px;">
             <% if !@followers.include?(author) %>
+               <button type="button" class="bttn-common bttn-danger-common bttn-following" disabled>Following</button>
+            <% else %>
               <% if @requesters.include?(author) %>
                 <button type="button" class="bttn-common bttn-danger-common btn btn-secondary" disabled>Requested to follow</button>
               <% else %>

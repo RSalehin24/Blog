@@ -9,11 +9,11 @@ class SearchController < ApplicationController
       redirect_to root_path, notice: "Search Type can't be empty!"
     elsif
       @search_term = params["search_string"]
+      @followers = current_user.followers
+      @requesters = current_user.requesters
 
       if @search_type == "User"
         @is_user = true
-        @requesters = current_user.requesters
-        @followers = current_user.followers
 
         if @search_term.empty?
           redirect_to root_path, notice: "Please write a Username to search!"
