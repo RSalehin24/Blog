@@ -1,8 +1,7 @@
-<div class="modal bg-transparent" id="<%= "#{dom_id(post)}_author" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable bg-transparent">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable bg-transparent" style="text-align: left">
     <div class="modal-content bg-transparent">
       <div class="modal-header post-new-post-modal post-line-hr">
-        <% author = User.find_by(username: post.author) %>
+        <% author = User.find_by(username: user) %>
         <h3 class="modal-title txt-title" id="exampleModalLabel"><%= author.first_name + " " + author.last_name %></h3>
        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -42,7 +41,7 @@
           </div>
         </div>
 
-        <div class="col col-md-6 text-center">
+        <div class="col col-md-6 center">
           <% if !author.instagram.nil? || !author.twitter.nil? %>
             <% if !author.instagram.empty? || !author.twitter.empty? %>
               <div id="profile-info-social">
@@ -70,17 +69,6 @@
               </div>
             <% end %>
           <% end %>
-
-          <div id="<%= "#{dom_id(author)}_user_follow_request" %>" style="padding-top: 20px;">
-            <% if !@followers.include?(author) %>
-              <% if @requesters.include?(author) %>
-                <button type="button" class="bttn-common bttn-danger-common btn btn-secondary" disabled>Requested to follow</button>
-              <% else %>
-                <%= link_to "Request to Follow", user_follow_path(:id => author.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn", style: "width: 80%; height: 50%;" %>
-              <% end %>
-            <% end %>
-          </div>
-           
         </div>
       </div>
       </div>
@@ -90,4 +78,3 @@
       </div>
     </div>
   </div>
-</div>

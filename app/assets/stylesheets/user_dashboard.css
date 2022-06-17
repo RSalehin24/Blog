@@ -1,22 +1,24 @@
 .follow-section {
-  padding: 10px;
-  margin-top: 40px;
+  padding-top: 10px;
+  margin-top: 100px;
   background-color: rgba(79, 165, 45, 0.1);
 }
 
-.section {
+.center-item {
+  display: flex;
+  border: 0px;
+  justify-content: center;
+}
 
-  height: 100%;
-  width: 100%;
-
+.follow-section-item {
   margin-top: 8px;
-  padding: 10px;
-
-  border: 1px solid;
-  border-color: #27910c;
-  border-radius: 5px;
-
+  padding-bottom: 20px;
   background-color: rgba(79, 165, 45, 0.1);
+}
+
+.first-item-margin {
+  border-right: 1px solid;
+  border-color: rgba(79, 165, 45, 0.4);
 }
 
 .title {
@@ -24,23 +26,25 @@
 }
 
 .follow-items {
-  width: 80%;
-  height: 80%;
-
+  width: 100%;
   border: 1px solid;
   border-color: #27910c;
   border-radius: 5px;
 
   padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.user-name {
-  padding-left: 10px;
-  right: 0px;
-}
 
-.item-button {
-  right: 0px;
+.scroll {
+  width: 80%;
+  padding: 10px;
+  padding-bottom: 0px;
+
+  background-color: rgba(79, 165, 45, 0.1);
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 30vh;
 }
+ 

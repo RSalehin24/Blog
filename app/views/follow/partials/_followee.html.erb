@@ -1,0 +1,11 @@
+<div id="<%= "#{dom_id(followee)}_followee" %>" class="follow-items">
+  <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(followee)}_followee_modal" %>" style="text-decoration: none; padding-left: 10px;">
+    <%= followee.first_name + " " + followee.last_name %>
+  </a>
+  <div style="float: right; padding-right: 5px;">
+    <%= link_to "Delete", user_follower_delete_path(:id => followee.id), data: { turbo_method: :delete }, class: " bttn-common bttn-danger-sm bttn-danger" %>
+  </div>
+</div>
+<div class="modal bg-transparent" id="<%= "#{dom_id(followee)}_followee_modal" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <%= render "user_dashboard/modals/user", user: followee.username %>
+</div>

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :categories
 
+  get "/user/feed", to: "user_feed#get_user_feed"
+  delete "/user/following/delete", to: "follow#delete_following"
+  delete "/user/follower/delete", to: "follow#delete_follower"
+  delete "/user/follow/delete", to: "follow#delete_follow_request"
+  delete "/user/follow/reject", to: "follow#reject_follow_request"
+  post "/user/follow/accept", to: "follow#accept_follow_request"
   post "/user/follow", to: "follow#post_follow_request"
 
   get "/user/dashboard", to: "user_dashboard#get_user_dashboard"

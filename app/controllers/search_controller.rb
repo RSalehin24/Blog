@@ -13,6 +13,7 @@ class SearchController < ApplicationController
       if @search_type == "User"
         @is_user = true
         @requesters = current_user.requesters
+        @followers = current_user.followers
 
         if @search_term.empty?
           redirect_to root_path, notice: "Please write a Username to search!"

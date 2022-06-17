@@ -1,0 +1,36 @@
+<% if @is_empty %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Follow Request has been accepted" %>
+  <% end %>
+
+  <%= turbo_stream.replace "#{dom_id(@requestee)}_requestee" do %>
+    <% render "follow/partials/requestee_none" %>
+  <% end %>
+
+  <% if @followers_is_empty %>
+    <%= turbo_stream.replace "follower-none" do %>
+      <%= render "follow/partials/followee", followee: @requestee %>
+    <% end %>
+  <% else %>
+    <%= turbo_stream.append "followees" do %>
+      <%= render "follow/partials/followee", followee: @requestee %>
+    <% end %>
+  <% end %>
+  
+<% else %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Follow Request has been accepted" %>
+  <% end %>
+  
+  <%= turbo_stream.remove "#{dom_id(@requestee)}_requestee" %>
+
+  <% if @followers_is_empty %>
+    <%= turbo_stream.replace "follower-none" do %>
+      <%= render "follow/partials/followee", followee: @requestee %>
+    <% end %>
+  <% else %>
+    <%= turbo_stream.append "followees" do %>
+      <%= render "follow/partials/followee", followee: @requestee %>
+    <% end %>
+  <% end %>
+<% end %>

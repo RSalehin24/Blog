@@ -7,7 +7,7 @@
   <% end %>
  
   <p class="txt-general" style="margin-left: 0px">
-    <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;">
+    <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(post)}_author" %>" style="text-decoration: none;">
       <%= post.author %>
     </a> | <%= distance_of_time_in_words(Time.now, post.updated_at) %>
   </p>

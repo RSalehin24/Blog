@@ -38,97 +38,117 @@
       <h5 class="txt">Please Click on Section Name to Open them</h5>
     </div>
 
-    
-    <% if !@requestees.empty? || !@requesters.empty? || !followees.empty? || !@followers.empty? %>
-      <div class="follow">
-        
-        <% if !@requestees.empty? || !@requesters.empty?%>
-          <div class="row request follow-section">
-            
-            <h4 class="txt-general">Requests</h4>
-
-            <% if !@requestees.empty? %>
-              <div class="col col-md-6 requesters section" style="margin-right: 10px;">
-                <div class="row center">
-                  <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
+    <div id="follow">
+      <div id="request" class="row follow-section text-center">
+        <h4 class="txt-general" style="margin-bottom: 10px;">Request</h4>
+          <div class="col col-md-6 follow-section-item first-item-margin">
+            <div class="row center">
+              <h6 class="col col-md-12 txt-general" style="padding-top: 10px; padding-bottom: 5px;">Requests</h6>
+              <div id="requestee-none-div" class="scroll">
+                <% if @requestees.empty? %>
+                  <p  class="txt-general">You don't have any follow request</p>
+                <% else %>
                   <% @requestees.each do |requestee| %>
-                    <div class="col col-md-12 follow-items ">
-                        <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
-                          <%= requestee.first_name + " " + requestee.last_name %>
-                        </a>
-                        <div style="float: right; padding-right: 5px;">
-                          <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
-                        </div>
+                    <div id="<%= "#{dom_id(requestee)}_requestee" %>" class="follow-items">
+                      <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(requestee)}_requestee_modal" %>" style="text-decoration: none; padding-left: 10px;">
+                        <%= requestee.first_name + " " + requestee.last_name %>
+                      </a>
+                      <div style="float: right; padding-right: 5px;">
+                        <%= link_to "Approve", user_follow_accept_path(:id => requestee.id), data: { turbo_method: :post }, class: " bttn-common bttn-danger-sm bttn" %>
+                        <%= link_to "Delete", user_follow_reject_path(:id => requestee.id), data: { turbo_method: :delete }, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                      </div>
+                    </div>
+                    <div class="modal bg-transparent" id="<%= "#{dom_id(requestee)}_requestee_modal" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <%= render "user_dashboard/modals/user", user: requestee.username %>
                     </div>
                   <% end %>
-                </div>
+                <% end %>
               </div>
-            <% end %>
+            </div>
+          </div>
 
-            <% if !@requesters.empty? %>
-              <div class="col col-md-6 requesters section">
-                <div class="row center">
-                  <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
+          <div class="col col-md-6 follow-section-item">
+            <div class="row center">
+              <h6 class="col col-md-12 txt-general" style="padding-top: 10px; padding-bottom: 5px;">Your Requests</h6>
+              <div class="scroll">
+                <% if @requesters.empty? %>
+                  <p class="txt-general">You have not any pending request to follow</p>
+                <% else %>
                   <% @requesters.each do |requester| %>
-                    <div class="col col-md-12 follow-items ">
-                        <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
-                          <%= requester.first_name + " " + requester.last_name %>
-                        </a>
-                        <div style="float: right; padding-right: 5px;">
-                          <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
-                        </div>
+                    <div id="<%= "#{dom_id(requester)}_requester" %>" class="follow-items">
+                      <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(requester)}_requester_modal" %>" style="text-decoration: none; padding-left: 10px;">
+                        <%= requester.first_name + " " + requester.last_name %>
+                      </a>
+                      <div style="float: right; padding-right: 5px;">
+                        <%= link_to "Delete", user_follow_delete_path(:id => requester.id), data: { turbo_method: :delete }, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                      </div>
+                    </div>
+                    <div class="modal bg-transparent" id="<%= "#{dom_id(requester)}_requester_modal" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <%= render "user_dashboard/modals/user", user: requester.username %>
                     </div>
                   <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-
-        <% if !@followees.empty? || !@followers.empty?%>
-          <div class="row following follow-section">
-            
-            <h4 class="txt-general">Followings</h4>
-            
-            <% if !@followees.empty? %>
-              <div class="col col-md-6 followees">
-
-                <% @followees.each do |followee| %>
-                  <div class="col col-md-6 requesters section" style="margin-right: 10px;">
-                    <div class="row center">
-                      <h6 class="col text-center col-md-12 txt-general requesters-title">Whom you have requested to follow</h6>
-                      <% @followees.each do |followee| %>
-                        <div class="col col-md-12 follow-items ">
-                            <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none; padding-left: 10px;">
-                              <%= followee.first_name + " " + followee.last_name %>
-                            </a>
-                            <div style="float: right; padding-right: 5px;">
-                              <%= link_to "Delete", posts_path, class: " bttn-common bttn-danger-sm bttn-danger" %>
-                            </div>
-                        </div>
-                      <% end %>
-                    </div>
-                  </div>
                 <% end %>
-
               </div>
-            <% end %>
-
-            <% if !@followers.empty? %>
-              <div class="col col-md-6 followers">
-
-                <% @followers.each do |follower| %>
-                  <%= follower.username %>
-                <% end %>
-
-              </div>
-            <% end %>
-
+            </div>
           </div>
-        <% end %>
       </div>
-    <% end %>
-    
-    
+
+      <div id="follow" class="row follow-section text-center">
+        <h4 class="txt-general" style="margin-bottom: 10px;">Follow</h4>
+          <div class="col col-md-6 follow-section-item first-item-margin">
+            <div class="row center">
+              <h6 class="col col-md-12 txt-general" style="padding-top: 10px; padding-bottom: 5px;">Followers</h6>
+              <div id="followees" class="scroll">
+               <%= turbo_stream_from "followees" %>
+                <% if @followees.empty? %>
+                <div id="follower-none">
+                  <p class="txt-general">You don't have any followers</p>
+                </div>
+                <% else %>
+                  <% @followees.each do |followee| %>
+                    <div id="<%= "#{dom_id(followee)}_followee" %>" class="follow-items">
+                      <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(followee)}_followee_modal" %>" style="text-decoration: none; padding-left: 10px;">
+                        <%= followee.first_name + " " + followee.last_name %>
+                      </a>
+                      <div style="float: right; padding-right: 5px;">
+                        <%= link_to "Delete", user_follower_delete_path(:id => followee.id), data: { turbo_method: :delete }, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                      </div>
+                    </div>
+                    <div class="modal bg-transparent" id="<%= "#{dom_id(followee)}_followee_modal" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <%= render "user_dashboard/modals/user", user: followee.username %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="col col-md-6 follow-section-item">
+            <div class="row center">
+              <h6 class="col col-md-12 txt-general" style="padding-top: 10px; padding-bottom: 5px;">Following</h6>
+              <div class="scroll">
+                <% if @followers.empty? %>
+                  <p class="txt-general">You are not following anyone</p>
+                <% else %>
+                  <% @followers.each do |follower| %>
+                    <div id="<%= "#{dom_id(follower)}_follower" %>" class="follow-items">
+                      <a type="button" class="txt-general" data-bs-toggle="modal" data-bs-target="#<%= "#{dom_id(follower)}_follower_modal" %>" style="text-decoration: none; padding-left: 10px;">
+                        <%= follower.first_name + " " + follower.last_name %>
+                      </a>
+                      <div style="float: right; padding-right: 5px;">
+                        <%= link_to "Delete", user_following_delete_path(:id => follower.id), data: { turbo_method: :delete }, class: " bttn-common bttn-danger-sm bttn-danger" %>
+                      </div>
+                    </div>
+                    <div class="modal bg-transparent" id="<%= "#{dom_id(follower)}_follower_modal" %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <%= render "user_dashboard/modals/user", user: follower.username %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
   </div>
 </div>

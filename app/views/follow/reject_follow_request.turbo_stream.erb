@@ -1,0 +1,13 @@
+<% if @is_empty %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Follow Request has been rejected" %>
+  <% end %>
+  <%= turbo_stream.replace "#{dom_id(@requestee)}_requestee" do %>
+    <% render "follow/partials/requestee_none", requestee: @requestee %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "alerts42" do %>
+    <%= render "layouts/alerts", notice: "The Follow Request has been rejected" %>
+  <% end %>
+  <%= turbo_stream.remove "#{dom_id(@requestee)}_requestee" %>
+<% end %>

@@ -1,0 +1,16 @@
+<% if @is_empty %>
+  <h2 class="txt-title" style="margin-bottom: 20px">Your feed</h2>
+  <p class="txt-general">No post has been posted by the people whom you are following</p>
+<% else %>
+  <div class="search-user-div">
+      <h2 class="txt-title">Your feed</h2>
+  </div>
+
+  <div class="search-user-div-items">
+    <div id="searched-posts" style="padding-top: 10px; margin-bottom: 20px;">
+      <% @posts.each do |post| %>
+        <%= render "posts/post", post: post %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

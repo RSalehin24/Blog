@@ -3,6 +3,8 @@ class HandlePostsController < ApplicationController
   before_action :for_admin, only: [:disapprove, :posts_tobe_approved, :approve_delete, :edit_post_approve, :update_post_approve]
 
   def posts_tobe_approved
+    @followers = current_user.followers
+    @requesters = current_user.requesters
     @posts = Post.where(is_approved: false, disapprove: false)
   end
 
