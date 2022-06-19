@@ -1,0 +1,43 @@
+<% if current_user %>
+  <li class="nav-link dropdown">
+    <a class="nav-link dropdown-toggle" id="navbardropdown" role="button" data-bs-target="dropdown" aria-expanded="false" href="#">
+      <span class="badge rounded-pill bg-danger">
+        <div id="unread-count" class="nav-link text-white">
+          <%= @unread.count >= 9 ? "9+" : @unread.count %>
+          <i class="bi bi-suit-heart-fill"></i>
+        </div>
+      </span>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+      <div id="unread-notifications" class="nav-link">
+      <% @unread.each do |notification| %>
+          <li id="<%= "#{dom_id(notification)}_unread_notification" %>" class="dropdown-item">
+            <%= link_to notification.to_notification.message, notification_read_path(:id => notification.id), class: "txt-general", data: { turbo_method: :post }, style: "text-decoration: none;" %>
+          </li>
+        <% end %>
+      </div>
+
+      <div id="no-read-line" class="nav-link">
+      </div>
+      <% if @read.count > 0 && @unread.count > 0 %>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+      <% elsif @read.count + @unread.count <= 0 %>
+        <li class="dropdown-item">
+          No notifications yet
+        </li>
+      </div>
+      <% end %>
+      <div id="read-notifications">
+        <%= turbo_stream_from "read-notifications" %>
+        <% @read.each do |notification| %>
+          <li id="<%= "#{dom_id(notification)}_read_notification" %>" class="dropdown-item txt-general">
+            <%= notification.to_notification.message %>
+          </li>
+        <% end %>
+      </div>
+    </ul>
+  </li>
+<% end %>

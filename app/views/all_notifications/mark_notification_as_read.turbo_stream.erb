@@ -1,0 +1,13 @@
+<%= turbo_stream.remove "#{dom_id(notification)}_unread_notification" %>
+
+<%= turbo_stream.prepend "read-notifications" do %>
+  <%= render "notification", notification: @notification_to_mark_as_read %>
+<% end %>
+
+<%= turbo_stream.replace "no-read-line" do %>
+  <%= render "no-read-line", unread: @unread %>
+<% end %>
+
+<%= turbo_stream.replace "unread-count" do %>
+  <%= render "unread_count", unread: @unread %>
+<% end %>

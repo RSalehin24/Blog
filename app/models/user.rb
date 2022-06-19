@@ -23,4 +23,6 @@ class User < ApplicationRecord
 
          has_many :followee_requests, foreign_key: :follower_id, class_name: "Follow"
          has_many :followees, through: :followee_requests, source: :followee
+
+         has_many :notifications, as: :recipient, dependent: :destroy
 end

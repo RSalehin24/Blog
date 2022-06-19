@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
 
+  post "/notification/read", to: "all_notifications#mark_notification_as_read"
   get "/user/feed", to: "user_feed#get_user_feed"
   delete "/user/following/delete", to: "follow#delete_following"
   delete "/user/follower/delete", to: "follow#delete_follower"
