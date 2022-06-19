@@ -1,6 +1,7 @@
-<h2 class="txt-title text-center">Your Pending Posts</h2>
 <% if @your_pending_posts.empty? %>
+  <h2 class="txt-title" style="margin-top: 100px;">Your Pending Posts</h2>
   <p class="txt-general">Do not have any pending posts... Congrats! </p> <p></p>
 <% else %>
+  <h2 class="txt-title text-center">Your Pending Posts</h2>
   <%= render "handle_posts/pending_posts/pending_posts" %>
 <% end %>

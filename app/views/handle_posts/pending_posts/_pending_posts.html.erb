@@ -1,5 +1,9 @@
 <div id="pending_posts">
-  <% @your_pending_posts.each do |post| %>
-    <%= render "handle_posts/pending_posts/pending_post/pending_post", post: post %>
-  <% end %>
+  <div class="search-user-div-items">
+    <div id="searched-posts" style="overflow: auto; max-height: 120vh; padding-right: 5px;">
+      <% @your_pending_posts.each do |post| %>
+        <%= render "handle_posts/pending_posts/pending_post/pending_post", post: post %>
+      <% end %>
+    </div>
+  </div>
 </div>

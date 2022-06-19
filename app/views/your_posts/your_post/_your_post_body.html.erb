@@ -3,7 +3,7 @@
   <%= render "your_posts/your_post/your_post_buttons", post: post %>
   <hr class="my-4 post-line-hr">
   <%= render "posts/post/post_image", post: post %>
-  <div class="bg-transparent" id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
+  <div class="bg-transparent" id="<%= "#{dom_id(post)}_description" %>" style="text-align: left; margin-left: 10px">
     <p class="txt-general">
       <%= post.body %>
     </p>

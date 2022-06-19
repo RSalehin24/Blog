@@ -24,7 +24,6 @@
   border-bottom-right-radius: 0px;
 }
 
-
 .input-search-category {
   padding: 8.5px;
   border: 1px solid;
@@ -73,7 +72,6 @@
   border-color: #6c9c74;
 }
 
-
 .input-search-button-nav {
   height: 30px;
   background-color: transparent;
@@ -90,7 +88,6 @@
 }
 
 .search-user-div {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +95,7 @@
 }
 
 .search-user-div-items {
-  margin-top: 20px;
+  padding-top: 13px;
   display: flex;
   justify-content: center;
   align-items: center;

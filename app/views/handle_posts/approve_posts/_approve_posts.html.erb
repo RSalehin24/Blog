@@ -1,5 +1,9 @@
-<div id="approve_posts" style="padding-top: 10px;">
-  <% @posts.each do |post| %>
-    <%= render "handle_posts/approve_posts/approve_post/approve_post", post: post %>
-  <% end %>
+<div id="approve_posts">
+  <div class="search-user-div-items">
+    <div id="searched-posts" style="overflow: auto; max-height: 120vh; padding-right: 5px;">
+      <% @posts.each do |post| %>
+        <%= render "handle_posts/approve_posts/approve_post/approve_post", post: post %>
+      <% end %>
+    </div>
+  </div>
 </div>

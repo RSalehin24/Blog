@@ -13,10 +13,10 @@ class YourPostsController < ApplicationController
   end
 
   def delete
-    @posts = Post.where(is_approved: false)
     @post = Post.find_by(id: params[:_id])
     @post.destroy
-
+    @posts = Post.where(user_id: current_user.id, is_approved: true)
+    
     respond_to do |format|
       format.turbo_stream
     end

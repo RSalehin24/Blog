@@ -1,10 +1,10 @@
 <div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer card-border post-footer-bg">
   <div class="post-approve-footer-items-div">
-    <div class="post-approve-footer-left-div">
+    <div class="post-approve-footer-left-div" style="text-align: left;">
       <%= link_to "Approve", post, data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn" %>
       &nbsp <%= link_to "Edit Category", handle_posts_edit_post_approve_path(id: post.id), class: "bttn-common bttn-danger-common bttn", style: "margin-left: 10px" %>
     </div>
-    <div class="post-approve-footer-right-div">
+    <div class="post-approve-footer-right-div" style="text-align: right;">
       <a class="bttn-common bttn-danger-common bttn-danger" data-action="reply-visibility#toggleTargets">Disapprove</a>
       <%= link_to "Delete",  handle_posts_approve_delete_path(:_id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-common bttn-danger", style: "left: 0px;"%>
     </div>

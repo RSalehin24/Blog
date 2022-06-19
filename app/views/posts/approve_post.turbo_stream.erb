@@ -7,7 +7,7 @@
   <% end %>
 <% else %>
   <%= turbo_stream.replace "alerts42" do %>
-    <%= render "layouts/alerts", notice: "The Post has been deleted" %>
+    <%= render "layouts/alerts", notice: "The Post has been approved" %>
   <% end %>
   <%= turbo_stream.remove "#{dom_id(@post)}_item" %>
 <% end %>

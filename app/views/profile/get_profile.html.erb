@@ -1,4 +1,4 @@
-<div id="profile">
+<div id="profile" style="margin-top: 75px; margin-left: 175px;">
   <div id="profile-title" class="profile-title" style="margin-bottom: 10px">
     <h2 class="txt-title">Profile</h2>
   </div>
@@ -6,12 +6,12 @@
   <div class="row" id="profile-body" style="margin-top: 10px">
    
     <%if current_user.image.attached? %>
-      <div id="profile-image" class="col col-md-4" style="margin-top: 10px; padding-right: 30px;">
+      <div id="profile-image" class="col col-md-5" style="margin-top: 10px; padding-right: 30px;">
         <%= image_tag current_user.image, style: "max-width:100%; height:auto; display: block; border-radius: 40px" %>
       </div>
     <% end %>
 
-    <div id="profile-info" class="col col-md-8" style="margin-top: 10px; padding-left: 20px">
+    <div id="profile-info" class="col col-md-7" style="margin-top: 10px; padding-left: 20px">
       
       <div class="profile-info-header" style="margin-bottom: 20px;">
         <div id="profile-name">

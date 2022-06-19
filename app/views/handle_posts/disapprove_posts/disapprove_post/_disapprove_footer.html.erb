@@ -1,4 +1,4 @@
-<div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer card-border post-footer-bg">
+<div id="<%= "#{dom_id(post)}_footer" %>" class="card-footer card-border post-footer-bg" style="text-align: left">
   <p></p>
   <%= link_to "Edit", handle_posts_post_disapprove_edit_path(id: post.id), class: "bttn-common bttn-danger-common bttn" %>
   &nbsp <%= link_to "Delete", handle_posts_post_disapprove_delete_path(:id => post.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "bttn-common bttn-danger-common bttn-danger"%>

@@ -1,13 +1,17 @@
-<h2 class="text-center txt-title">Posts from others</h2>
-
 <% if @posts.empty? %>
+  <h2 class="txt-title" style="margin-top: 100px;">Posts from others</h2>
   <p class="txt-general">Others have not created any posts yet!   &nbsp Go to your posts</p>
    <%= link_to your_posts_get_posts_path, class: "bttn-common bttn-main-common bttn-main-lone-button bttn" do %>
       Your Posts
   <% end %>
 <% else %>
-  <div id="posts" class="scroll-div" style="padding-top: 10px; border: 2px;">
-    <%= render @posts %>
+  <h2 class="txt-title text-center">Posts from others</h2>
+  <div id="posts">
+    <div class="search-user-div-items">
+      <div id="searched-posts" style="overflow: auto; max-height: 120vh; padding-right: 5px; padding-top: 0px;">
+        <%= render @posts %>
+      </div>
+    </div>
   </div>
   <br>
 <% end %>

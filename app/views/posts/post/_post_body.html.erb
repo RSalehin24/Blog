@@ -3,7 +3,7 @@
   <hr class="post-line-hr">
   <%= render "posts/post/post_image", post: post %>
   <div id="<%= "#{dom_id(post)}_description" %>" style="margin-left: 10px">
-    <p class="txt-general">
+    <p class="txt-general" style="text-align: left;">
       <%= post.body %>
     </p>
   </div>
