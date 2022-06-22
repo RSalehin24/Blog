@@ -1,0 +1,5 @@
+<%= form_with url: '/room/create', method: :post do |form| %>
+  <%= form.text_field :name, class: "form-control bg-transparent input-border txt-general", autocomplete: false %>
+  <p></p>
+  <%= form.submit "Create", class: "bttn-common bttn-danger-common bttn" %>
+<% end %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  post "/room/create", to: "chat#create_room"
+  get "/chat", to: "chat#get_chat_dashboard"
+
   resources :categories
 
   post "/notification/read", to: "all_notifications#mark_notification_as_read"
