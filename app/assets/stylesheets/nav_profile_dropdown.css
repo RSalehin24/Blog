@@ -35,6 +35,10 @@
 .profile-dropdown-item {
   padding-left: 15px;
   padding-top: 5px;
-  padding-right: 5px;
+  padding-right: 15px;
   padding-bottom: 5px;
+}
+
+.nav-link-navbar-bg {
+  background-color: #3f3e3e;
 }

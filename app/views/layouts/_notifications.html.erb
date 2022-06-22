@@ -1,39 +1,50 @@
 <% if current_user %>
-  <li class="nav-link dropdown">
-    <a class="nav-link dropdown-toggle" id="navbardropdown" role="button" data-bs-target="dropdown" aria-expanded="false" href="#">
-      <span class="badge rounded-pill bg-danger">
-        <div id="unread-count" class="nav-link text-white">
+  <li class="dropdown">
+    <a class="nav-link-navbar" >
+      <div id="notifications-icon" class="nav-link-navbar">
+        <% if @unread.count <= 0 %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
+          </svg>
+        <% else %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"></path>
+          </svg>
+        <% end %>
+      </div>
+     
+      <span class="position-absolute translate-middle badge rounded-pill nav-link-navbar-bg" style="top: 2px; right: -21px;">
+        <div id="unread-count">
           <%= @unread.count >= 9 ? "9+" : @unread.count %>
-          <i class="bi bi-suit-heart-fill"></i>
         </div>
       </span>
     </a>
 
-    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-      <div id="unread-notifications" class="nav-link">
-      <% @unread.each do |notification| %>
-          <li id="<%= "#{dom_id(notification)}_unread_notification" %>" class="dropdown-item">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+      <div id="unread-notifications">
+        <% @unread.each do |notification| %>
+          <li id="<%= "#{dom_id(notification)}_unread_notification" %>" class="dropdown-item nav-profile-item profile-dropdown-item">
             <%= link_to notification.to_notification.message, notification_read_path(:id => notification.id), class: "txt-general", data: { turbo_method: :post }, style: "text-decoration: none;" %>
           </li>
         <% end %>
       </div>
-
-      <div id="no-read-line" class="nav-link">
-      </div>
+      
       <% if @read.count > 0 && @unread.count > 0 %>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
+        <div id="no-read-line">
+          <li>
+            <hr class="dropdown-divider post-line-hr">
+          </li>
+        </div>
       <% elsif @read.count + @unread.count <= 0 %>
-        <li class="dropdown-item">
+        <li class="dropdown-item txt-general nav-profile-item profile-dropdown-item">
           No notifications yet
         </li>
-      </div>
       <% end %>
+      
       <div id="read-notifications">
         <%= turbo_stream_from "read-notifications" %>
         <% @read.each do |notification| %>
-          <li id="<%= "#{dom_id(notification)}_read_notification" %>" class="dropdown-item txt-general">
+          <li id="<%= "#{dom_id(notification)}_read_notification" %>" class="dropdown-item txt-general nav-profile-item profile-dropdown-item">
             <%= notification.to_notification.message %>
           </li>
         <% end %>
@@ -41,3 +52,4 @@
     </ul>
   </li>
 <% end %>
+</div>

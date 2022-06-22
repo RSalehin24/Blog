@@ -8,7 +8,9 @@ class UserFeedController < ApplicationController
 
     @followers.each do |follower|
       follower.posts.each do |post|
-        @posts.push(post)
+        if post.is_approved
+          @posts.push(post)
+        end
       end
     end
 

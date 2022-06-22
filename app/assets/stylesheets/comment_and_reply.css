@@ -1,13 +1,10 @@
 .comments-section {
-  padding-left: 50px; 
-  padding-right: 50px; 
+  padding-left: 25px; 
+  padding-right: 25px; 
   padding-top: 20px;
   padding-bottom: 0px;
 }
 
 .comment-replies-section {
-  padding-left: 50px; 
-  padding-right: 250px; 
-  padding-top: 20px;
-  padding-bottom: 0px;
+  padding: auto;
 }

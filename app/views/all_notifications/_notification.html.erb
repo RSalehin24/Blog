@@ -1,4 +1,9 @@
-<li id="<%= "#{dom_id(notification)}_read_notification" %>" class="dropdown-item txt-general">
-  <%= notification.to_notification.message %>
-  <i class="bi bi-suit-heart-fill"></i>
+<% if @read <= 0 %>
+  <div id="no-read-line" class="nav-link">
+    <hr class="dropdown-divider post-line-hr">
+  </div>
+<% end %>
+
+<li id="<%= "#{dom_id(@notification_to_mark_as_read)}_read_notification" %>" class="dropdown-item txt-general nav-profile-item profile-dropdown-item">
+  <%= @notification_to_mark_as_read.to_notification.message %>
 </li>
