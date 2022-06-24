@@ -7,7 +7,7 @@
       <% end %>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -70,8 +70,10 @@
 
       <ul class="navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <div style="display: flex; align-items: center; justify-content: cneter; margin-right: 20px;">
+          <!--  <div style="display: flex; align-items: center; justify-content: cneter; margin-right: 24px;">
             <%= render "layouts/notifications" %>
+          </div>  -->
+
           </div>
           
           <div style="display: flex; align-items: center; justify-content: cneter; margin-right: 20px;">

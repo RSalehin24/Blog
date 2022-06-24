@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   before_action :not_approved, only: [:update]
   before_action :for_admin, only: [ :update_after_approve ]
 
+  after_action :set_status
+
   # GET /posts or /posts.json
   def index
     @followers = current_user.followers
@@ -149,5 +151,9 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :body, :author, :user_id, :disapprove, :category_id, images: [])
+    end
+
+    def set_status
+      current_user.update!(status: User.statuses[:offline]) if current_user
     end
 end

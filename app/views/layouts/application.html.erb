@@ -21,6 +21,22 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+
+    <style>
+      <%= ".msg-#{current_user&.id}" %> {
+        background-color: #1d600f !important;
+        padding: 10px;
+      }
+
+      <%= ".cont-#{current_user&.id}" %> {
+        display: flex;
+        justify-content: flex-start;
+      }
+    </style>
+
+
+
   </head>
 
   <body class="bg-image">

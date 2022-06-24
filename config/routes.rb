@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'chat_users/show', to: "chat_users#show"
 
-  post "/room/create", to: "chat#create_room"
-  get "/chat", to: "chat#get_chat_dashboard"
+  resources :rooms do
+    resources :messages
+  end
+
+  post "/room/create", to: "rooms#create"
+  get "/chat", to: "rooms#index"
 
   resources :categories
 
