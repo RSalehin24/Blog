@@ -22,4 +22,5 @@ This is an app I have developed to learn the basics of the  ruby on rails web fr
 17. User have "Your feed" page where he./she can search see the posts of the users whom he/she is following.
 19. User has his/her own dashboard to see the activites of their profile
 20. Admins have their dashboard to keep track of the admin activitites.
+21. Users can chat with the persons whom he/she is following or who is following him/her.
 
