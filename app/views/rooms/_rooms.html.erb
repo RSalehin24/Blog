@@ -1,0 +1,8 @@
+<div id="rooms" class="txt-general">
+  <%= turbo_stream_from "rooms" %>
+  <% @rooms.each do |room| %>
+    <div class="txt-general">
+      <%= room.name %> <br>
+    </div>
+  <% end %>
+</div>

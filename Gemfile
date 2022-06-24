@@ -36,3 +36,6 @@ group :test do
 end
 
 gem "noticed", "~> 1.5"
+
+# Use Redis for Action Cable
+gem "redis", "~> 4.0"

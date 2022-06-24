@@ -1,0 +1,83 @@
+<div class="card bg-transparent card-border" style="width: 32rem; margin-bottom: 30px;">
+  <%if user.image.attached? %>
+    <div id="profile-image" class="card-img-top" style="margin-top: 10px;">
+      <%= image_tag user.image, style: "max-width: 100%; height: 100%; display: block;" %>
+    </div>
+  <% end %>
+  <div class="card-body" style="margin-bottom: 5px;">
+    <h4 class="card-title txt-general" style="margin-top: 20px;"><%= user.first_name + " " + user.last_name %></h4>
+    <div id="profile-info" class="col col-md-12" style="margin-top: 20px; padding-left: 20px">
+      <div class="row">
+        <div class="col col-md-6">
+          <div id="profile-info-body">
+
+            <div id="profile-info-title">
+              <h5 class="txt-general">Info</h5>
+            </div>
+
+            <div id="profile-username" class="txt-general">
+              <i class="fa-solid fa-at fa-lg" style="padding-right: 5px;"></i>
+              <%= user.username %> 
+            </div>
+
+            <div class="profile-email txt-general" style="margin-top: 10px">
+              <i class="fa-solid fa-envelope fa-lg" style="padding-right: 5px;"></i>
+              <%= user.email %>
+            </div>
+
+            <% if !user.date_of_birth.nil? %>
+              <div class="profile-age txt-general" style="margin-top: 10px">
+                <%= image_tag "age.png", size: "26x25", style: "padding-right: 5px;" %>
+                <%= ((Time.zone.now - user.date_of_birth.to_time) / 1.year.seconds).floor.to_s + " years"  %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col col-md-6 text-center">
+          <% if !user.instagram.nil? || !user.twitter.nil? %>
+            <% if !user.instagram.empty? || !user.twitter.empty? %>
+              <div id="profile-info-social">
+                <div id="profile-info-social-title">
+                  <h5 class="txt-general">Socials</h5>
+                </div>
+                
+                <div id="profile-info-social-items">
+                  <% if !user.instagram.nil? %>
+                    <% if  !user.instagram.empty? %>
+                      <a href=<%= "https://instagram.com/" + user.instagram %> style="text-decoration: none; padding-left: 10px;"> 
+                        <i class="txt-general fa-brands fa-instagram fa-2x"></i>
+                      </a>
+                    <% end %>
+                  <% end %>
+
+                  <% if !user.twitter.nil? %>
+                    <% if !user.twitter.empty? %>
+                      <a href=<%= "https://twitter.com/" + user.twitter %> style="padding-left: 10px;">
+                        <i class="txt-general fa-brands fa-twitter fa-2x"></i>
+                      </a> 
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div id="<%= "#{dom_id(user)}_user_follow_request" %>" style="padding-top: 20px;">
+            <% if @followers.include?(user) %>
+               <button type="button" class="bttn-common bttn-danger-common bttn-following" disabled>Following</button>
+            <% else %>
+              <% if @requesters.include?(user) %>
+                <button type="button" class="bttn-common bttn-danger-common btn btn-secondary" disabled>Requested to follow</button>
+              <% else %>
+                <%= link_to "Request to Follow", user_follow_path(:id => user.id), data: { turbo_method: :post }, class: "bttn-common bttn-danger-common bttn", style: "width: 80%; height: 50%;" %>
+              <% end %>
+            <% end %>
+
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

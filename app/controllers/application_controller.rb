@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  respond_to :html, :json
-
   before_action :set_notifications, if: :current_user
 
   private
