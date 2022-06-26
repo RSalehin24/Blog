@@ -1,7 +1,7 @@
 <% if @is_user %>
 
   <% if @searched_users.empty? %>
-    <h2 class="txt-title" style="margin-bottom: 20px">Searched Users</h2>
+    <h2 class="txt-title" style="margin-bottom: 20px; margin-top: 100px;">Searched Users</h2>
     <p class="txt-general">No users has been found with the Username...</p>
   <% else %>
    
@@ -24,8 +24,11 @@
 
 <% else %>
 
-  <% if @searched_posts.empty? %>
-      <h2 class="txt-title" style="margin-bottom: 20px">Searched Posts</h2>
+  <% if @searched_posts.nil? %>
+    <h2 class="txt-title" style="margin-bottom: 20px; margin-top: 100px;">Searched Posts</h2>
+    <p class="txt-general">No posts has been found with the keywords...</p>
+  <% elsif @searched_posts.empty? %>
+      <h2 class="txt-title" style="margin-bottom: 20px; margin-top: 100px;">Searched Posts</h2>
       <p class="txt-general">No posts has been found with the keywords...</p>
   <% else %>
 

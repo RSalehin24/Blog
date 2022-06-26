@@ -16,10 +16,20 @@
         <h5 class="txt-title" style="margin-left: 10px;"> <%= current_user.first_name + " " + current_user.last_name %> </h5>  
       </li> <br>
       
-      <h4 class="txt-title" style="margin-bottom: 15px;"> Friends </h4>
-      <% @users.each do |user| %>
-        <%= render 'users/user', user: user %>
+      
+      <% if !@users.empty? %>
+        <h4 class="txt-title" style="margin-bottom: 15px;"> Friends </h4>
+        <% @users.each do |user| %>
+          <%= render 'users/user', user: user %>
+        <% end %>
+      <% else %>
+        <div class="txt-general">
+          No followers or you're not following anyone
+        </div>
+        
       <% end %>
+      
+     
 
       <!-- <h4 class="txt-title"> Rooms </h4>
       <%= turbo_stream_from "rooms" %>
