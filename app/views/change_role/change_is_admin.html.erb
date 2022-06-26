@@ -1,9 +1,9 @@
 <% if !current_user.is_admin %>
-  <h2 class="txt-title">Request for changing your role</h2> <br>
+  <h2 class="txt-title" style="margin-top: 100px;">Request for changing your role</h2> <br>
   <%= link_to "Request For Admin Role", change_role_requested_admin_role_path, data: { turbo_method: :post }, class: "bttn-common bttn-main-common bttn-main-lone-button bttn" %>
   <p></p>
 <% else %>
-  <h2 class="txt-title">Request for changing your role</h2>
+  <h2 class="txt-title" style="margin-top: 100px;">Request for changing your role</h2>
   <p class="txt-general">You are already an Admin!</p>
 <% end %>
 
