@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_19_082524) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -78,16 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "room_id", null: false
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.integer "recipient_id", null: false
@@ -98,15 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
     t.datetime "updated_at", null: false
     t.index ["read_at"], name: "index_notifications_on_read_at"
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
-  end
-
-  create_table "participants", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "room_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_participants_on_room_id"
-    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -132,13 +113,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.boolean "is_private", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -159,7 +133,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.integer "status", default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -171,10 +144,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_041017) do
   add_foreign_key "comment_replies", "comments"
   add_foreign_key "comments", "posts"
   add_foreign_key "likes", "posts"
-  add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
-  add_foreign_key "participants", "rooms"
-  add_foreign_key "participants", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
 end

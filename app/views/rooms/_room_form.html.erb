@@ -1,5 +1,0 @@
-<%= form_with url: '/room/create', data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset"}, method: :post do |form| %>
-  <%= form.text_field :name, class: "form-control bg-transparent input-border txt-general", autocomplete: false %>
-  <p></p>
-  <%= form.submit "Create", class: "bttn-common bttn-danger-common bttn" %>
-<% end %>
