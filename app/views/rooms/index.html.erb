@@ -57,13 +57,15 @@
        
         <div id="single-room"> 
           <%= turbo_stream_from @single_room %>
+          
+         
           <div id="messages" data-controller="scroll">
             <div class="txt-general text-center" style="margin-bottom: 30px; margin-top: 20px;">Message will appear here</div>
             <%= render @messages %> 
           </div>
-          <div style="margin-top: 10px; heigth: 500px;">
-            <%= render "messages/form" %>
-          </div>
+           <div style="margin-top: 10px;">
+              <%= render "messages/form" %>
+            </div>
         </div>
       <% end %>
     </div>
