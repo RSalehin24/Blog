@@ -1,8 +1,9 @@
 <div class="form-group msg-form">
   <%= form_with(model: [@single_room, @message], remote: true, class: 'd-flex', data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset"}) do |form| %>
-    <div id="attachment-previews" data-controller="message-preview" data-action="message-preview#preview" style="width: 100%;">
-        
-      
+    <div id="attachment-previews" data-controller="message-preview" data-action="message-preview#preview">
+    </div>
+
+      <div class="d-flex">
       <div class="image-upload">  
         <%= form.label :attachments, class: "txt-general" do %>
           <i class="bi bi-plus-circle upload-button"></i>
@@ -10,8 +11,10 @@
         <%= form.file_field(:attachments, multiple: true,) %>
       </div>
       
-      <%= form.text_field :body, id: 'chat-text', class: "form-control msg-control txt-general bg-transparent input-search-type", placeholder: "Write your message here...", autocomplete: false, style: "width: 30%" %>
-      <%= form.submit "Send Message", data: { disable_with: false, controller: "message-preview", action: "click->message-preview#clearPreview" }, class: "btn bttn-search input-search-button" %>
-    </div>
+        <%= form.text_field :body, id: 'chat-text', class: "align-self-end form-control msg-control txt-general bg-transparent input-search-type", placeholder: "Write your message here...", autocomplete: false, style: "margin-left:10px; width: 80%" %>
+        <%= form.submit "Send Message", data: { disable_with: false, controller: "message-preview", action: "click->message-preview#clearPreview" }, class: "btn bttn-search input-search-button" %>
+      </div>
+      
+    
   <% end %>
 </div>

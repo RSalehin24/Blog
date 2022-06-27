@@ -141,9 +141,13 @@
     */
 #attachment-previews {
   display: inline;
+  bottom: 120px;
+  height: 70px;
+  width: 290px;
   overflow-y: hidden;
   overflow-x: auto;
-  border: 1px solid green;
+  direction: rtl;
+  white-space: nowrap;
 }
 
 .attachment-preview {
