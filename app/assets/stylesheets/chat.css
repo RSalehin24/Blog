@@ -140,16 +140,12 @@
     * Adds a horizontal scroll bar that hides extra attachments
     */
 #attachment-previews {
-  position: absolute;
   display: inline;
-  bottom: 120px;
-  height: 70px;
-  width: 290px;
   overflow-y: hidden;
   overflow-x: auto;
-  direction: rtl;
-  white-space: nowrap;
+  border: 1px solid green;
 }
+
 .attachment-preview {
   position: relative;
   display: inline-block;
