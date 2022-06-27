@@ -3,7 +3,7 @@ class FollowController < ApplicationController
 
   def post_follow_request
     @requester = User.find_by(id: params[:id])
-    @request = Request.create(requestee: current_user, requester: @requester)
+    @request = Request.find_by(requestee: current_user, requester: @requester)
 
     respond_to do |format|
       if @request.save

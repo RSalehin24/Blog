@@ -1,7 +1,5 @@
 class UserFeedController < ApplicationController
 
-  before_action :authenticate_user!
-  
   def get_user_feed
     @followers = current_user.followers
     @requesters = current_user.requesters

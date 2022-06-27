@@ -13,7 +13,7 @@ class ChatUsersController < ApplicationController
       @users << followee
     end
 
-    if @users.include?(@user)
+    if current_user.followees.include?(@user)
       @room = Room.new 
       @rooms = Room.public_rooms
       @room_name = get_name(@user, current_user)

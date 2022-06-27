@@ -75,7 +75,7 @@
           <% @requesters0 = User.find_by(id: current_user.id).requesters %>
           
           <div id="<%= "#{dom_id(author)}_user_follow_request" %>" style="padding-top: 20px;">
-            <% if @followers0.include?(author) %>
+            <% if !@followers0.include?(author) %>
                <button type="button" class="bttn-common bttn-danger-common bttn-following" disabled>Following</button>
             <% else %>
               <% if @requesters0.include?(author) %>
