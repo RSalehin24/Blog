@@ -23,6 +23,7 @@ end
 
 group :development do
   gem "web-console"
+  gem "redis", "~> 4.0"
 end
 
 group :production do
@@ -38,4 +39,4 @@ end
 gem "noticed", "~> 1.5"
 
 # Use Redis for Action Cable
-gem "redis", "~> 4.0"
+
