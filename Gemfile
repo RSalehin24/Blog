@@ -41,4 +41,7 @@ gem "noticed", "~> 1.5"
 
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
+<<<<<<< HEAD
+>>>>>>> parent of a339a93 (redis has been moved to development)
+=======
 >>>>>>> parent of a339a93 (redis has been moved to development)
