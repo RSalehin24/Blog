@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(@post) do %>
-  <div class="card  bg-transparent card-border" style="margin-top: 10px">
+  <div class="card  bg-transparent card-border" style="margin-top: 10px; width: 35rem;">
     <div class="card-body">
       <%= render "posts/post/post_header", post: @post %>
       <div id="<%= "#{dom_id(@post)}_body" %>" style= "align-items: center; justify-content: center;">

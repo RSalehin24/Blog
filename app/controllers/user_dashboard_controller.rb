@@ -1,6 +1,5 @@
 class UserDashboardController < ApplicationController
   before_action :authenticate_user!
-  before_action only: [ :get_admin_dashboard ] 
 
   def get_user_dashboard
     @your_posts = Post.where(user_id: current_user.id, is_approved: true, disapprove: false).count

@@ -22,7 +22,7 @@ class SearchController < ApplicationController
         end
 
       elsif @search_type == "Post"
-
+        @searched_posts = []
         @category_id = params["category_id"]
 
         if @category_id.nil? && @search_term.empty?

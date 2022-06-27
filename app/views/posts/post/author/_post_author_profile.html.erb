@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable bg-transparent">
     <div class="modal-content bg-transparent">
       <div class="modal-header post-new-post-modal post-line-hr">
-        <% author = User.find_by(username: post.author) %>
+        <% author = User.find_by(id: post.user_id) %>
         <h3 class="modal-title txt-title" id="exampleModalLabel"><%= author.first_name + " " + author.last_name %></h3>
        
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -75,7 +75,7 @@
           <% @requesters0 = User.find_by(id: current_user.id).requesters %>
           
           <div id="<%= "#{dom_id(author)}_user_follow_request" %>" style="padding-top: 20px;">
-            <% if !@followers0.include?(author) %>
+            <% if @followers0.include?(author) %>
                <button type="button" class="bttn-common bttn-danger-common bttn-following" disabled>Following</button>
             <% else %>
               <% if @requesters0.include?(author) %>
