@@ -1,6 +1,6 @@
 <div class="form-group msg-form">
   <%= form_with(model: [@single_room, @message], remote: true, class: 'd-flex', data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset"}) do |form| %>
-    <%= form.text_field :body, id: 'chat-text', class: "form-control msg-control txt-general bg-transparent input-search-type", placeholder: "Write your message here...", autocomplete: false, required: true %>
+    <%= form.text_field :body, id: 'chat-text', class: "form-control msg-control txt-general bg-transparent input-search-type", placeholder: "Write your message here...", autocomplete: false %>
     <%= form.submit "Send Message", data: { disable_with: false }, class: "btn bttn-search input-search-button" %>
   <% end %>
 </div>
