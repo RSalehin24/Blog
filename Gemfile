@@ -38,6 +38,7 @@ end
 gem "noticed", "~> 1.5"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 # Use Redis for Action Cable
@@ -46,5 +47,7 @@ gem "redis", "~> 4.0"
 >>>>>>> parent of a339a93 (redis has been moved to development)
 =======
 >>>>>>> parent of a339a93 (redis has been moved to development)
+=======
+>>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)
 =======
 >>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)

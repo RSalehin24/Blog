@@ -5,6 +5,7 @@ Rails.application.configure do
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -14,6 +15,9 @@ Rails.application.configure do
 >>>>>>> parent of c8f262e (small bug fixing in production config)
   
 >>>>>>> parent of c3751ba (small bug fixing in production config)
+=======
+
+>>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)
 =======
 
 >>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)
