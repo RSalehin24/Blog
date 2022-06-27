@@ -2,25 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-=======
-  config.action_controller.default_url_options = {
-    host: ENV['PRODUCTION_HOST'],
-  }
->>>>>>> parent of c8f262e (small bug fixing in production config)
-  
->>>>>>> parent of c3751ba (small bug fixing in production config)
-=======
-
->>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)
-=======
-
->>>>>>> parent of 22b2492 (Merge pull request #6 from RSalehin24/chat)
   # Code is not reloaded between requests.
   config.cache_classes = true
 
