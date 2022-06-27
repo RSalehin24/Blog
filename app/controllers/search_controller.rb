@@ -13,7 +13,6 @@ class SearchController < ApplicationController
       @requesters = current_user.requesters
 
       if @search_type == "User"
-        @search_term = params["search_string"]
         @is_user = true
 
         if @search_term.empty?
@@ -28,7 +27,7 @@ class SearchController < ApplicationController
 
         if @category_id.nil? && @search_term.empty?
           redirect_to root_path, notice: "Please insert Category or Post title or both to search!"
-        elsif !@search_term.empty? && @category_id.empty?
+        elsif !@search_term.empty? && @category_id.nil?
           @searched_posts = Post.where(is_approved: true).where("lower(title) LIKE lower(?)", "%#{@search_term}%")
         elsif !@category_id.nil? && @search_term.empty?
           @searched_posts = Post.where(is_approved: true).where(category_id: @category_id)
