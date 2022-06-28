@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'chat_users/show', to: "chat_users#show"
+  get 'chat_users/chat/:id', to: "chat_users#show"
 
   resources :rooms do
     resources :messages
@@ -7,7 +7,8 @@ Rails.application.routes.draw do
 
   post "/room/create", to: "rooms#create"
   get "/chat", to: "rooms#index"
-
+  
+  
   resources :categories
 
   post "/notification/read", to: "all_notifications#mark_notification_as_read"

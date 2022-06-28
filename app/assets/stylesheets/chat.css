@@ -19,7 +19,8 @@
 }
 
 #messages {
-  max-height: 75vh;
+  padding-right: 5px;
+  max-height: 85vh;
   bottom: 0px;
   border-radius: 10px;
   background-color: rgba(230, 255, 220, 0.5);
@@ -45,7 +46,7 @@
 }
 
 #chatroom_container {
-  height: 120vh;
+  height: 100vh;
   margin-right: 0px !important;
 }
 
@@ -55,7 +56,7 @@
 
 .message-box {
   word-wrap: break-word;
-  width: fit-content;
+  max-width: 100%;
   border-radius: 10px;
   background-color: #758048;
   padding: 10px;
@@ -64,6 +65,7 @@
 }
 
 .message-box-container {
+  max-height: fit-content;
   display: flex;
   justify-content: flex-end;
   margin: 10px;
@@ -142,6 +144,7 @@
     * Adds a horizontal scroll bar that hides extra attachments
     */
 #attachment-previews {
+  padding-left: 20px;
   display: inline;
   height: 50px;
   width: 290px;

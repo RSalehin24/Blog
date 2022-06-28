@@ -5,14 +5,12 @@
 <% end %>
 <li class="list-group-item d-flex align-items-center <%= isActive %>">
   <div class="icon-container">
-    <%= link_to chat_users_show_path(id: user.id), style: "text-decoration: none;", class: "txt-general" do %> 
+    <a href="/chat_users/chat/<%= user.id %>" style="text-decoration: none;" class="txt-general"> 
       <div class="d-flex align-items-center" style="width: 100vh;">
         <%= image_tag user.image, class: "nav-link", style: "width: 40px; height: 40px; display: block; border-radius: 40px" %> 
         <div class="d-flex align-items-center" style="margin-left: 20px;"><%= user.first_name + " " + user.last_name %></div>
       </div>
-      
-      
-    <% end %>
+    </a>
     <%= turbo_stream_from "user_status" %>
     <div>
       <%= render "users/status", user: user %>
