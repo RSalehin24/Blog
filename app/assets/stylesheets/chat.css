@@ -6,6 +6,8 @@
   width: 100%;
   height: 56px;
   padding: 10px;
+  padding-top: 2px;
+  padding-right: 15px;
 }
 
 #single-room {
@@ -13,11 +15,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 #messages {
-  max-height: 85vh;
+  max-height: 75vh;
   bottom: 0px;
   border-radius: 10px;
   background-color: rgba(230, 255, 220, 0.5);
@@ -26,7 +28,7 @@
 }
 
 #room_container {
-  height: 150vh;
+  height: 100vh;
   margin-right: 0px !important;
   border-radius: 10px;
   background-color: rgba(230, 255, 220, 0.3);
@@ -43,7 +45,7 @@
 }
 
 #chatroom_container {
-  height: 100vh;
+  height: 120vh;
   margin-right: 0px !important;
 }
 
@@ -141,8 +143,7 @@
     */
 #attachment-previews {
   display: inline;
-  bottom: 120px;
-  height: 70px;
+  height: 50px;
   width: 290px;
   overflow-y: hidden;
   overflow-x: auto;
@@ -163,13 +164,14 @@
   vertical-align: middle;
   line-height: 0px;
 }
+
 .cancel-upload-button {
   position: absolute;
   top: 0%;
   right: 0%;
   font-size: 15px;
   padding: 3px;
-  color: rgb(224, 0, 0);
+  color: rgb(4, 83, 11);
   opacity: 0.75;
 }
 .cancel-upload-button:hover {
@@ -190,6 +192,7 @@
   display: block;
   position: absolute;
   background-size: contain;
+  background-repeat: no-repeat;
   top: 0;
   left: 0;
   width: 100%;
@@ -213,4 +216,42 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.message-text-input {
+  width: 100%;
+  height: 40px;
+  padding: 8.5px;
+  border: 1px solid;
+  border-color: #6c9c74;
+  border-right: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 0px;
+  margin-left: 10px;
+}
+
+.message-button {
+  color: white;
+  background-color: #1d600f;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid;
+  border-color: #14440a;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+}
+
+.message-button:hover {
+  border: 1px solid;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  background-color: #14440a;
+  color: white;
+  border-color: #14440a;
 }

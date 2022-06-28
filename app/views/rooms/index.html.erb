@@ -59,9 +59,14 @@
           <%= turbo_stream_from @single_room %>
           <div id="messages" data-controller="scroll">
             <div class="txt-general text-center" style="margin-bottom: 30px; margin-top: 20px;">Message will appear here</div>
-            <%= render @messages %> 
+            <%= render @messages %>
           </div>
-          <div style="margin-top: 10px; heigth: 100%; width: 100%; border: 1px solid green;">
+          <div id="attachment-previews" 
+            data-controller="message-preview"
+            data-action="message-preview#preview"
+          >
+          </div>
+          <div>
             <%= render "messages/form" %>
           </div>
         </div>
