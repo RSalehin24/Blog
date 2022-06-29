@@ -6,7 +6,7 @@ This is an app I have developed to learn the basics of the  ruby on rails web fr
 3. A user can post about any topic
 4. The post has to be approved by an admin
 5. Admin can disapprove the post with a message or delete the post altogether
-6. User can see their disapproved posts from disapprove posts page, they can edit the posts and submit again or delete them altogether
+6. User can see their disapproved posts from disapprove posts page, they can edit the posts and submit them again or delete them altogether
 7. User can see the pending posts which are yet to be approved in "Pending Posts" page
 8. Admin can add, edit or delete a category
 9. User can edit the pending posts
