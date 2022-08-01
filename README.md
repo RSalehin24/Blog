@@ -1,5 +1,7 @@
 # Blogs4248
-
+```
+Some features are available at different branches. They have not been merged as Heroku need credit card info for some tools to use.
+```
 This is an app I have developed to learn the basics of the  ruby on rails web framework with some common features:
 1. A person can create an account using email
 2. User has to verify his/her email to start using the blogs site
@@ -22,4 +24,6 @@ This is an app I have developed to learn the basics of the  ruby on rails web fr
 17. User have "Your feed" page where he/she can search see the posts of the users whom he/she is following
 19. User has his/her own dashboard to see the activites of their profile
 20. Admins have their dashboard to keep track of the admin activitites
-
+21. Users can chat with their follower or the person whom he/she is following
+22. User can see the status of the person in chat (active, away or offline)
+23. User can add message attachments with in chat
